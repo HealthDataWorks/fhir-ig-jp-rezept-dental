@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem
+    xmlns="http://hl7.org/fhir">
+    <id value="CodeSystem-JP-REZEPT-DentalMedicalIdentification"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2021-04-06T12:34:46.812+00:00"/>
+        <source value="#kD44cQNiX1u7c5R0"/>
+    </meta>
+    <url value="https://xxx/CodeSystem-JP-REZEPT-DentalMedicalIdentification"/>
+    <name value="DentalMedicalIdentification"/>
+    <title value="診療識別コード"/>
+    <status value="draft"/>
+    <description value="レセプト電算処理システムで使用されている診療識別コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表20 診療識別コード」に記載されています。"/>
+    <valueSet value="https://xxx/ValueSet-JP-REZEPT-DENTAL-DentalMedicalIdentification"/>
+    <content value="complete"/>
+    <concept>
+        <code value="01"/>
+        <display value="全体に係る識別コード(入院)"/>
+        <definition value="全体に係る識別コード(入院)"/>
+    </concept>
+    <concept>
+        <code value="11"/>
+        <display value="初診(入院・入院外)"/>
+        <definition value="初診(入院・入院外)"/>
+    </concept>
+    <concept>
+        <code value="12"/>
+        <display value="再診(入院外)"/>
+        <definition value="再診(入院外)"/>
+    </concept>
+    <concept>
+        <code value="13"/>
+        <display value="管理(入院)、管理・リハ(入院外)"/>
+        <definition value="管理(入院)、管理・リハ(入院外)"/>
+    </concept>
+    <concept>
+        <code value="14"/>
+        <display value="在宅(入院)"/>
+        <definition value="在宅(入院)"/>
+    </concept>
+    <concept>
+        <code value="21"/>
+        <display value="投薬/内服(入院)、投薬・注射(入院外)"/>
+        <definition value="投薬/内服(入院)、投薬・注射(入院外)"/>
+    </concept>
+    <concept>
+        <code value="22"/>
+        <display value="投薬/屯服(入院)"/>
+        <definition value="投薬/屯服(入院)"/>
+    </concept>
+    <concept>
+        <code value="23"/>
+        <display value="投薬/外用(入院)"/>
+        <definition value="投薬/外用(入院)"/>
+    </concept>
+    <concept>
+        <code value="24"/>
+        <display value="投薬/調剤(入院)"/>
+        <definition value="投薬/調剤(入院)"/>
+    </concept>
+    <concept>
+        <code value="26"/>
+        <display value="投薬/麻毒(入院)"/>
+        <definition value="投薬/麻毒(入院)"/>
+    </concept>
+    <concept>
+        <code value="27"/>
+        <display value="投薬/調基(入院)"/>
+        <definition value="投薬/調基(入院)"/>
+    </concept>
+    <concept>
+        <code value="31"/>
+        <display value="注射/皮下筋肉内(入院)、X線検査(入院外)"/>
+        <definition value="注射/皮下筋肉内(入院)、X線検査(入院外)"/>
+    </concept>
+    <concept>
+        <code value="32"/>
+        <display value="注射/静脈内(入院)"/>
+        <definition value="注射/静脈内(入院)"/>
+    </concept>
+    <concept>
+        <code value="33"/>
+        <display value="注射/その他(入院)"/>
+        <definition value="注射/その他(入院)"/>
+    </concept>
+    <concept>
+        <code value="39"/>
+        <display value="薬剤料減点(入院)"/>
+        <definition value="薬剤料減点(入院)"/>
+    </concept>
+    <concept>
+        <code value="40"/>
+        <display value="処置(入院)"/>
+        <definition value="処置(入院)"/>
+    </concept>
+    <concept>
+        <code value="41"/>
+        <display value="処置・手術1(入院外)"/>
+        <definition value="処置・手術1(入院外)"/>
+    </concept>
+    <concept>
+        <code value="42"/>
+        <display value="処置・手術2(入院外)"/>
+        <definition value="処置・手術2(入院外)"/>
+    </concept>
+    <concept>
+        <code value="43"/>
+        <display value="処置・手術3(入院外)"/>
+        <definition value="処置・手術3(入院外)"/>
+    </concept>
+    <concept>
+        <code value="44"/>
+        <display value="処置・手術(その他)(入院外)"/>
+        <definition value="処置・手術(その他)(入院外)"/>
+    </concept>
+    <concept>
+        <code value="50"/>
+        <display value="手術(入院)"/>
+        <definition value="手術(入院)"/>
+    </concept>
+    <concept>
+        <code value="54"/>
+        <display value="麻酔(入院・入院外)"/>
+        <definition value="麻酔(入院・入院外)"/>
+    </concept>
+    <concept>
+        <code value="60"/>
+        <display value="検査・病理(入院)"/>
+        <definition value="検査・病理(入院)"/>
+    </concept>
+    <concept>
+        <code value="61"/>
+        <display value="歯冠修復・欠損補綴・修復・補綴1(入院外)"/>
+        <definition value="歯冠修復・欠損補綴・修復・補綴1(入院外)"/>
+    </concept>
+    <concept>
+        <code value="62"/>
+        <display value="歯冠修復・欠損補綴・修復・補綴2(入院外)"/>
+        <definition value="歯冠修復・欠損補綴・修復・補綴2(入院外)"/>
+    </concept>
+    <concept>
+        <code value="63"/>
+        <display value="歯冠修復・欠損補綴・修復・補綴3(入院外)"/>
+        <definition value="歯冠修復・欠損補綴・修復・補綴3(入院外)"/>
+    </concept>
+    <concept>
+        <code value="64"/>
+        <display value="歯冠修復・欠損補綴・修復・補綴(その他)(入院外)"/>
+        <definition value="歯冠修復・欠損補綴・修復・補綴(その他)(入院外)"/>
+    </concept>
+    <concept>
+        <code value="70"/>
+        <display value="画像診断(入院)"/>
+        <definition value="画像診断(入院)"/>
+    </concept>
+    <concept>
+        <code value="80"/>
+        <display value="その他(入院)、全体のその他(入院外)"/>
+        <definition value="その他(入院)、全体のその他(入院外)"/>
+    </concept>
+    <concept>
+        <code value="90"/>
+        <display value="入院/入院基本料(入院)"/>
+        <definition value="入院/入院基本料(入院)"/>
+    </concept>
+    <concept>
+        <code value="92"/>
+        <display value="入院/特定入院料・その他(入院)"/>
+        <definition value="入院/特定入院料・その他(入院)"/>
+    </concept>
+    <concept>
+        <code value="97"/>
+        <display value="食事療養・生活療養・標準負担額(入院)"/>
+        <definition value="食事療養・生活療養・標準負担額(入院)"/>
+    </concept>
+    <concept>
+        <code value="99"/>
+        <display value="全体に係る識別コード(入院)、摘要(入院外)"/>
+        <definition value="全体に係る識別コード(入院)、摘要(入院外)"/>
+    </concept>
+</CodeSystem>

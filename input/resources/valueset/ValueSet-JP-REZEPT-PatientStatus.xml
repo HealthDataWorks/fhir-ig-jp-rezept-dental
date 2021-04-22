@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-PatientStatus"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-04-06T13:06:26.539+00:00"/>
+        <source value="#qz1H1BOm9gm4uWeN"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-PatientStatus"/>
+    <name value="PatientStatus"/>
+    <title value="患者の状態コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている患者の状態コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-PatientStatus"/>
+        </include>
+    </compose>
+</ValueSet>

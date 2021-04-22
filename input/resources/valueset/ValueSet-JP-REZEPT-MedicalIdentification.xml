@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-MedicalIdentification"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-04-06T13:06:26.430+00:00"/>
+        <source value="#Dg3r4fzil8p0xEY1"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-MedicalIdentification"/>
+    <name value="MedicalIdentification"/>
+    <title value="診療識別コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている診療識別コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-MedicalIdentification"/>
+        </include>
+    </compose>
+</ValueSet>

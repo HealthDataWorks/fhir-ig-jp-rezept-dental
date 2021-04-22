@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-ReliefCategory"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2021-04-06T13:06:26.663+00:00"/>
+        <source value="#7MxRIpkmybzEsY3z"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-ReliefCategory"/>
+    <name value="ReliefCategory"/>
+    <title value="減免区分コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている減免区分コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-ReliefCategory"/>
+        </include>
+    </compose>
+</ValueSet>

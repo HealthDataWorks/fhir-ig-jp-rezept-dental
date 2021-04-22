@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem
+    xmlns="http://hl7.org/fhir">
+    <id value="CodeSystem-JP-REZEPT-RezeptSpecialInstructions"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2021-04-16T12:52:11.861+00:00"/>
+        <source value="#JwSW4oU6HW5RVZEM"/>
+    </meta>
+    <url value="https://xxx/CodeSystem-JP-REZEPT-RezeptSpecialInstructions"/>
+    <name value="RezeptSpecialInstructions"/>
+    <title value="レセプト特記事項コード"/>
+    <status value="draft"/>
+    <description value="レセプト電算処理システムで使用されているレセプト特記事項コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表9 レセプト特記事項コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表9 レセプト特記事項コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表11 レセプト特記事項コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表7 レセプト特記事項コード」に記載されています。"/>
+    <valueSet value="https://xxx/ValueSet-JP-REZEPT-RezeptSpecialInstructions"/>
+    <content value="complete"/>
+    <concept>
+        <code value="01"/>
+        <display value="公"/>
+        <definition value="医療保険単独の者及び後期高齢者医療単独の者に係る明細書で、「公費負担医療が行 われる療養に係る高額医療費の支給について」（昭和 48 年 10 月 30 日付保発第 42 号、 庁保発第 26 号）による公費負担医療が行われる療養に要する費用の額が、健康保険法 施行令（大正 15 年勅令第 243 号）第 42 条及び高齢者医療確保法施行令（昭和 57 年政 令第 293 号）第 15 条に規定する金額を超える場合"/>
+    </concept>
+    <concept>
+        <code value="02"/>
+        <display value="長"/>
+        <definition value="以下のいずれかに該当する場合 ① 高額長期疾病に係る特定疾病療養受療証を提出した患者の負担額が、健康保険法 施行令第 42 条第 9 項第 1 号に規定する金額を超えた場合（ただし、患者が特定疾病療 養受療証の提出を行った際に、既に同号に規定する金額を超えて受領している場合で あって、現物給付化することが困難な場合を除く。） ② 後期高齢者医療特定疾病療養受療証を提示した患者の負担額が、高齢者医療確保 法施行令第 15 条第 6 項に規定する金額を超えた場合(ただし、患者が後期高齢者医療 特定疾病療養受療証の提示を行った際に、既に同項に規定する金額を超えて受領して いる場合であって、現物給付化することが困難な場合を除く。)"/>
+    </concept>
+    <concept>
+        <code value="03"/>
+        <display value="長処"/>
+        <definition value="慢性腎不全に係る自己連続携行式腹膜灌流(CAPD)を行っている患者に対して、 同一月内の投薬を院外処方せんのみにより行い、保険医療機関では当該患者の負担額 を受領しない場合"/>
+    </concept>
+    <concept>
+        <code value="04"/>
+        <display value="後保"/>
+        <definition value="公費負担医療のみの場合であって、請求点数を高齢者医療確保法の規定による医療 の提供をする場合"/>
+    </concept>
+    <concept>
+        <code value="07"/>
+        <display value="老併"/>
+        <definition value="介護老人保健施設に入所中の患者の診療料を、併設保険医療機関において算定した 場合（なお、同一月に同一患者につき、介護老人保健施設に入所中の診療と介護老人 保健施設に入所中以外の外来分の診療がある場合は、それぞれ個別の明細書に記載す ること。）"/>
+    </concept>
+    <concept>
+        <code value="08"/>
+        <display value="老健"/>
+        <definition value="介護老人保健施設に入所中の患者の診療料を、併設保険医療機関以外の保険医療機 関において算定した場合（なお、同一月に同一患者につき、介護老人保健施設に入所 中の診療と介護老人保健施設に入所中以外の外来分の診療がある場合は、それぞれ個 別の明細書に記載すること。）"/>
+    </concept>
+    <concept>
+        <code value="09"/>
+        <display value="施"/>
+        <definition value="平成 18 年 3 月 31 日保医発第 0331002 号に規定する特別養護老人ホーム等に入所中 の患者について診療報酬を算定した場合（なお、同一月に同一患者につき、特別養護 老人ホーム等に赴き行った診療と、それ以外の外来分の診療がある場合は、それぞれ 明確に区分できるよう「摘要」欄に記載すること。）"/>
+    </concept>
+    <concept>
+        <code value="10"/>
+        <display value="第三"/>
+        <definition value="患者の疾病又は負傷が、第三者の不法行為（交通事故等）によって生じたと認めら れる場合"/>
+    </concept>
+    <concept>
+        <code value="11"/>
+        <display value="薬治"/>
+        <definition value="厚生労働大臣の定める評価療養及び選定療養（平成 18 年厚生労働省告示第 495 号） 第 1 条第 2 号の規定に基づく薬事法に規定する治験（人体に直接使用される薬物に係 るものに限る。）に係る診療報酬の請求である場合"/>
+    </concept>
+    <concept>
+        <code value="12"/>
+        <display value="器治"/>
+        <definition value="厚生労働大臣の定める評価療養及び選定療養第 1 条第 3 号の規定に基づく薬事法に 規定する治験（機械器具等に係るものに限る。）に係る診療報酬の請求である場合"/>
+    </concept>
+    <concept>
+        <code value="13"/>
+        <display value="先進"/>
+        <definition value="地方厚生（支）局長に届け出て別に厚生労働大臣が定める先進医療を実施した場合 （この場合にあっては、当該先進医療の名称及び当該先進医療について徴収した特別 の料金の額を「摘要」欄の最上部に記載すること。）"/>
+    </concept>
+    <concept>
+        <code value="14"/>
+        <display value="制超"/>
+        <definition value="「診療報酬の算定方法」に規定する回数を超えて行った診療であって「保険外併用 療養費に係る厚生労働大臣が定める医薬品等」（平成 18 年厚生労働省告示第 498 号） の第 7 号の 5 に規定する診療（以下「制限回数を超えて行う診療」という。）に係る診 療報酬の請求である場合（この場合にあっては、当該「制限回数を超えて行う診療」 の名称、徴収した特別の料金及び回数を「摘要」欄に記載すること。）"/>
+    </concept>
+    <concept>
+        <code value="16"/>
+        <display value="長２"/>
+        <definition value="高額長期疾病に係る特定疾病療養受療証を提出した患者の負担額が、健康保険法施 行令第 42 条第 9 項第 2 号に規定する金額を超えた場合（ただし、患者が特定疾病療養 受療証の提出を行った際に、既に同号に規定する金額を超えて受領している場合であ って、現物給付化することが困難な場合を除く。）"/>
+    </concept>
+    <concept>
+        <code value="17"/>
+        <display value="上位"/>
+        <definition value="以下のいずれかに該当する場合 ① 「上位所得者の世帯」の限度額適用認定証が提示された場合 ② 「上位所得者（70 歳以上の場合は現役並み所得者）の世帯」の適用区分の記載の  ある特定疾患医療受給者証又は小児慢性特定疾患医療受診券が提示された場合（特 記事項「22」に該当する場合を除く。）"/>
+    </concept>
+    <concept>
+        <code value="18"/>
+        <display value="一般"/>
+        <definition value="以下のいずれかに該当する場合 ① 「上位所得者の世帯」又は「低所得者の世帯」以外の限度額適用認定証が提示さ れた場合 ② 「上位所得者の世帯」又は「低所得者の世帯」以外の適用区分の記載のある特定  疾患医療受給者証又は小児慢性特定疾患医療受診券が提示された場合（特記事項 「23」に該当する場合を除く。）"/>
+    </concept>
+    <concept>
+        <code value="19"/>
+        <display value="低所"/>
+        <definition value="以下のいずれかに該当する場合 ① 高齢受給者（後期高齢者医療の被保険者を含む）以外で「低所得者の世帯」の限 度額適用認定証又は限度額適用・標準負担額減額認定証が提示された場合 ② 「低所得者の世帯」の適用区分の記載のある特定疾患医療受給者証又は小児慢性 特定疾患医療受診券が提示された場合（特記事項「24」に該当する場合を除く。）"/>
+    </concept>
+    <concept>
+        <code value="20"/>
+        <display value="二割"/>
+        <definition value="平成 20 年 2 月 21 日保発第 0221003 号の別紙「70 歳代前半の被保険者等に係る一部 負担金等の軽減特例措置実施要綱」の第 2 の 4 の特例措置対象被保険者等が、特例措 置にかかわらず、自らが受けた療養に係る 2（4）に規定する一部負担金等の一部に相 当する額を自ら支払った場合"/>
+    </concept>
+    <concept>
+        <code value="21"/>
+        <display value="高半"/>
+        <definition value="月の初日以外の日に 75 歳に達し後期高齢者医療の被保険者となったことにより被 用者保険の被保険者でなくなった者の被扶養者であった者又は月の初日以外の日に 75 歳に到達し後期高齢者医療の被保険者となったことにより国民健康保険組合の組 合員でなくなった者の世帯に属する組合員以外の被保険者であった者（いずれも市町 村国保に加入することになる。）であって、当該後期高齢者医療の被保険者が 75 歳に 到達した月に療養を受けた者（以下「自己負担限度額特例対象被扶養者等」という。） の場合"/>
+    </concept>
+    <concept>
+        <code value="22"/>
+        <display value="多上"/>
+        <definition value="「上位所得者（70 歳以上の場合は現役並み所得者）の世帯」の適用区分の記載のあ る特定疾患医療受給者証又は小児慢性特定疾患医療受診券が提示された場合であっ て、特定疾患治療研究事業又は小児慢性特定疾患治療研究事業に係る公費負担医療（入 院に限る。）の自院における高額療養費の支給が直近 12 ヶ月間において 4 月目以上で ある場合（以下「特定疾患給付対象療養高額療養費多数回該当の場合」という。）"/>
+    </concept>
+    <concept>
+        <code value="25"/>
+        <display value="出産"/>
+        <definition value="平成 21 年 5 月 29 日保険発 0529005 号から第 0529010 号までにより定める｢｢出産育 児一時金等の医療機関等への直接支払制度｣実施要綱｣に基づき、直接支払制度を利 用する者の出産に係る診療請求である場合"/>
+    </concept>
+    <concept>
+        <code value="26"/>
+        <display value="区ア"/>
+    </concept>
+    <concept>
+        <code value="27"/>
+        <display value="区イ"/>
+    </concept>
+    <concept>
+        <code value="28"/>
+        <display value="区ウ"/>
+    </concept>
+    <concept>
+        <code value="29"/>
+        <display value="区エ"/>
+    </concept>
+    <concept>
+        <code value="30"/>
+        <display value="区オ"/>
+    </concept>
+    <concept>
+        <code value="31"/>
+        <display value="多ア"/>
+    </concept>
+    <concept>
+        <code value="32"/>
+        <display value="多イ"/>
+    </concept>
+    <concept>
+        <code value="33"/>
+        <display value="多ウ"/>
+    </concept>
+    <concept>
+        <code value="34"/>
+        <display value="多エ"/>
+    </concept>
+    <concept>
+        <code value="35"/>
+        <display value="多オ"/>
+    </concept>
+    <concept>
+        <code value="36"/>
+        <display value="加治"/>
+    </concept>
+    <concept>
+        <code value="37"/>
+        <display value="申出"/>
+    </concept>
+    <concept>
+        <code value="38"/>
+        <display value="医併"/>
+    </concept>
+    <concept>
+        <code value="39"/>
+        <display value="医療"/>
+    </concept>
+    <concept>
+        <code value="40"/>
+        <display value="加算"/>
+    </concept>
+</CodeSystem>

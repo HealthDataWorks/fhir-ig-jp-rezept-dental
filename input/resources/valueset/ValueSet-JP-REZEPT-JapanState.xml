@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-JapanState"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2021-04-06T13:06:26.453+00:00"/>
+        <source value="#l10aQeDerUy8wQqT"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-JapanState"/>
+    <name value="JapanState"/>
+    <title value="都道府県コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている都道府県コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-JapanState"/>
+        </include>
+    </compose>
+</ValueSet>

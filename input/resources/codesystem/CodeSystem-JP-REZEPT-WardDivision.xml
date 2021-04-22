@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem
+    xmlns="http://hl7.org/fhir">
+    <id value="CodeSystem-JP-REZEPT-WardDivision"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-04-21T04:43:32.871+00:00"/>
+        <source value="#IXzNRFIp9wz5ACe1"/>
+    </meta>
+    <url value="https://xxx/CodeSystem-JP-REZEPT-WardDivision"/>
+    <name value="WardDivision"/>
+    <title value="病棟区分コード"/>
+    <status value="draft"/>
+    <description value="レセプト電算処理システムで使用されている病棟区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表7 病棟区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表7 病棟区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表9 病棟区分コード」に記載されています。"/>
+    <valueSet value="https://xxx/ValueSet-JP-REZEPT-WardDivision"/>
+    <content value="complete"/>
+    <concept>
+        <code value="01"/>
+        <display value="精神(精神病棟)"/>
+        <definition value="精神(精神病棟)"/>
+    </concept>
+    <concept>
+        <code value="02"/>
+        <display value="精神(結核病棟)"/>
+        <definition value="精神(結核病棟)"/>
+    </concept>
+    <concept>
+        <code value="07"/>
+        <display value="精神(療養病棟)"/>
+        <definition value="精神(療養病棟)"/>
+    </concept>
+</CodeSystem>

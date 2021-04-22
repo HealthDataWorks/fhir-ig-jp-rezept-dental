@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem
+    xmlns="http://hl7.org/fhir">
+    <id value="CodeSystem-JP-REZEPT-JobReason"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2021-04-16T12:46:36.756+00:00"/>
+        <source value="#pclJqswZ0GRaTbiz"/>
+    </meta>
+    <url value="https://xxx/CodeSystem-JP-REZEPT-JobReason"/>
+    <name value="JobReason"/>
+    <title value="職務上の事由コード"/>
+    <status value="draft"/>
+    <description value="レセプト電算処理システムで使用されている職務上の事由コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表15 職務上の事由コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表16 職務上の事由コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表13 職務上の事由コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表9 職務上の事由コード」に記載されています。"/>
+    <valueSet value="https://xxx/ValueSet-JP-REZEPT-JobReason"/>
+    <content value="complete"/>
+    <concept>
+        <code value="1"/>
+        <display value="職上"/>
+        <definition value="職務上"/>
+    </concept>
+    <concept>
+        <code value="2"/>
+        <display value="下３"/>
+        <definition value="下船後3月以内"/>
+    </concept>
+    <concept>
+        <code value="3"/>
+        <display value="通災"/>
+        <definition value="通勤災害"/>
+    </concept>
+</CodeSystem>

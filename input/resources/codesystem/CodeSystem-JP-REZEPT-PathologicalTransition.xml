@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem
+    xmlns="http://hl7.org/fhir">
+    <id value="CodeSystem-JP-REZEPT-PathologicalTransition"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-04-06T12:32:03.612+00:00"/>
+        <source value="#Eio3bCMhJb0KA1WU"/>
+    </meta>
+    <url value="https://xxx/CodeSystem-JP-REZEPT-PathologicalTransition"/>
+    <name value="PathologicalTransition"/>
+    <title value="病態移行コード"/>
+    <status value="draft"/>
+    <description value="レセプト電算処理システムで使用されている病態移行コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表18 病態移行コード &#xA;」に記載されています。"/>
+    <valueSet value="https://xxx/ValueSet-JP-REZEPT-DENTAL-PathologicalTransition"/>
+    <content value="complete"/>
+    <concept>
+        <code value="1"/>
+        <display value="病態移行前"/>
+        <definition value="病態移行後"/>
+    </concept>
+    <concept>
+        <code value="2"/>
+        <display value="病態移行前"/>
+        <definition value="病態移行後"/>
+    </concept>
+</CodeSystem>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-ClassificationOfCoPayment"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2021-04-06T13:06:27.056+00:00"/>
+        <source value="#qN3nA4bvkNeeknT1"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-ClassificationOfCoPayment"/>
+    <name value="ClassificationOfCoPayment"/>
+    <title value="一部負担金・食事療養費・生活療養費標準負担額区分コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている一部負担金・食事療養費・生活療養費標準負担額区分コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-ClassificationOfCoPayment"/>
+        </include>
+    </compose>
+</ValueSet>

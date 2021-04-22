@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-DENTA-ToothType"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2021-04-06T13:06:26.961+00:00"/>
+        <source value="#hTjnxIZEYXuJx6en"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-ToothType"/>
+    <name value="ToothType"/>
+    <title value="歯式"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている歯式の種類が含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/kihonmasta_09.html"/>
+        </include>
+    </compose>
+</ValueSet>

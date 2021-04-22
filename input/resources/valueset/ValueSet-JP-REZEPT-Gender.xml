@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-Gender"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2021-04-06T13:15:04.694+00:00"/>
+        <source value="#Rbu93xMV11ptV7II"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-Gender"/>
+    <name value="Gender"/>
+    <title value="男女区分コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている男女区分コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-Gender"/>
+        </include>
+    </compose>
+</ValueSet>

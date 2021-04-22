@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement
+    xmlns="http://hl7.org/fhir">
+    <id value="rezept-dental-server"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2021-03-24T11:55:58.251+00:00"/>
+        <source value="#cruExw4UEjUYp87e"/>
+    </meta>
+    <url value="http://xxx/rezept-dental-server"/>
+    <version value="0.0.1"/>
+    <name value="Rezept Dental Server"/>
+    <title value="Rezept Dental Server"/>
+    <status value="draft"/>
+    <experimental value="false"/>
+    <date value="2021-02-01"/>
+    <description value="歯科レセプトのサーバ機能の機能ステートメントです。  &#xA;使用できるリソース(Resource Type)と使用できる操作(Read	Search:検索参照,	Update:更新,	Create:作成,	Delete:削除)の関係を示します。  &#xA;表で&quot;y&quot;となっている操作が使用できます。空欄となっている操作は使用できません。"/>
+    <kind value="requirements"/>
+    <fhirVersion value="4.0.1"/>
+    <format value="json"/>
+    <format value="xml"/>
+    <rest>
+        <mode value="server"/>
+        <documentation value="歯科レセプトのエンドポイントです。"/>
+        <resource>
+            <type value="Patient"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Patient"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Organization"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Organization"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Claim"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Claim"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Coverage"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Coverage"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Condition"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Condition"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Encounter"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Encounter"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Procedure"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Procedure"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="MedicationAdministration"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-MedicationAdministration"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="MedicationDispense"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-MedicationDespence"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Medication"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Medication"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <resource>
+            <type value="Device"/>
+            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Device"/>
+            <interaction>
+                <code value="read"/>
+            </interaction>
+            <interaction>
+                <code value="create"/>
+            </interaction>
+            <interaction>
+                <code value="update"/>
+            </interaction>
+            <interaction>
+                <code value="delete"/>
+            </interaction>
+            <interaction>
+                <code value="search-type"/>
+            </interaction>
+        </resource>
+        <interaction>
+            <code value="search-system"/>
+        </interaction>
+    </rest>
+</CapabilityStatement>

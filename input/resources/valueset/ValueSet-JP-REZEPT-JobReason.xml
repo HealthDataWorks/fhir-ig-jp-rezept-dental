@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-JobReason"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2021-04-06T13:06:26.441+00:00"/>
+        <source value="#BwnZhza7D1gs2fbX"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-JobReason"/>
+    <name value="JobReason"/>
+    <title value="職務上の事由コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている職務上の事由コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-JobReason"/>
+        </include>
+    </compose>
+</ValueSet>

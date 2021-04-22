@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem
+    xmlns="http://hl7.org/fhir">
+    <id value="CodeSystem-JP-REZEPT-ReliefCategory"/>
+    <meta>
+        <versionId value="8"/>
+        <lastUpdated value="2021-04-15T11:55:36.964+00:00"/>
+        <source value="#l1Vo2HpQhuKSi8fg"/>
+    </meta>
+    <url value="https://xxx/CodeSystem-JP-REZEPT-ReliefCategory"/>
+    <name value="ReliefCategory"/>
+    <title value="減免区分コード"/>
+    <status value="draft"/>
+    <description value="レセプト電算処理システムで使用されている減免区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表16 減免区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表17 減免区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表14 減免区分コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表10 減免区分コード」に記載されています。"/>
+    <valueSet value="https://xxx/ValueSet-JP-REZEPT-ReliefCategory"/>
+    <content value="complete"/>
+    <concept>
+        <code value="1"/>
+        <display value="減額"/>
+        <definition value="減額"/>
+    </concept>
+    <concept>
+        <code value="2"/>
+        <display value="免除"/>
+        <definition value="免除"/>
+    </concept>
+    <concept>
+        <code value="3"/>
+        <display value="支払猶予"/>
+        <definition value="支払猶予"/>
+    </concept>
+</CodeSystem>

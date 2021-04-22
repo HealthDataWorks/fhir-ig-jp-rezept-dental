@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-CounterBurdenClassification"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-04-06T13:06:27.143+00:00"/>
+        <source value="#Ix6ET0jNlemsy3qv"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-CounterBurdenClassification"/>
+    <name value="CounterBurdenClassification"/>
+    <title value="窓口負担額区分コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている窓口負担額区分コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-CounterBurdenClassification"/>
+        </include>
+    </compose>
+</ValueSet>

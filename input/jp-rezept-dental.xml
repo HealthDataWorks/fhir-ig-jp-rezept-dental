@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide
+    xmlns="http://hl7.org/fhir">
+    <id value="jp-rezept-dental"/>
+    <meta>
+        <versionId value="15"/>
+        <lastUpdated value="2021-04-28T03:36:57.470+00:00"/>
+        <source value="#eBNPXTZkWO4j3qmy"/>
+    </meta>
+    <url value="https://healthdataworks.net/hl7-fhir/ImplementationGuide/jp-rezept-dental"/>
+    <version value="0.8.0"/>
+    <name value="JP_rezept_dental"/>
+    <title value="歯科レセプト"/>
+    <status value="draft"/>
+    <date value="2021-04-28"/>
+    <publisher value="HealthDataWorks"/>
+    <contact>
+        <name value="小山内 尚、西山 喜樹、能崎 克行"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://healthdataworks.net/"/>
+        </telecom>
+    </contact>
+    <description value="この実装ガイドは、HL7 FHIR のリソースに歯科レセプトの情報を設定して利用するためのドキュメントです。  &#xA;"/>
+    <packageId value="jp-rezept-dental"/>
+    <fhirVersion value="4.0.1"/>
+    <definition>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionClaimInsurerInformation"/>
+                <display value="保険会社の拡張情報"/>
+            </reference>
+            <name value="保険会社の拡張情報"/>
+            <description value="保険会社の拡張情報です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionDeviceQuantity"/>
+                <display value="特定器材の使用量"/>
+            </reference>
+            <name value="特定器材の使用量"/>
+            <description value="特定器材の使用量です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionConditionNumberOfComorbidities"/>
+                <display value="併存傷病名数"/>
+            </reference>
+            <name value="併存傷病名数"/>
+            <description value="併存傷病名数です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionConditionMajorDisease"/>
+                <display value="主病名があるかどうか"/>
+            </reference>
+            <name value="主病名があるかどうか"/>
+            <description value="主病名があるかどうかのフラグです。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionClaimComprehensiveEvaluation"/>
+                <display value="包括評価の拡張情報"/>
+            </reference>
+            <name value="包括評価の拡張情報"/>
+            <description value="包括評価の拡張情報の情報です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionClaimCommonInformation"/>
+                <display value="共通の拡張情報"/>
+            </reference>
+            <name value="レセプト情報の共通の拡張情報"/>
+            <description value="レセプト情報の共通の拡張情報です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionClaimPatientInformation"/>
+                <display value="患者の拡張情報"/>
+            </reference>
+            <name value="患者の拡張情報"/>
+            <description value="患者の拡張情報です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionDeviceNumberOfTimes"/>
+                <display value="特定機材の使用回数"/>
+            </reference>
+            <name value="特定機材の使用回数"/>
+            <description value="特定機材の使用回数です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionConditionOutcome"/>
+                <display value="転帰区分コード"/>
+            </reference>
+            <name value="転帰区分コード"/>
+            <description value="転帰区分コードです。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionDeviceUnitPrice"/>
+                <display value="特定器材の単価"/>
+            </reference>
+            <name value="特定器材の単価"/>
+            <description value="特定器材の単価です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionMedicationDispenseRequestDate"/>
+                <display value="処方箋発行日"/>
+            </reference>
+            <name value="処方箋発行日"/>
+            <description value="処方箋発行日です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionMedicationDispenseAddition"/>
+                <display value="調剤の加算情報"/>
+            </reference>
+            <name value="調剤の加算情報"/>
+            <description value="調剤の加算情報です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionProcedureAddition"/>
+                <display value="診療行為の加算情報"/>
+            </reference>
+            <name value="診療行為の加算情報"/>
+            <description value="診療行為の加算情報です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionProcedureNumberOfTimes"/>
+                <display value="診療行為の回数"/>
+            </reference>
+            <name value="診療行為の回数"/>
+            <description value="診療行為の回数です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionProcedureQuantity"/>
+                <display value="診療行為の使用量"/>
+            </reference>
+            <name value="診療行為の使用量"/>
+            <description value="診療行為の使用量です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-DENTA-ToothType"/>
+                <display value="歯式"/>
+            </reference>
+            <name value="歯式"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている歯式の種類が含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CapabilityStatement/rezept-dental-server"/>
+                <display value="Rezept Dental Server"/>
+            </reference>
+            <name value="Rezept Dental Server"/>
+            <description value="歯科レセプトのサーバ機能の機能ステートメントです。  &#xA;使用できるリソース(Resource Type)と使用できる操作(Read	Search:検索参照,	Update:更新,	Create:作成,	Delete:削除)の関係を示します。  &#xA;表で&quot;y&quot;となっている操作が使用できます。空欄となっている操作は使用できません。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-CounterBurdenClassification"/>
+                <display value="窓口負担額区分コード"/>
+            </reference>
+            <name value="窓口負担額区分コード"/>
+            <description value="レセプト電算処理システムで使用されている窓口負担額区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表31 窓口負担額区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表40 窓口負担額区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表30 窓口負担額区分コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表23 窓口負担額区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-ConsultationClassification"/>
+                <display value="受診等区分コード"/>
+            </reference>
+            <name value="受診等区分コード"/>
+            <description value="レセプト電算処理システムで使用されている受診等区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表30 受診等区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表39 受診等区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表39 受診等区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-PatientStatus"/>
+                <display value="患者の状態コード"/>
+            </reference>
+            <name value="患者の状態コード"/>
+            <description value="レセプト電算処理システムで使用されている患者の状態コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表27 患者の状態コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表36 患者の状態コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表36 患者の状態コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-ExaminationAndPaymentInstitution"/>
+                <display value="審査支払機関コード"/>
+            </reference>
+            <name value="審査支払機関コード"/>
+            <description value="レセプト電算処理システムで使用されている審査支払機関コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表1 審査支払機関コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表1 審査支払機関コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表1 審査支払機関コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表1 審査支払機関コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-Gender"/>
+                <display value="男女区分コード"/>
+            </reference>
+            <name value="男女区分コード"/>
+            <description value="レセプト電算処理システムで使用されている男女区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表6 男女区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表6 男女区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表7 男女区分コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表6 男女区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-FacilityStandard"/>
+                <display value="施設基準届出コード"/>
+            </reference>
+            <name value="施設基準届出コード"/>
+            <description value="レセプト電算処理システムで使用されている施設基準届出コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表5 施設基準届出コード &#xA;」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-MainIllness"/>
+                <display value="主傷病コード"/>
+            </reference>
+            <name value="主傷病コード"/>
+            <description value="レセプト電算処理システムで使用されている主傷病コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表19 主傷病コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表25 主傷病コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表19 主傷病コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-JapanState"/>
+                <display value="都道府県コード"/>
+            </reference>
+            <name value="都道府県コード"/>
+            <description value="レセプト電算処理システムで使用されている都道府県コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表2 都道府県コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表2 都道府県コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表2 都道府県コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表2 都道府県コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-JobReason"/>
+                <display value="職務上の事由コード"/>
+            </reference>
+            <name value="職務上の事由コード"/>
+            <description value="レセプト電算処理システムで使用されている職務上の事由コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表15 職務上の事由コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表16 職務上の事由コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表13 職務上の事由コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表9 職務上の事由コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-OutcomeClassification"/>
+                <display value="転帰区分コード"/>
+            </reference>
+            <name value="転帰区分コード"/>
+            <description value="レセプト電算処理システムで使用されている転帰区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表18 転帰区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表24 転帰区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表8 転帰区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-DetailedSymptomClassification"/>
+                <display value="症状詳記区分コード"/>
+            </reference>
+            <name value="症状詳記区分コード"/>
+            <description value="レセプト電算処理システムで使用されている症状詳記区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表23 症状詳記区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表25 症状詳記区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-ReliefCategory"/>
+                <display value="減免区分コード"/>
+            </reference>
+            <name value="減免区分コード"/>
+            <description value="レセプト電算処理システムで使用されている減免区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表16 減免区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表17 減免区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表14 減免区分コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表10 減免区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-RezeptSpecialInstructions"/>
+                <display value="レセプト特記事項コード"/>
+            </reference>
+            <name value="レセプト特記事項コード"/>
+            <description value="レセプト電算処理システムで使用されているレセプト特記事項コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表9 レセプト特記事項コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表9 レセプト特記事項コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表11 レセプト特記事項コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表7 レセプト特記事項コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-RequestForNonVisit"/>
+                <display value="未来院請求コード"/>
+            </reference>
+            <name value="未来院請求コード"/>
+            <description value="レセプト電算処理システムで使用されている未来院請求コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表12 未来院請求コード &#xA;」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-PharmaceuticalCategory"/>
+                <display value="医薬品区分コード"/>
+            </reference>
+            <name value="医薬品区分コード"/>
+            <description value="レセプト電算処理システムで使用されている医薬品区分コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表22 医薬品区分コード &#xA;」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-RezeptType"/>
+                <display value="点数表コード"/>
+            </reference>
+            <name value="点数表コード"/>
+            <description value="レセプト電算処理システムで使用されている点数表コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表3 点数表コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表3 点数表コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表3 点数表コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表3 点数表コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-WardDivision"/>
+                <display value="病棟区分コード"/>
+            </reference>
+            <name value="病棟区分コード"/>
+            <description value="レセプト電算処理システムで使用されている病棟区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表7 病棟区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表7 病棟区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表9 病棟区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-BearerType"/>
+                <display value="負担者種別コード"/>
+            </reference>
+            <name value="負担者種別コード"/>
+            <description value="レセプト電算処理システムで使用されている負担者種別コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表28 負担者種別コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表37 負担者種別コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表27 負担者種別コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表20 負担者種別コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-SpecificEquipmentUnit"/>
+                <display value="特定器材単位コード"/>
+            </reference>
+            <name value="特定器材単位コード"/>
+            <description value="レセプト電算処理システムで使用されている特定器材単位コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表22 特定器材単位コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表32 特定器材単位コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表23 特定器材単位コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表17 特定器材単位コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-BurdenClass"/>
+                <display value="負担区分コード"/>
+            </reference>
+            <name value="負担区分コード"/>
+            <description value="レセプト電算処理システムで使用されている負担区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表21 負担区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表20 負担区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表21 負担区分コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表13 負担区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-ClassificationOfCoPayment"/>
+                <display value="一部負担金・食事療養費・生活療養費標準負担額区分コード"/>
+            </reference>
+            <name value="一部負担金・食事療養費・生活療養費標準負担額区分コード"/>
+            <description value="レセプト電算処理システムで使用されている一部負担金・食事療養費・生活療養費標準負担額区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表8 一部負担金・食事療養費・生活療養費標準負担額区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表8 一部負担金・食事療養費・生活療養費標準負担額区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表10 一部負担金・食事療養費・生活療養費標準負担額区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-ConfirmationCategory"/>
+                <display value="確認区分コード"/>
+            </reference>
+            <name value="確認区分コード"/>
+            <description value="レセプト電算処理システムで使用されている確認区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表29 確認区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表38 確認区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表28 確認区分コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表21 確認区分コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-PathologicalTransition"/>
+                <display value="病態移行コード"/>
+            </reference>
+            <name value="病態移行コード"/>
+            <description value="レセプト電算処理システムで使用されている病態移行コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表18 病態移行コード &#xA;」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-SpecificEquipmentAddition"/>
+                <display value="特定器材加算等コード"/>
+            </reference>
+            <name value="特定器材加算等コード"/>
+            <description value="レセプト電算処理システムで使用されている特定器材加算等コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表24 特定器材加算等コード &#xA;」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-DentalMedicalIdentification"/>
+                <display value="診療識別コード"/>
+            </reference>
+            <name value="診療識別コード"/>
+            <description value="レセプト電算処理システムで使用されている診療識別コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表20 診療識別コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem-JP-REZEPT-RezeptCategory"/>
+                <display value="レセプト種別コード"/>
+            </reference>
+            <name value="レセプト種別コード"/>
+            <description value="レセプト電算処理システムで使用されているレセプト種別コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表5 レセプト種別コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表6 レセプト種別コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表5 レセプト種別コード」に記載されています。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-OutcomeClassification"/>
+                <display value="転帰区分コード"/>
+            </reference>
+            <name value="転帰区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている転帰区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-ICD10"/>
+                <display value="ICD10コード"/>
+            </reference>
+            <name value="ICD10コード"/>
+            <description value="このバリューセットには、ICD10コードで定義されるすべての傷病名が含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-HOT9"/>
+                <display value="HOT9コード"/>
+            </reference>
+            <name value="HOT9コード"/>
+            <description value="このバリューセットには、HOT9コードで定義されるすべての医薬品が含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-MedicalIdentification"/>
+                <display value="診療識別コード"/>
+            </reference>
+            <name value="診療識別コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている診療識別コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-JobReason"/>
+                <display value="職務上の事由コード"/>
+            </reference>
+            <name value="職務上の事由コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている職務上の事由コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-FacilityStandard"/>
+                <display value="施設基準届出コード"/>
+            </reference>
+            <name value="施設基準届出コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている施設基準届出コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-PatientStatus"/>
+                <display value="患者の状態コード"/>
+            </reference>
+            <name value="患者の状態コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている患者の状態コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-JapanState"/>
+                <display value="都道府県コード"/>
+            </reference>
+            <name value="都道府県コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている都道府県コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-PathologicalTransition"/>
+                <display value="病態移行コード"/>
+            </reference>
+            <name value="病態移行コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている病態移行コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-MainIllness"/>
+                <display value="主傷病コード"/>
+            </reference>
+            <name value="主傷病コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている主傷病コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-PharmaceuticalCategory"/>
+                <display value="医薬品区分コード"/>
+            </reference>
+            <name value="医薬品区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている医薬品区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-ReliefCategory"/>
+                <display value="減免区分コード"/>
+            </reference>
+            <name value="減免区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている減免区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-RequestForNonVisit"/>
+                <display value="未来院請求コード"/>
+            </reference>
+            <name value="未来院請求コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている未来院請求コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-RezeptCategory"/>
+                <display value="レセプト種別コード"/>
+            </reference>
+            <name value="レセプト種別コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されているレセプト種別コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-RezeptSpecialInstructions"/>
+                <display value="レセプト特記事項コード"/>
+            </reference>
+            <name value="レセプト特記事項コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されているレセプト特記事項コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-SpecificEquipmentUnit"/>
+                <display value="特定器材単位コード"/>
+            </reference>
+            <name value="特定器材単位コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている特定器材単位コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-RezeptType"/>
+                <display value="点数表コード"/>
+            </reference>
+            <name value="点数表コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている点数表コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-SpecificEquipmentAddition"/>
+                <display value="特定器材加算等コード"/>
+            </reference>
+            <name value="特定器材加算等コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている特定器材加算等コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-WardDivision"/>
+                <display value="病棟区分コード"/>
+            </reference>
+            <name value="病棟区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている病棟区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-BearerType"/>
+                <display value="負担者種別コード"/>
+            </reference>
+            <name value="負担者種別コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている負担者種別コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-ConfirmationCategory"/>
+                <display value="確認区分コード"/>
+            </reference>
+            <name value="確認区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている確認区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-BurdenClass"/>
+                <display value="負担区分コード"/>
+            </reference>
+            <name value="負担区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている負担区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-CounterBurdenClassification"/>
+                <display value="窓口負担額区分コード"/>
+            </reference>
+            <name value="窓口負担額区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている窓口負担額区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-ClassificationOfCoPayment"/>
+                <display value="一部負担金・食事療養費・生活療養費標準負担額区分コード"/>
+            </reference>
+            <name value="一部負担金・食事療養費・生活療養費標準負担額区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている一部負担金・食事療養費・生活療養費標準負担額区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-ConsultationClassification"/>
+                <display value="受診等区分コード"/>
+            </reference>
+            <name value="受診等区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている受診等区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-ExaminationAndPaymentInstitution"/>
+                <display value="審査支払機関コード"/>
+            </reference>
+            <name value="審査支払機関コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている審査支払機関コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-DetailedSymptomClassification"/>
+                <display value="症状詳記区分コード"/>
+            </reference>
+            <name value="症状詳記区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている症状詳記区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/ValueSet-JP-REZEPT-Gender"/>
+                <display value="男女区分コード"/>
+            </reference>
+            <name value="男女区分コード"/>
+            <description value="このバリューセットには、レセプト電算処理システムで定義されている男女区分コードが含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-Patient"/>
+                <display value="患者情報"/>
+            </reference>
+            <name value="患者情報"/>
+            <description value="患者の情報です。  &#xA;医療行為や関連サービスを受けている個人も含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-Device"/>
+                <display value="日単位の特定器材情報"/>
+            </reference>
+            <name value="日単位の特定器材情報"/>
+            <description value="医療行為を通じて使用された器材の情報です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-Coverage"/>
+                <display value="保険・被保険者情報"/>
+            </reference>
+            <name value="保険・被保険者情報"/>
+            <description value="保険情報、公費情報です。  &#xA;医療サービスや調剤等の請求額と自己負担金の両方が含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-Claim"/>
+                <display value="レセプト情報"/>
+            </reference>
+            <name value="レセプト情報"/>
+            <description value="レセプト(医科レセプト、DPCレセプト、歯科レセプト、調剤レセプト)情報です。  &#xA;医療提供者は、患者の診療・治療に掛かった医療サービス内容や調剤情報を医療費の請求のために保険者に通知する情報を発行します。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-Medication"/>
+                <display value="医薬品情報"/>
+            </reference>
+            <name value="医薬品情報"/>
+            <description value="このリソースは、主に医薬品の処方、調剤、および投与を目的とした医薬品の識別、定義、および医薬品の使用に関する記述を行うために使用されます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-Organization"/>
+                <display value="医療機関"/>
+            </reference>
+            <name value="医療機関"/>
+            <description value="医療機関、薬局の情報です。  &#xA;診療行為、調剤に関わった企業、機関、部門や保健者等が含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-Procedure"/>
+                <display value="診療行為情報"/>
+            </reference>
+            <name value="診療行為情報"/>
+            <description value="患者に対して行われた診療行為や関連するサービスの内容です。  &#xA;また、介護、リハビルやカウンセリング等も含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-Condition"/>
+                <display value="患者の傷病記録"/>
+            </reference>
+            <name value="患者の傷病記録"/>
+            <description value="患者の傷病記録、診断内容、またはその他の状況や問題点、または臨床の概念事項を示します。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-Encounter"/>
+                <display value="入院、外来情報"/>
+            </reference>
+            <name value="入院、外来情報"/>
+            <description value="入院、外来を記録した情報です。  &#xA;医療サービスの提供者と患者の間を繋ぐ情報を示します。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-MedicationAdministration"/>
+                <display value="日単位の投薬記録"/>
+            </reference>
+            <name value="日単位の投薬記録"/>
+            <description value="患者が薬を服薬したり、診療行為で投与したこと等を記録します。  &#xA;これは、錠剤を飲み込む簡単な場合や、長期的な投薬である場合もあります。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-MedicationDispense"/>
+                <display value="調剤情報"/>
+            </reference>
+            <name value="調剤情報"/>
+            <description value="調剤情報です。  &#xA;医薬品が指定された患者に調剤される予定であるか、調剤されたことを示します。  &#xA;これには、提供される医薬品の説明と、医薬品を投与するための指示が含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <page>
+            <nameUrl value="index.html"/>
+            <title value="Home Page"/>
+            <generation value="markdown"/>
+            <page>
+                <nameUrl value="summary.html"/>
+                <title value="概要"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="usecase.html"/>
+                <title value="ユースケース"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="guidance.html"/>
+                <title value="ガイダンス"/>
+                <generation value="markdown"/>
+                <page>
+                    <nameUrl value="mapping.html"/>
+                    <title value="歯科レセプトとFHIRリソースのマッピング"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="search.html"/>
+                    <title value="データ検索の方法"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="structure.html"/>
+                    <title value="構造定義"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="terminology.html"/>
+                    <title value="使用するコード体系"/>
+                    <generation value="markdown"/>
+                </page>
+            </page>
+        </page>
+        <parameter>
+            <code value="copyrightyear"/>
+            <value value="2020+"/>
+        </parameter>
+        <parameter>
+            <code value="releaselabel"/>
+            <value value="CI Build"/>
+        </parameter>
+    </definition>
+</ImplementationGuide>

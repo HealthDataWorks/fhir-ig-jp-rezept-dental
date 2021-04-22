@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-BearerType"/>
+    <meta>
+        <versionId value="4"/>
+        <lastUpdated value="2021-04-06T13:06:26.969+00:00"/>
+        <source value="#4pMKD2C6pqlKLAaR"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-BearerType"/>
+    <name value="BearerType"/>
+    <title value="負担者種別コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている負担者種別コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-BearerType"/>
+        </include>
+    </compose>
+</ValueSet>

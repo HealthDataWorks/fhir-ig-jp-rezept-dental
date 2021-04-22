@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem
+    xmlns="http://hl7.org/fhir">
+    <id value="CodeSystem-JP-REZEPT-ConsultationClassification"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-04-21T07:33:14.064+00:00"/>
+        <source value="#7zljG5faNlfszNEv"/>
+    </meta>
+    <url value="https://xxx/CodeSystem-JP-REZEPT-ConsultationClassification"/>
+    <name value="ConsultationClassification"/>
+    <title value="受診等区分コード"/>
+    <status value="draft"/>
+    <description value="レセプト電算処理システムで使用されている受診等区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表30 受診等区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表39 受診等区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表39 受診等区分コード」に記載されています。"/>
+    <valueSet value="https://xxx/ValueSet-JP-REZEPT-ConsultationClassification"/>
+    <content value="complete"/>
+    <concept>
+        <code value="1"/>
+        <display value="診療実日数に計上する受診及び入院"/>
+        <definition value="診療実日数に計上する受診及び入院"/>
+    </concept>
+    <concept>
+        <code value="2"/>
+        <display value="診療実日数に計上しない受診(初診又は再診に付随する一連の行為等)"/>
+        <definition value="診療実日数に計上しない受診(初診又は再診に付随する一連の行為等)"/>
+    </concept>
+    <concept>
+        <code value="9"/>
+        <display value="請求データの各レコードに記録された算定日情報と不一致"/>
+        <definition value="請求データの各レコードに記録された算定日情報と不一致"/>
+    </concept>
+</CodeSystem>

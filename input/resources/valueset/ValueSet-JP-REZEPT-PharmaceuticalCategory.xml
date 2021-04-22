@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-PharmaceuticalCategory"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-04-06T13:06:26.630+00:00"/>
+        <source value="#GHigrYTcZOgYxHLQ"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-PharmaceuticalCategory"/>
+    <name value="PharmaceuticalCategory"/>
+    <title value="医薬品区分コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている医薬品区分コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-PharmaceuticalCategory"/>
+        </include>
+    </compose>
+</ValueSet>

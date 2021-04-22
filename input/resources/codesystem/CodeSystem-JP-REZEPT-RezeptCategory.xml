@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem
+    xmlns="http://hl7.org/fhir">
+    <id value="CodeSystem-JP-REZEPT-RezeptCategory"/>
+    <meta>
+        <versionId value="5"/>
+        <lastUpdated value="2021-04-16T12:52:11.876+00:00"/>
+        <source value="#bILjcOjWFbjfuhZR"/>
+    </meta>
+    <url value="https://xxx/CodeSystem-JP-REZEPT-RezeptCategory"/>
+    <name value="RezeptCategory"/>
+    <title value="レセプト種別コード"/>
+    <status value="draft"/>
+    <description value="レセプト電算処理システムで使用されているレセプト種別コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表5 レセプト種別コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表6 レセプト種別コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表5 レセプト種別コード」に記載されています。"/>
+    <valueSet value="https://xxx/ValueSet-JP-REZEPT-RezeptCategory"/>
+    <content value="complete"/>
+    <concept>
+        <code value="1112"/>
+        <display value="医科・医保単独/国保単独・本人/世帯主"/>
+        <definition value="医科・医保単独/国保単独・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="1114"/>
+        <display value="医科・医保単独/国保単独・未就学者"/>
+        <definition value="医科・医保単独/国保単独・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1116"/>
+        <display value="医科・医保単独/国保単独・家族/その他"/>
+        <definition value="医科・医保単独/国保単独・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="1118"/>
+        <display value="医科・医保単独/国保単独・高齢受給者一般・低所得者"/>
+        <definition value="医科・医保単独/国保単独・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1110"/>
+        <display value="医科・医保単独/国保単独・高齢受給者７割"/>
+        <definition value="医科・医保単独/国保単独・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="1122"/>
+        <display value="医科・医保/国保と１種の公費併用・本人/世帯主"/>
+        <definition value="医科・医保/国保と１種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="1124"/>
+        <display value="医科・医保/国保と１種の公費併用・未就学者"/>
+        <definition value="医科・医保/国保と１種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1126"/>
+        <display value="医科・医保/国保と１種の公費併用・家族/その他"/>
+        <definition value="医科・医保/国保と１種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="1128"/>
+        <display value="医科・医保/国保と１種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="医科・医保/国保と１種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1120"/>
+        <display value="医科・医保/国保と１種の公費併用・高齢受給者７割"/>
+        <definition value="医科・医保/国保と１種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="1132"/>
+        <display value="医科・医保/国保と２種の公費併用・本人/世帯主"/>
+        <definition value="医科・医保/国保と２種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="1134"/>
+        <display value="医科・医保/国保と２種の公費併用・未就学者"/>
+        <definition value="医科・医保/国保と２種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1136"/>
+        <display value="医科・医保/国保と２種の公費併用・家族/その他"/>
+        <definition value="医科・医保/国保と２種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="1138"/>
+        <display value="医科・医保/国保と２種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="医科・医保/国保と２種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1130"/>
+        <display value="医科・医保/国保と２種の公費併用・高齢受給者７割"/>
+        <definition value="医科・医保/国保と２種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="1142"/>
+        <display value="医科・医保/国保と３種の公費併用・本人/世帯主"/>
+        <definition value="医科・医保/国保と３種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="1144"/>
+        <display value="医科・医保/国保と３種の公費併用・未就学者"/>
+        <definition value="医科・医保/国保と３種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1146"/>
+        <display value="医科・医保/国保と３種の公費併用・家族/その他"/>
+        <definition value="医科・医保/国保と３種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="1148"/>
+        <display value="医科・医保/国保と３種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="医科・医保/国保と３種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1140"/>
+        <display value="医科・医保/国保と３種の公費併用・高齢受給者７割"/>
+        <definition value="医科・医保/国保と３種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="1152"/>
+        <display value="医科・医保/国保と４種の公費併用・本人/世帯主"/>
+        <definition value="医科・医保/国保と４種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="1154"/>
+        <display value="医科・医保/国保と４種の公費併用・未就学者"/>
+        <definition value="医科・医保/国保と４種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1156"/>
+        <display value="医科・医保/国保と４種の公費併用・家族/その他"/>
+        <definition value="医科・医保/国保と４種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="1158"/>
+        <display value="医科・医保/国保と４種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="医科・医保/国保と４種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1150"/>
+        <display value="医科・医保/国保と４種の公費併用・高齢受給者７割"/>
+        <definition value="医科・医保/国保と４種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="1212"/>
+        <display value="医科・公費単独"/>
+        <definition value="医科・公費単独"/>
+    </concept>
+    <concept>
+        <code value="1222"/>
+        <display value="医科・２種の公費併用"/>
+        <definition value="医科・２種の公費併用"/>
+    </concept>
+    <concept>
+        <code value="1232"/>
+        <display value="医科・３種の公費併用"/>
+        <definition value="医科・３種の公費併用"/>
+    </concept>
+    <concept>
+        <code value="1242"/>
+        <display value="医科・４種の公費併用"/>
+        <definition value="医科・４種の公費併用"/>
+    </concept>
+    <concept>
+        <code value="1318"/>
+        <display value="医科・後期高齢者単独・一般・低所得者"/>
+        <definition value="医科・後期高齢者単独・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1310"/>
+        <display value="医科・後期高齢者単独・７割"/>
+        <definition value="医科・後期高齢者単独・７割"/>
+    </concept>
+    <concept>
+        <code value="1328"/>
+        <display value="医科・後期高齢者と１種の公費併用・一般・低所得者"/>
+        <definition value="医科・後期高齢者と１種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1320"/>
+        <display value="医科・後期高齢者と１種の公費併用・７割"/>
+        <definition value="医科・後期高齢者と１種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="1338"/>
+        <display value="医科・後期高齢者と２種の公費併用・一般・低所得者"/>
+        <definition value="医科・後期高齢者と２種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1330"/>
+        <display value="医科・後期高齢者と２種の公費併用・７割"/>
+        <definition value="医科・後期高齢者と２種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="1348"/>
+        <display value="医科・後期高齢者と３種の公費併用・一般・低所得者"/>
+        <definition value="医科・後期高齢者と３種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1340"/>
+        <display value="医科・後期高齢者と３種の公費併用・７割"/>
+        <definition value="医科・後期高齢者と３種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="1358"/>
+        <display value="医科・後期高齢者と４種の公費併用・一般・低所得者"/>
+        <definition value="医科・後期高齢者と４種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="1350"/>
+        <display value="医科・後期高齢者と４種の公費併用・７割"/>
+        <definition value="医科・後期高齢者と４種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="1412"/>
+        <display value="医科・退職者単独・本人"/>
+        <definition value="医科・退職者単独・本人"/>
+    </concept>
+    <concept>
+        <code value="1414"/>
+        <display value="医科・退職者単独・未就学者"/>
+        <definition value="医科・退職者単独・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1416"/>
+        <display value="医科・退職者単独・家族"/>
+        <definition value="医科・退職者単独・家族"/>
+    </concept>
+    <concept>
+        <code value="1422"/>
+        <display value="医科・退職者と１種の公費併用・本人"/>
+        <definition value="医科・退職者と１種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="1424"/>
+        <display value="医科・退職者と１種の公費併用・未就学者"/>
+        <definition value="医科・退職者と１種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1426"/>
+        <display value="医科・退職者と１種の公費併用・家族"/>
+        <definition value="医科・退職者と１種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="1432"/>
+        <display value="医科・退職者と２種の公費併用・本人"/>
+        <definition value="医科・退職者と２種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="1434"/>
+        <display value="医科・退職者と２種の公費併用・未就学者"/>
+        <definition value="医科・退職者と２種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1436"/>
+        <display value="医科・退職者と２種の公費併用・家族"/>
+        <definition value="医科・退職者と２種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="1442"/>
+        <display value="医科・退職者と３種の公費併用・本人"/>
+        <definition value="医科・退職者と３種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="1444"/>
+        <display value="医科・退職者と３種の公費併用・未就学者"/>
+        <definition value="医科・退職者と３種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1446"/>
+        <display value="医科・退職者と３種の公費併用・家族"/>
+        <definition value="医科・退職者と３種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="1452"/>
+        <display value="医科・退職者と４種の公費併用・本人"/>
+        <definition value="医科・退職者と４種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="1454"/>
+        <display value="医科・退職者と４種の公費併用・未就学者"/>
+        <definition value="医科・退職者と４種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="1456"/>
+        <display value="医科・退職者と４種の公費併用・家族"/>
+        <definition value="医科・退職者と４種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="3112"/>
+        <display value="歯科・医保単独/国保単独・本人/世帯主"/>
+        <definition value="歯科・医保単独/国保単独・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="3114"/>
+        <display value="歯科・医保単独/国保単独・未就学者"/>
+        <definition value="歯科・医保単独/国保単独・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3116"/>
+        <display value="歯科・医保単独/国保単独・家族/その他"/>
+        <definition value="歯科・医保単独/国保単独・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="3118"/>
+        <display value="歯科・医保単独/国保単独・高齢受給者一般・低所得者"/>
+        <definition value="歯科・医保単独/国保単独・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3110"/>
+        <display value="歯科・医保単独/国保単独・高齢受給者７割"/>
+        <definition value="歯科・医保単独/国保単独・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="3122"/>
+        <display value="歯科・医保/国保と１種の公費併用・本人/世帯主"/>
+        <definition value="歯科・医保/国保と１種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="3124"/>
+        <display value="歯科・医保/国保と１種の公費併用・未就学者"/>
+        <definition value="歯科・医保/国保と１種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3126"/>
+        <display value="歯科・医保/国保と１種の公費併用・家族/その他"/>
+        <definition value="歯科・医保/国保と１種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="3128"/>
+        <display value="歯科・医保/国保と１種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="歯科・医保/国保と１種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3120"/>
+        <display value="歯科・医保/国保と１種の公費併用・高齢受給者７割"/>
+        <definition value="歯科・医保/国保と１種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="3132"/>
+        <display value="歯科・医保/国保と２種の公費併用・本人/世帯主"/>
+        <definition value="歯科・医保/国保と２種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="3134"/>
+        <display value="歯科・医保/国保と２種の公費併用・未就学者"/>
+        <definition value="歯科・医保/国保と２種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3136"/>
+        <display value="歯科・医保/国保と２種の公費併用・家族/その他"/>
+        <definition value="歯科・医保/国保と２種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="3138"/>
+        <display value="歯科・医保/国保と２種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="歯科・医保/国保と２種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3130"/>
+        <display value="歯科・医保/国保と２種の公費併用・高齢受給者７割"/>
+        <definition value="歯科・医保/国保と２種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="3142"/>
+        <display value="歯科・医保/国保と３種の公費併用・本人/世帯主"/>
+        <definition value="歯科・医保/国保と３種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="3144"/>
+        <display value="歯科・医保/国保と３種の公費併用・未就学者"/>
+        <definition value="歯科・医保/国保と３種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3146"/>
+        <display value="歯科・医保/国保と３種の公費併用・家族/その他"/>
+        <definition value="歯科・医保/国保と３種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="3148"/>
+        <display value="歯科・医保/国保と３種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="歯科・医保/国保と３種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3140"/>
+        <display value="歯科・医保/国保と３種の公費併用・高齢受給者７割"/>
+        <definition value="歯科・医保/国保と３種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="3152"/>
+        <display value="歯科・医保/国保と４種の公費併用・本人/世帯主"/>
+        <definition value="歯科・医保/国保と４種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="3154"/>
+        <display value="歯科・医保/国保と４種の公費併用・未就学者"/>
+        <definition value="歯科・医保/国保と４種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3156"/>
+        <display value="歯科・医保/国保と４種の公費併用・家族/その他"/>
+        <definition value="歯科・医保/国保と４種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="3158"/>
+        <display value="歯科・医保/国保と４種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="歯科・医保/国保と４種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3150"/>
+        <display value="歯科・医保/国保と４種の公費併用・高齢受給者７割"/>
+        <definition value="歯科・医保/国保と４種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="3212"/>
+        <display value="歯科・公費単独"/>
+        <definition value="歯科・公費単独"/>
+    </concept>
+    <concept>
+        <code value="3222"/>
+        <display value="歯科・２種の公費併用"/>
+        <definition value="歯科・２種の公費併用"/>
+    </concept>
+    <concept>
+        <code value="3232"/>
+        <display value="歯科・３種の公費併用"/>
+        <definition value="歯科・３種の公費併用"/>
+    </concept>
+    <concept>
+        <code value="3242"/>
+        <display value="歯科・４種の公費併用"/>
+        <definition value="歯科・４種の公費併用"/>
+    </concept>
+    <concept>
+        <code value="3318"/>
+        <display value="歯科・後期高齢者単独・一般・低所得者"/>
+        <definition value="歯科・後期高齢者単独・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3310"/>
+        <display value="歯科・後期高齢者単独・７割"/>
+        <definition value="歯科・後期高齢者単独・７割"/>
+    </concept>
+    <concept>
+        <code value="3328"/>
+        <display value="歯科・後期高齢者と１種の公費併用・一般・低所得者"/>
+        <definition value="歯科・後期高齢者と１種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3320"/>
+        <display value="歯科・後期高齢者と１種の公費併用・７割"/>
+        <definition value="歯科・後期高齢者と１種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="3338"/>
+        <display value="歯科・後期高齢者と２種の公費併用・一般・低所得者"/>
+        <definition value="歯科・後期高齢者と２種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3330"/>
+        <display value="歯科・後期高齢者と２種の公費併用・７割"/>
+        <definition value="歯科・後期高齢者と２種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="3348"/>
+        <display value="歯科・後期高齢者と３種の公費併用・一般・低所得者"/>
+        <definition value="歯科・後期高齢者と３種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3340"/>
+        <display value="歯科・後期高齢者と３種の公費併用・７割"/>
+        <definition value="歯科・後期高齢者と３種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="3358"/>
+        <display value="歯科・後期高齢者と４種の公費併用・一般・低所得者"/>
+        <definition value="歯科・後期高齢者と４種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="3350"/>
+        <display value="歯科・後期高齢者と４種の公費併用・７割"/>
+        <definition value="歯科・後期高齢者と４種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="3412"/>
+        <display value="歯科・退職者単独・本人"/>
+        <definition value="歯科・退職者単独・本人"/>
+    </concept>
+    <concept>
+        <code value="3414"/>
+        <display value="歯科・退職者単独・未就学者"/>
+        <definition value="歯科・退職者単独・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3416"/>
+        <display value="歯科・退職者単独・家族"/>
+        <definition value="歯科・退職者単独・家族"/>
+    </concept>
+    <concept>
+        <code value="3422"/>
+        <display value="歯科・退職者と１種の公費併用・本人"/>
+        <definition value="歯科・退職者と１種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="3424"/>
+        <display value="歯科・退職者と１種の公費併用・未就学者"/>
+        <definition value="歯科・退職者と１種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3426"/>
+        <display value="歯科・退職者と１種の公費併用・家族"/>
+        <definition value="歯科・退職者と１種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="3432"/>
+        <display value="歯科・退職者と２種の公費併用・本人"/>
+        <definition value="歯科・退職者と２種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="3434"/>
+        <display value="歯科・退職者と２種の公費併用・未就学者"/>
+        <definition value="歯科・退職者と２種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3436"/>
+        <display value="歯科・退職者と２種の公費併用・家族"/>
+        <definition value="歯科・退職者と２種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="3442"/>
+        <display value="歯科・退職者と３種の公費併用・本人"/>
+        <definition value="歯科・退職者と３種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="3444"/>
+        <display value="歯科・退職者と３種の公費併用・未就学者"/>
+        <definition value="歯科・退職者と３種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3446"/>
+        <display value="歯科・退職者と３種の公費併用・家族"/>
+        <definition value="歯科・退職者と３種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="3452"/>
+        <display value="歯科・退職者と４種の公費併用・本人"/>
+        <definition value="歯科・退職者と４種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="3454"/>
+        <display value="歯科・退職者と４種の公費併用・未就学者"/>
+        <definition value="歯科・退職者と４種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="3456"/>
+        <display value="歯科・退職者と４種の公費併用・家族"/>
+        <definition value="歯科・退職者と４種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="4112"/>
+        <display value="調剤・医保単独/国保単独・本人/世帯主"/>
+        <definition value="調剤・医保単独/国保単独・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="4114"/>
+        <display value="調剤・医保単独/国保単独・未就学者"/>
+        <definition value="調剤・医保単独/国保単独・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4116"/>
+        <display value="調剤・医保単独/国保単独・家族/その他"/>
+        <definition value="調剤・医保単独/国保単独・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="4118"/>
+        <display value="調剤・医保単独/国保単独・高齢受給者一般・低所得者"/>
+        <definition value="調剤・医保単独/国保単独・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4110"/>
+        <display value="調剤・医保単独/国保単独・高齢受給者７割"/>
+        <definition value="調剤・医保単独/国保単独・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="4122"/>
+        <display value="調剤・医保/国保と１種の公費併用・本人/世帯主"/>
+        <definition value="調剤・医保/国保と１種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="4124"/>
+        <display value="調剤・医保/国保と１種の公費併用・未就学者"/>
+        <definition value="調剤・医保/国保と１種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4126"/>
+        <display value="調剤・医保/国保と１種の公費併用・家族/その他"/>
+        <definition value="調剤・医保/国保と１種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="4128"/>
+        <display value="調剤・医保/国保と１種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="調剤・医保/国保と１種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4120"/>
+        <display value="調剤・医保/国保と１種の公費併用・高齢受給者７割"/>
+        <definition value="調剤・医保/国保と１種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="4132"/>
+        <display value="調剤・医保/国保と２種の公費併用・本人/世帯主"/>
+        <definition value="調剤・医保/国保と２種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="4134"/>
+        <display value="調剤・医保/国保と２種の公費併用・未就学者"/>
+        <definition value="調剤・医保/国保と２種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4136"/>
+        <display value="調剤・医保/国保と２種の公費併用・家族/その他"/>
+        <definition value="調剤・医保/国保と２種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="4138"/>
+        <display value="調剤・医保/国保と２種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="調剤・医保/国保と２種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4130"/>
+        <display value="調剤・医保/国保と２種の公費併用・高齢受給者７割"/>
+        <definition value="調剤・医保/国保と２種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="4142"/>
+        <display value="調剤・医保/国保と３種の公費併用・本人/世帯主"/>
+        <definition value="調剤・医保/国保と３種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="4144"/>
+        <display value="調剤・医保/国保と３種の公費併用・未就学者"/>
+        <definition value="調剤・医保/国保と３種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4146"/>
+        <display value="調剤・医保/国保と３種の公費併用・家族/その他"/>
+        <definition value="調剤・医保/国保と３種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="4148"/>
+        <display value="調剤・医保/国保と３種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="調剤・医保/国保と３種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4140"/>
+        <display value="調剤・医保/国保と３種の公費併用・高齢受給者７割"/>
+        <definition value="調剤・医保/国保と３種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="4152"/>
+        <display value="調剤・医保/国保と４種の公費併用・本人/世帯主"/>
+        <definition value="調剤・医保/国保と４種の公費併用・本人/世帯主"/>
+    </concept>
+    <concept>
+        <code value="4154"/>
+        <display value="調剤・医保/国保と４種の公費併用・未就学者"/>
+        <definition value="調剤・医保/国保と４種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4156"/>
+        <display value="調剤・医保/国保と４種の公費併用・家族/その他"/>
+        <definition value="調剤・医保/国保と４種の公費併用・家族/その他"/>
+    </concept>
+    <concept>
+        <code value="4158"/>
+        <display value="調剤・医保/国保と４種の公費併用・高齢受給者一般・低所得者"/>
+        <definition value="調剤・医保/国保と４種の公費併用・高齢受給者一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4150"/>
+        <display value="調剤・医保/国保と４種の公費併用・高齢受給者７割"/>
+        <definition value="調剤・医保/国保と４種の公費併用・高齢受給者７割"/>
+    </concept>
+    <concept>
+        <code value="4212"/>
+        <display value="調剤・公費単独"/>
+        <definition value="調剤・公費単独"/>
+    </concept>
+    <concept>
+        <code value="4222"/>
+        <display value="調剤・２種の公費併用"/>
+        <definition value="調剤・２種の公費併用"/>
+    </concept>
+    <concept>
+        <code value="4232"/>
+        <display value="調剤・３種の公費併用"/>
+        <definition value="調剤・３種の公費併用"/>
+    </concept>
+    <concept>
+        <code value="4242"/>
+        <display value="調剤・４種の公費併用"/>
+        <definition value="調剤・４種の公費併用"/>
+    </concept>
+    <concept>
+        <code value="4318"/>
+        <display value="調剤・後期高齢者単独・一般・低所得者"/>
+        <definition value="調剤・後期高齢者単独・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4310"/>
+        <display value="調剤・後期高齢者単独・７割"/>
+        <definition value="調剤・後期高齢者単独・７割"/>
+    </concept>
+    <concept>
+        <code value="4328"/>
+        <display value="調剤・後期高齢者と１種の公費併用・一般・低所得者"/>
+        <definition value="調剤・後期高齢者と１種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4320"/>
+        <display value="調剤・後期高齢者と１種の公費併用・７割"/>
+        <definition value="調剤・後期高齢者と１種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="4338"/>
+        <display value="調剤・後期高齢者と２種の公費併用・一般・低所得者"/>
+        <definition value="調剤・後期高齢者と２種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4330"/>
+        <display value="調剤・後期高齢者と２種の公費併用・７割"/>
+        <definition value="調剤・後期高齢者と２種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="4348"/>
+        <display value="調剤・後期高齢者と３種の公費併用・一般・低所得者"/>
+        <definition value="調剤・後期高齢者と３種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4340"/>
+        <display value="調剤・後期高齢者と３種の公費併用・７割"/>
+        <definition value="調剤・後期高齢者と３種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="4358"/>
+        <display value="調剤・後期高齢者と４種の公費併用・一般・低所得者"/>
+        <definition value="調剤・後期高齢者と４種の公費併用・一般・低所得者"/>
+    </concept>
+    <concept>
+        <code value="4350"/>
+        <display value="調剤・後期高齢者と４種の公費併用・７割"/>
+        <definition value="調剤・後期高齢者と４種の公費併用・７割"/>
+    </concept>
+    <concept>
+        <code value="4412"/>
+        <display value="調剤・退職者単独・本人"/>
+        <definition value="調剤・退職者単独・本人"/>
+    </concept>
+    <concept>
+        <code value="4414"/>
+        <display value="調剤・退職者単独・未就学者"/>
+        <definition value="調剤・退職者単独・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4416"/>
+        <display value="調剤・退職者単独・家族"/>
+        <definition value="調剤・退職者単独・家族"/>
+    </concept>
+    <concept>
+        <code value="4422"/>
+        <display value="調剤・退職者と１種の公費併用・本人"/>
+        <definition value="調剤・退職者と１種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="4424"/>
+        <display value="調剤・退職者と１種の公費併用・未就学者"/>
+        <definition value="調剤・退職者と１種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4426"/>
+        <display value="調剤・退職者と１種の公費併用・家族"/>
+        <definition value="調剤・退職者と１種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="4432"/>
+        <display value="調剤・退職者と２種の公費併用・本人"/>
+        <definition value="調剤・退職者と２種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="4434"/>
+        <display value="調剤・退職者と２種の公費併用・未就学者"/>
+        <definition value="調剤・退職者と２種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4436"/>
+        <display value="調剤・退職者と２種の公費併用・家族"/>
+        <definition value="調剤・退職者と２種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="4442"/>
+        <display value="調剤・退職者と３種の公費併用・本人"/>
+        <definition value="調剤・退職者と３種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="4444"/>
+        <display value="調剤・退職者と３種の公費併用・未就学者"/>
+        <definition value="調剤・退職者と３種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4446"/>
+        <display value="調剤・退職者と３種の公費併用・家族"/>
+        <definition value="調剤・退職者と３種の公費併用・家族"/>
+    </concept>
+    <concept>
+        <code value="4452"/>
+        <display value="調剤・退職者と４種の公費併用・本人"/>
+        <definition value="調剤・退職者と４種の公費併用・本人"/>
+    </concept>
+    <concept>
+        <code value="4454"/>
+        <display value="調剤・退職者と４種の公費併用・未就学者"/>
+        <definition value="調剤・退職者と４種の公費併用・未就学者"/>
+    </concept>
+    <concept>
+        <code value="4456"/>
+        <display value="調剤・退職者と４種の公費併用・家族"/>
+        <definition value="調剤・退職者と４種の公費併用・家族"/>
+    </concept>
+</CodeSystem>

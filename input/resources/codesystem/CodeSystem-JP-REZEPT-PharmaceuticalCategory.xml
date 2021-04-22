@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem
+    xmlns="http://hl7.org/fhir">
+    <id value="CodeSystem-JP-REZEPT-PharmaceuticalCategory"/>
+    <meta>
+        <versionId value="1"/>
+        <lastUpdated value="2021-04-06T12:32:03.589+00:00"/>
+        <source value="#k4LwjN6BbgGq3ovN"/>
+    </meta>
+    <url value="https://xxx/CodeSystem-JP-REZEPT-PharmaceuticalCategory"/>
+    <name value="PharmaceuticalCategory"/>
+    <title value="医薬品区分コード"/>
+    <status value="draft"/>
+    <description value="レセプト電算処理システムで使用されている医薬品区分コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表22 医薬品区分コード &#xA;」に記載されています。"/>
+    <valueSet value="https://xxx/ValueSet-JP-REZEPT-DENTAL-PharmaceuticalCategory"/>
+    <content value="complete"/>
+    <concept>
+        <code value="1"/>
+        <display value="内服薬剤"/>
+        <definition value="内服薬剤"/>
+    </concept>
+    <concept>
+        <code value="2"/>
+        <display value="屯服薬剤"/>
+        <definition value="屯服薬剤"/>
+    </concept>
+    <concept>
+        <code value="3"/>
+        <display value="外用薬剤"/>
+        <definition value="外用薬剤"/>
+    </concept>
+    <concept>
+        <code value="4"/>
+        <display value="注射薬剤"/>
+        <definition value="注射薬剤"/>
+    </concept>
+    <concept>
+        <code value="5"/>
+        <display value="麻酔・処置・手術等で使用する薬剤(6・7以外)"/>
+    </concept>
+    <concept>
+        <code value="6"/>
+        <display value="歯科麻酔薬剤"/>
+        <definition value="歯科麻酔薬剤"/>
+    </concept>
+    <concept>
+        <code value="7"/>
+        <display value="特定薬剤"/>
+        <definition value="特定薬剤"/>
+    </concept>
+</CodeSystem>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-DetailedSymptomClassification"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-04-06T13:06:27.224+00:00"/>
+        <source value="#uTIMH0SlvW6XmYGA"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-DetailedSymptomClassification"/>
+    <name value="DetailedSymptomClassification"/>
+    <title value="症状詳記区分コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている症状詳記区分コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-DetailedSymptomClassification"/>
+        </include>
+    </compose>
+</ValueSet>

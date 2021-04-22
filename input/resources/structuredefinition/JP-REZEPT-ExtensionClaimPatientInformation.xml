@@ -1,0 +1,1782 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureDefinition
+    xmlns="http://hl7.org/fhir">
+    <id value="JP-REZEPT-ExtensionClaimPatientInformation"/>
+    <meta>
+        <versionId value="8"/>
+        <lastUpdated value="2021-04-16T04:10:08.617+00:00"/>
+        <source value="#a8VRDrMpA1VEGIwJ"/>
+    </meta>
+    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimPatientInformation"/>
+    <name value="ExtensionClaimPatientInformation"/>
+    <title value="患者の拡張情報"/>
+    <status value="draft"/>
+    <description value="患者の拡張情報です。"/>
+    <fhirVersion value="4.0.1"/>
+    <mapping>
+        <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+        <uri value="https://shinryohoshu.mhlw.go.jp/shinryohoshu/receMenu/doReceInfo"/>
+        <name value="医科"/>
+        <comment value="レセプト電算処理システムの請求に係る記録条件仕様(医科用)をFHIRにマッピングします。"/>
+    </mapping>
+    <mapping>
+        <identity value="JP-REZEPT-DPC-Mapping"/>
+        <uri value="https://shinryohoshu.mhlw.go.jp/shinryohoshu/receMenu/doReceInfo"/>
+        <name value="DPC"/>
+        <comment value="レセプト電算処理システムの請求に係る記録条件仕様(DPC用)をFHIRにマッピングします。"/>
+    </mapping>
+    <mapping>
+        <identity value="JP-REZEPT-DENTAL-Mapping"/>
+        <uri value="https://shinryohoshu.mhlw.go.jp/shinryohoshu/receMenu/doReceInfo"/>
+        <name value="歯科"/>
+        <comment value="レセプト電算処理システムの請求に係る記録条件仕様(歯科用)をFHIRにマッピングします。"/>
+    </mapping>
+    <mapping>
+        <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+        <uri value="https://shinryohoshu.mhlw.go.jp/shinryohoshu/receMenu/doReceInfo"/>
+        <name value="調剤"/>
+        <comment value="レセプト電算処理システムの請求に係る記録条件仕様(調剤用)をFHIRにマッピングします。"/>
+    </mapping>
+    <kind value="resource"/>
+    <abstract value="false"/>
+    <context>
+        <type value="element"/>
+        <expression value="Claim"/>
+    </context>
+    <type value="Extension"/>
+    <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+    <derivation value="constraint"/>
+    <snapshot>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="患者の拡張情報"/>
+            <definition value="患者の拡張情報です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <condition value="ele-1"/>
+            <constraint>
+                <key value="ele-1"/>
+                <severity value="error"/>
+                <human value="All FHIR elements must have a @value or children"/>
+                <expression value="hasValue() or (children().count() &gt; id.count())"/>
+                <xpath value="@value|f:*|h:div"/>
+                <source value="Element"/>
+            </constraint>
+            <constraint>
+                <key value="ext-1"/>
+                <severity value="error"/>
+                <human value="Must have either extensions or value[x], not both"/>
+                <expression value="extension.exists() != value.exists()"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+                <source value="Extension"/>
+            </constraint>
+            <isModifier value="false"/>
+        </element>
+        <element id="Extension.id">
+            <path value="Extension.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension">
+            <path value="Extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="患者の拡張情報"/>
+            <definition value="患者の拡張情報です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="Extension.extension:totalFeePoint">
+            <path value="Extension.extension"/>
+            <sliceName value="totalFeePoint"/>
+            <short value="合計点数"/>
+            <definition value="合計点数です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="Extension.extension:totalFeePoint.id">
+            <path value="Extension.extension.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:totalFeePoint.extension">
+            <path value="Extension.extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:totalFeePoint.url">
+            <path value="Extension.extension.url"/>
+            <representation value="xmlAttr"/>
+            <short value="identifies the meaning of the extension"/>
+            <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+            <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.url"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+                        <valueString value="string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+                        <valueString value="((http|https)://([A-Za-z0-9\\\.\:\%\$]*\/)*)?(Account|ActivityDefinition|AdverseEvent|AllergyIntolerance|Appointment|AppointmentResponse|AuditEvent|Basic|Binary|BiologicallyDerivedProduct|BodyStructure|Bundle|CapabilityStatement|CarePlan|CareTeam|CatalogEntry|ChargeItem|ChargeItemDefinition|Claim|ClaimResponse|ClinicalImpression|CodeSystem|Communication|CommunicationRequest|CompartmentDefinition|Composition|ConceptMap|Condition|Consent|Contract|Coverage|CoverageEligibilityRequest|CoverageEligibilityResponse|DetectedIssue|Device|DeviceDefinition|DeviceMetric|DeviceRequest|DeviceUseStatement|DiagnosticReport|DocumentManifest|DocumentReference|EffectEvidenceSynthesis|Encounter|Endpoint|EnrollmentRequest|EnrollmentResponse|EpisodeOfCare|EventDefinition|Evidence|EvidenceVariable|ExampleScenario|ExplanationOfBenefit|FamilyMemberHistory|Flag|Goal|GraphDefinition|Group|GuidanceResponse|HealthcareService|ImagingStudy|Immunization|ImmunizationEvaluation|ImmunizationRecommendation|ImplementationGuide|InsurancePlan|Invoice|Library|Linkage|List|Location|Measure|MeasureReport|Media|Medication|MedicationAdministration|MedicationDispense|MedicationKnowledge|MedicationRequest|MedicationStatement|MedicinalProduct|MedicinalProductAuthorization|MedicinalProductContraindication|MedicinalProductIndication|MedicinalProductIngredient|MedicinalProductInteraction|MedicinalProductManufactured|MedicinalProductPackaged|MedicinalProductPharmaceutical|MedicinalProductUndesirableEffect|MessageDefinition|MessageHeader|MolecularSequence|NamingSystem|NutritionOrder|Observation|ObservationDefinition|OperationDefinition|OperationOutcome|Organization|OrganizationAffiliation|Patient|PaymentNotice|PaymentReconciliation|Person|PlanDefinition|Practitioner|PractitionerRole|Procedure|Provenance|Questionnaire|QuestionnaireResponse|RelatedPerson|RequestGroup|ResearchDefinition|ResearchElementDefinition|ResearchStudy|ResearchSubject|RiskAssessment|RiskEvidenceSynthesis|Schedule|SearchParameter|ServiceRequest|Slot|Specimen|SpecimenDefinition|StructureDefinition|StructureMap|Subscription|Substance|SubstanceNucleicAcid|SubstancePolymer|SubstanceProtein|SubstanceReferenceInformation|SubstanceSourceMaterial|SubstanceSpecification|SupplyDelivery|SupplyRequest|Task|TerminologyCapabilities|TestReport|TestScript|ValueSet|VerificationResult|VisionPrescription)\/[A-Za-z0-9\-\.]{1,64}(\/_history\/[A-Za-z0-9\-\.]{1,64})?"/>
+                    </extension>
+                </code>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:totalFeePoint.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="合計点数"/>
+            <definition value="合計点数です。"/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.value[x]"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentQuantity">
+            <path value="Extension.extension"/>
+            <sliceName value="dietaryLifeTreatmentQuantity"/>
+            <short value="食事療養・生活療養の回数"/>
+            <definition value="食事療養・生活療養の回数です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentQuantity.id">
+            <path value="Extension.extension.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentQuantity.extension">
+            <path value="Extension.extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentQuantity.url">
+            <path value="Extension.extension.url"/>
+            <representation value="xmlAttr"/>
+            <short value="identifies the meaning of the extension"/>
+            <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+            <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.url"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+                        <valueString value="string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+                        <valueString value="((http|https)://([A-Za-z0-9\\\.\:\%\$]*\/)*)?(Account|ActivityDefinition|AdverseEvent|AllergyIntolerance|Appointment|AppointmentResponse|AuditEvent|Basic|Binary|BiologicallyDerivedProduct|BodyStructure|Bundle|CapabilityStatement|CarePlan|CareTeam|CatalogEntry|ChargeItem|ChargeItemDefinition|Claim|ClaimResponse|ClinicalImpression|CodeSystem|Communication|CommunicationRequest|CompartmentDefinition|Composition|ConceptMap|Condition|Consent|Contract|Coverage|CoverageEligibilityRequest|CoverageEligibilityResponse|DetectedIssue|Device|DeviceDefinition|DeviceMetric|DeviceRequest|DeviceUseStatement|DiagnosticReport|DocumentManifest|DocumentReference|EffectEvidenceSynthesis|Encounter|Endpoint|EnrollmentRequest|EnrollmentResponse|EpisodeOfCare|EventDefinition|Evidence|EvidenceVariable|ExampleScenario|ExplanationOfBenefit|FamilyMemberHistory|Flag|Goal|GraphDefinition|Group|GuidanceResponse|HealthcareService|ImagingStudy|Immunization|ImmunizationEvaluation|ImmunizationRecommendation|ImplementationGuide|InsurancePlan|Invoice|Library|Linkage|List|Location|Measure|MeasureReport|Media|Medication|MedicationAdministration|MedicationDispense|MedicationKnowledge|MedicationRequest|MedicationStatement|MedicinalProduct|MedicinalProductAuthorization|MedicinalProductContraindication|MedicinalProductIndication|MedicinalProductIngredient|MedicinalProductInteraction|MedicinalProductManufactured|MedicinalProductPackaged|MedicinalProductPharmaceutical|MedicinalProductUndesirableEffect|MessageDefinition|MessageHeader|MolecularSequence|NamingSystem|NutritionOrder|Observation|ObservationDefinition|OperationDefinition|OperationOutcome|Organization|OrganizationAffiliation|Patient|PaymentNotice|PaymentReconciliation|Person|PlanDefinition|Practitioner|PractitionerRole|Procedure|Provenance|Questionnaire|QuestionnaireResponse|RelatedPerson|RequestGroup|ResearchDefinition|ResearchElementDefinition|ResearchStudy|ResearchSubject|RiskAssessment|RiskEvidenceSynthesis|Schedule|SearchParameter|ServiceRequest|Slot|Specimen|SpecimenDefinition|StructureDefinition|StructureMap|Subscription|Substance|SubstanceNucleicAcid|SubstancePolymer|SubstanceProtein|SubstanceReferenceInformation|SubstanceSourceMaterial|SubstanceSpecification|SupplyDelivery|SupplyRequest|Task|TerminologyCapabilities|TestReport|TestScript|ValueSet|VerificationResult|VisionPrescription)\/[A-Za-z0-9\-\.]{1,64}(\/_history\/[A-Za-z0-9\-\.]{1,64})?"/>
+                    </extension>
+                </code>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentQuantity.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="食事療養・生活療養の回数"/>
+            <definition value="食事療養・生活療養の回数です。"/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.value[x]"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentTotalFee">
+            <path value="Extension.extension"/>
+            <sliceName value="dietaryLifeTreatmentTotalFee"/>
+            <short value="食事療養・生活療養の合計金額"/>
+            <definition value="食事療養・生活療養の合計金額です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentTotalFee.id">
+            <path value="Extension.extension.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentTotalFee.extension">
+            <path value="Extension.extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentTotalFee.url">
+            <path value="Extension.extension.url"/>
+            <representation value="xmlAttr"/>
+            <short value="identifies the meaning of the extension"/>
+            <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+            <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.url"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+                        <valueString value="string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+                        <valueString value="((http|https)://([A-Za-z0-9\\\.\:\%\$]*\/)*)?(Account|ActivityDefinition|AdverseEvent|AllergyIntolerance|Appointment|AppointmentResponse|AuditEvent|Basic|Binary|BiologicallyDerivedProduct|BodyStructure|Bundle|CapabilityStatement|CarePlan|CareTeam|CatalogEntry|ChargeItem|ChargeItemDefinition|Claim|ClaimResponse|ClinicalImpression|CodeSystem|Communication|CommunicationRequest|CompartmentDefinition|Composition|ConceptMap|Condition|Consent|Contract|Coverage|CoverageEligibilityRequest|CoverageEligibilityResponse|DetectedIssue|Device|DeviceDefinition|DeviceMetric|DeviceRequest|DeviceUseStatement|DiagnosticReport|DocumentManifest|DocumentReference|EffectEvidenceSynthesis|Encounter|Endpoint|EnrollmentRequest|EnrollmentResponse|EpisodeOfCare|EventDefinition|Evidence|EvidenceVariable|ExampleScenario|ExplanationOfBenefit|FamilyMemberHistory|Flag|Goal|GraphDefinition|Group|GuidanceResponse|HealthcareService|ImagingStudy|Immunization|ImmunizationEvaluation|ImmunizationRecommendation|ImplementationGuide|InsurancePlan|Invoice|Library|Linkage|List|Location|Measure|MeasureReport|Media|Medication|MedicationAdministration|MedicationDispense|MedicationKnowledge|MedicationRequest|MedicationStatement|MedicinalProduct|MedicinalProductAuthorization|MedicinalProductContraindication|MedicinalProductIndication|MedicinalProductIngredient|MedicinalProductInteraction|MedicinalProductManufactured|MedicinalProductPackaged|MedicinalProductPharmaceutical|MedicinalProductUndesirableEffect|MessageDefinition|MessageHeader|MolecularSequence|NamingSystem|NutritionOrder|Observation|ObservationDefinition|OperationDefinition|OperationOutcome|Organization|OrganizationAffiliation|Patient|PaymentNotice|PaymentReconciliation|Person|PlanDefinition|Practitioner|PractitionerRole|Procedure|Provenance|Questionnaire|QuestionnaireResponse|RelatedPerson|RequestGroup|ResearchDefinition|ResearchElementDefinition|ResearchStudy|ResearchSubject|RiskAssessment|RiskEvidenceSynthesis|Schedule|SearchParameter|ServiceRequest|Slot|Specimen|SpecimenDefinition|StructureDefinition|StructureMap|Subscription|Substance|SubstanceNucleicAcid|SubstancePolymer|SubstanceProtein|SubstanceReferenceInformation|SubstanceSourceMaterial|SubstanceSpecification|SupplyDelivery|SupplyRequest|Task|TerminologyCapabilities|TestReport|TestScript|ValueSet|VerificationResult|VisionPrescription)\/[A-Za-z0-9\-\.]{1,64}(\/_history\/[A-Za-z0-9\-\.]{1,64})?"/>
+                    </extension>
+                </code>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentTotalFee.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="食事療養・生活療養の合計金額"/>
+            <definition value="食事療養・生活療養の合計金額です。"/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.value[x]"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="Money"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:occupationalReason">
+            <path value="Extension.extension"/>
+            <sliceName value="occupationalReason"/>
+            <short value="職務上の事由"/>
+            <definition value="職務上の事由です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="Extension.extension:occupationalReason.id">
+            <path value="Extension.extension.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:occupationalReason.extension">
+            <path value="Extension.extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:occupationalReason.url">
+            <path value="Extension.extension.url"/>
+            <representation value="xmlAttr"/>
+            <short value="identifies the meaning of the extension"/>
+            <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+            <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.url"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+                        <valueString value="string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+                        <valueString value="((http|https)://([A-Za-z0-9\\\.\:\%\$]*\/)*)?(Account|ActivityDefinition|AdverseEvent|AllergyIntolerance|Appointment|AppointmentResponse|AuditEvent|Basic|Binary|BiologicallyDerivedProduct|BodyStructure|Bundle|CapabilityStatement|CarePlan|CareTeam|CatalogEntry|ChargeItem|ChargeItemDefinition|Claim|ClaimResponse|ClinicalImpression|CodeSystem|Communication|CommunicationRequest|CompartmentDefinition|Composition|ConceptMap|Condition|Consent|Contract|Coverage|CoverageEligibilityRequest|CoverageEligibilityResponse|DetectedIssue|Device|DeviceDefinition|DeviceMetric|DeviceRequest|DeviceUseStatement|DiagnosticReport|DocumentManifest|DocumentReference|EffectEvidenceSynthesis|Encounter|Endpoint|EnrollmentRequest|EnrollmentResponse|EpisodeOfCare|EventDefinition|Evidence|EvidenceVariable|ExampleScenario|ExplanationOfBenefit|FamilyMemberHistory|Flag|Goal|GraphDefinition|Group|GuidanceResponse|HealthcareService|ImagingStudy|Immunization|ImmunizationEvaluation|ImmunizationRecommendation|ImplementationGuide|InsurancePlan|Invoice|Library|Linkage|List|Location|Measure|MeasureReport|Media|Medication|MedicationAdministration|MedicationDispense|MedicationKnowledge|MedicationRequest|MedicationStatement|MedicinalProduct|MedicinalProductAuthorization|MedicinalProductContraindication|MedicinalProductIndication|MedicinalProductIngredient|MedicinalProductInteraction|MedicinalProductManufactured|MedicinalProductPackaged|MedicinalProductPharmaceutical|MedicinalProductUndesirableEffect|MessageDefinition|MessageHeader|MolecularSequence|NamingSystem|NutritionOrder|Observation|ObservationDefinition|OperationDefinition|OperationOutcome|Organization|OrganizationAffiliation|Patient|PaymentNotice|PaymentReconciliation|Person|PlanDefinition|Practitioner|PractitionerRole|Procedure|Provenance|Questionnaire|QuestionnaireResponse|RelatedPerson|RequestGroup|ResearchDefinition|ResearchElementDefinition|ResearchStudy|ResearchSubject|RiskAssessment|RiskEvidenceSynthesis|Schedule|SearchParameter|ServiceRequest|Slot|Specimen|SpecimenDefinition|StructureDefinition|StructureMap|Subscription|Substance|SubstanceNucleicAcid|SubstancePolymer|SubstanceProtein|SubstanceReferenceInformation|SubstanceSourceMaterial|SubstanceSpecification|SupplyDelivery|SupplyRequest|Task|TerminologyCapabilities|TestReport|TestScript|ValueSet|VerificationResult|VisionPrescription)\/[A-Za-z0-9\-\.]{1,64}(\/_history\/[A-Za-z0-9\-\.]{1,64})?"/>
+                    </extension>
+                </code>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:occupationalReason.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="職務上の事由"/>
+            <definition value="職務上の事由です。"/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.value[x]"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:certificateNumber">
+            <path value="Extension.extension"/>
+            <sliceName value="certificateNumber"/>
+            <short value="証明書番号"/>
+            <definition value="証明書番号です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="Extension.extension:certificateNumber.id">
+            <path value="Extension.extension.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:certificateNumber.extension">
+            <path value="Extension.extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:certificateNumber.url">
+            <path value="Extension.extension.url"/>
+            <representation value="xmlAttr"/>
+            <short value="identifies the meaning of the extension"/>
+            <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+            <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.url"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+                        <valueString value="string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+                        <valueString value="((http|https)://([A-Za-z0-9\\\.\:\%\$]*\/)*)?(Account|ActivityDefinition|AdverseEvent|AllergyIntolerance|Appointment|AppointmentResponse|AuditEvent|Basic|Binary|BiologicallyDerivedProduct|BodyStructure|Bundle|CapabilityStatement|CarePlan|CareTeam|CatalogEntry|ChargeItem|ChargeItemDefinition|Claim|ClaimResponse|ClinicalImpression|CodeSystem|Communication|CommunicationRequest|CompartmentDefinition|Composition|ConceptMap|Condition|Consent|Contract|Coverage|CoverageEligibilityRequest|CoverageEligibilityResponse|DetectedIssue|Device|DeviceDefinition|DeviceMetric|DeviceRequest|DeviceUseStatement|DiagnosticReport|DocumentManifest|DocumentReference|EffectEvidenceSynthesis|Encounter|Endpoint|EnrollmentRequest|EnrollmentResponse|EpisodeOfCare|EventDefinition|Evidence|EvidenceVariable|ExampleScenario|ExplanationOfBenefit|FamilyMemberHistory|Flag|Goal|GraphDefinition|Group|GuidanceResponse|HealthcareService|ImagingStudy|Immunization|ImmunizationEvaluation|ImmunizationRecommendation|ImplementationGuide|InsurancePlan|Invoice|Library|Linkage|List|Location|Measure|MeasureReport|Media|Medication|MedicationAdministration|MedicationDispense|MedicationKnowledge|MedicationRequest|MedicationStatement|MedicinalProduct|MedicinalProductAuthorization|MedicinalProductContraindication|MedicinalProductIndication|MedicinalProductIngredient|MedicinalProductInteraction|MedicinalProductManufactured|MedicinalProductPackaged|MedicinalProductPharmaceutical|MedicinalProductUndesirableEffect|MessageDefinition|MessageHeader|MolecularSequence|NamingSystem|NutritionOrder|Observation|ObservationDefinition|OperationDefinition|OperationOutcome|Organization|OrganizationAffiliation|Patient|PaymentNotice|PaymentReconciliation|Person|PlanDefinition|Practitioner|PractitionerRole|Procedure|Provenance|Questionnaire|QuestionnaireResponse|RelatedPerson|RequestGroup|ResearchDefinition|ResearchElementDefinition|ResearchStudy|ResearchSubject|RiskAssessment|RiskEvidenceSynthesis|Schedule|SearchParameter|ServiceRequest|Slot|Specimen|SpecimenDefinition|StructureDefinition|StructureMap|Subscription|Substance|SubstanceNucleicAcid|SubstancePolymer|SubstanceProtein|SubstanceReferenceInformation|SubstanceSourceMaterial|SubstanceSpecification|SupplyDelivery|SupplyRequest|Task|TerminologyCapabilities|TestReport|TestScript|ValueSet|VerificationResult|VisionPrescription)\/[A-Za-z0-9\-\.]{1,64}(\/_history\/[A-Za-z0-9\-\.]{1,64})?"/>
+                    </extension>
+                </code>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:certificateNumber.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="証明書番号"/>
+            <definition value="証明書番号です。"/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.value[x]"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="Identifier"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountRate">
+            <path value="Extension.extension"/>
+            <sliceName value="burdenFeeDiscountRate"/>
+            <short value="負担金額の減額割合"/>
+            <definition value="負担金額の減額割合です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountRate.id">
+            <path value="Extension.extension.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountRate.extension">
+            <path value="Extension.extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountRate.url">
+            <path value="Extension.extension.url"/>
+            <representation value="xmlAttr"/>
+            <short value="identifies the meaning of the extension"/>
+            <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+            <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.url"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+                        <valueString value="string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+                        <valueString value="((http|https)://([A-Za-z0-9\\\.\:\%\$]*\/)*)?(Account|ActivityDefinition|AdverseEvent|AllergyIntolerance|Appointment|AppointmentResponse|AuditEvent|Basic|Binary|BiologicallyDerivedProduct|BodyStructure|Bundle|CapabilityStatement|CarePlan|CareTeam|CatalogEntry|ChargeItem|ChargeItemDefinition|Claim|ClaimResponse|ClinicalImpression|CodeSystem|Communication|CommunicationRequest|CompartmentDefinition|Composition|ConceptMap|Condition|Consent|Contract|Coverage|CoverageEligibilityRequest|CoverageEligibilityResponse|DetectedIssue|Device|DeviceDefinition|DeviceMetric|DeviceRequest|DeviceUseStatement|DiagnosticReport|DocumentManifest|DocumentReference|EffectEvidenceSynthesis|Encounter|Endpoint|EnrollmentRequest|EnrollmentResponse|EpisodeOfCare|EventDefinition|Evidence|EvidenceVariable|ExampleScenario|ExplanationOfBenefit|FamilyMemberHistory|Flag|Goal|GraphDefinition|Group|GuidanceResponse|HealthcareService|ImagingStudy|Immunization|ImmunizationEvaluation|ImmunizationRecommendation|ImplementationGuide|InsurancePlan|Invoice|Library|Linkage|List|Location|Measure|MeasureReport|Media|Medication|MedicationAdministration|MedicationDispense|MedicationKnowledge|MedicationRequest|MedicationStatement|MedicinalProduct|MedicinalProductAuthorization|MedicinalProductContraindication|MedicinalProductIndication|MedicinalProductIngredient|MedicinalProductInteraction|MedicinalProductManufactured|MedicinalProductPackaged|MedicinalProductPharmaceutical|MedicinalProductUndesirableEffect|MessageDefinition|MessageHeader|MolecularSequence|NamingSystem|NutritionOrder|Observation|ObservationDefinition|OperationDefinition|OperationOutcome|Organization|OrganizationAffiliation|Patient|PaymentNotice|PaymentReconciliation|Person|PlanDefinition|Practitioner|PractitionerRole|Procedure|Provenance|Questionnaire|QuestionnaireResponse|RelatedPerson|RequestGroup|ResearchDefinition|ResearchElementDefinition|ResearchStudy|ResearchSubject|RiskAssessment|RiskEvidenceSynthesis|Schedule|SearchParameter|ServiceRequest|Slot|Specimen|SpecimenDefinition|StructureDefinition|StructureMap|Subscription|Substance|SubstanceNucleicAcid|SubstancePolymer|SubstanceProtein|SubstanceReferenceInformation|SubstanceSourceMaterial|SubstanceSpecification|SupplyDelivery|SupplyRequest|Task|TerminologyCapabilities|TestReport|TestScript|ValueSet|VerificationResult|VisionPrescription)\/[A-Za-z0-9\-\.]{1,64}(\/_history\/[A-Za-z0-9\-\.]{1,64})?"/>
+                    </extension>
+                </code>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountRate.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="負担金額の減額割合"/>
+            <definition value="負担金額の減額割合です。"/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.value[x]"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="Ratio"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountFee">
+            <path value="Extension.extension"/>
+            <sliceName value="burdenFeeDiscountFee"/>
+            <short value="負担金額の減額金額"/>
+            <definition value="負担金額の減額金額です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountFee.id">
+            <path value="Extension.extension.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountFee.extension">
+            <path value="Extension.extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountFee.url">
+            <path value="Extension.extension.url"/>
+            <representation value="xmlAttr"/>
+            <short value="identifies the meaning of the extension"/>
+            <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+            <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.url"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+                        <valueString value="string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+                        <valueString value="((http|https)://([A-Za-z0-9\\\.\:\%\$]*\/)*)?(Account|ActivityDefinition|AdverseEvent|AllergyIntolerance|Appointment|AppointmentResponse|AuditEvent|Basic|Binary|BiologicallyDerivedProduct|BodyStructure|Bundle|CapabilityStatement|CarePlan|CareTeam|CatalogEntry|ChargeItem|ChargeItemDefinition|Claim|ClaimResponse|ClinicalImpression|CodeSystem|Communication|CommunicationRequest|CompartmentDefinition|Composition|ConceptMap|Condition|Consent|Contract|Coverage|CoverageEligibilityRequest|CoverageEligibilityResponse|DetectedIssue|Device|DeviceDefinition|DeviceMetric|DeviceRequest|DeviceUseStatement|DiagnosticReport|DocumentManifest|DocumentReference|EffectEvidenceSynthesis|Encounter|Endpoint|EnrollmentRequest|EnrollmentResponse|EpisodeOfCare|EventDefinition|Evidence|EvidenceVariable|ExampleScenario|ExplanationOfBenefit|FamilyMemberHistory|Flag|Goal|GraphDefinition|Group|GuidanceResponse|HealthcareService|ImagingStudy|Immunization|ImmunizationEvaluation|ImmunizationRecommendation|ImplementationGuide|InsurancePlan|Invoice|Library|Linkage|List|Location|Measure|MeasureReport|Media|Medication|MedicationAdministration|MedicationDispense|MedicationKnowledge|MedicationRequest|MedicationStatement|MedicinalProduct|MedicinalProductAuthorization|MedicinalProductContraindication|MedicinalProductIndication|MedicinalProductIngredient|MedicinalProductInteraction|MedicinalProductManufactured|MedicinalProductPackaged|MedicinalProductPharmaceutical|MedicinalProductUndesirableEffect|MessageDefinition|MessageHeader|MolecularSequence|NamingSystem|NutritionOrder|Observation|ObservationDefinition|OperationDefinition|OperationOutcome|Organization|OrganizationAffiliation|Patient|PaymentNotice|PaymentReconciliation|Person|PlanDefinition|Practitioner|PractitionerRole|Procedure|Provenance|Questionnaire|QuestionnaireResponse|RelatedPerson|RequestGroup|ResearchDefinition|ResearchElementDefinition|ResearchStudy|ResearchSubject|RiskAssessment|RiskEvidenceSynthesis|Schedule|SearchParameter|ServiceRequest|Slot|Specimen|SpecimenDefinition|StructureDefinition|StructureMap|Subscription|Substance|SubstanceNucleicAcid|SubstancePolymer|SubstanceProtein|SubstanceReferenceInformation|SubstanceSourceMaterial|SubstanceSpecification|SupplyDelivery|SupplyRequest|Task|TerminologyCapabilities|TestReport|TestScript|ValueSet|VerificationResult|VisionPrescription)\/[A-Za-z0-9\-\.]{1,64}(\/_history\/[A-Za-z0-9\-\.]{1,64})?"/>
+                    </extension>
+                </code>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountFee.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="負担金額の減額金額"/>
+            <definition value="負担金額の減額金額です。"/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.value[x]"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="Money"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:diagnosisTime">
+            <path value="Extension.extension"/>
+            <sliceName value="diagnosisTime"/>
+            <short value="診療実日数"/>
+            <definition value="診療実日数です。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+        </element>
+        <element id="Extension.extension:diagnosisTime.id">
+            <path value="Extension.extension.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:diagnosisTime.extension">
+            <path value="Extension.extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:diagnosisTime.url">
+            <path value="Extension.extension.url"/>
+            <representation value="xmlAttr"/>
+            <short value="identifies the meaning of the extension"/>
+            <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+            <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.url"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+                        <valueString value="string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+                        <valueString value="((http|https)://([A-Za-z0-9\\\.\:\%\$]*\/)*)?(Account|ActivityDefinition|AdverseEvent|AllergyIntolerance|Appointment|AppointmentResponse|AuditEvent|Basic|Binary|BiologicallyDerivedProduct|BodyStructure|Bundle|CapabilityStatement|CarePlan|CareTeam|CatalogEntry|ChargeItem|ChargeItemDefinition|Claim|ClaimResponse|ClinicalImpression|CodeSystem|Communication|CommunicationRequest|CompartmentDefinition|Composition|ConceptMap|Condition|Consent|Contract|Coverage|CoverageEligibilityRequest|CoverageEligibilityResponse|DetectedIssue|Device|DeviceDefinition|DeviceMetric|DeviceRequest|DeviceUseStatement|DiagnosticReport|DocumentManifest|DocumentReference|EffectEvidenceSynthesis|Encounter|Endpoint|EnrollmentRequest|EnrollmentResponse|EpisodeOfCare|EventDefinition|Evidence|EvidenceVariable|ExampleScenario|ExplanationOfBenefit|FamilyMemberHistory|Flag|Goal|GraphDefinition|Group|GuidanceResponse|HealthcareService|ImagingStudy|Immunization|ImmunizationEvaluation|ImmunizationRecommendation|ImplementationGuide|InsurancePlan|Invoice|Library|Linkage|List|Location|Measure|MeasureReport|Media|Medication|MedicationAdministration|MedicationDispense|MedicationKnowledge|MedicationRequest|MedicationStatement|MedicinalProduct|MedicinalProductAuthorization|MedicinalProductContraindication|MedicinalProductIndication|MedicinalProductIngredient|MedicinalProductInteraction|MedicinalProductManufactured|MedicinalProductPackaged|MedicinalProductPharmaceutical|MedicinalProductUndesirableEffect|MessageDefinition|MessageHeader|MolecularSequence|NamingSystem|NutritionOrder|Observation|ObservationDefinition|OperationDefinition|OperationOutcome|Organization|OrganizationAffiliation|Patient|PaymentNotice|PaymentReconciliation|Person|PlanDefinition|Practitioner|PractitionerRole|Procedure|Provenance|Questionnaire|QuestionnaireResponse|RelatedPerson|RequestGroup|ResearchDefinition|ResearchElementDefinition|ResearchStudy|ResearchSubject|RiskAssessment|RiskEvidenceSynthesis|Schedule|SearchParameter|ServiceRequest|Slot|Specimen|SpecimenDefinition|StructureDefinition|StructureMap|Subscription|Substance|SubstanceNucleicAcid|SubstancePolymer|SubstanceProtein|SubstanceReferenceInformation|SubstanceSourceMaterial|SubstanceSpecification|SupplyDelivery|SupplyRequest|Task|TerminologyCapabilities|TestReport|TestScript|ValueSet|VerificationResult|VisionPrescription)\/[A-Za-z0-9\-\.]{1,64}(\/_history\/[A-Za-z0-9\-\.]{1,64})?"/>
+                    </extension>
+                </code>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:diagnosisTime.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="診療実日数"/>
+            <definition value="診療実日数です。"/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.value[x]"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.url">
+            <path value="Extension.url"/>
+            <representation value="xmlAttr"/>
+            <short value="identifies the meaning of the extension"/>
+            <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+            <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.url"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-json-type">
+                        <valueString value="string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-xml-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-rdf-type">
+                        <valueString value="xsd:string"/>
+                    </extension>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+                        <valueString value="((http|https)://([A-Za-z0-9\\\.\:\%\$]*\/)*)?(Account|ActivityDefinition|AdverseEvent|AllergyIntolerance|Appointment|AppointmentResponse|AuditEvent|Basic|Binary|BiologicallyDerivedProduct|BodyStructure|Bundle|CapabilityStatement|CarePlan|CareTeam|CatalogEntry|ChargeItem|ChargeItemDefinition|Claim|ClaimResponse|ClinicalImpression|CodeSystem|Communication|CommunicationRequest|CompartmentDefinition|Composition|ConceptMap|Condition|Consent|Contract|Coverage|CoverageEligibilityRequest|CoverageEligibilityResponse|DetectedIssue|Device|DeviceDefinition|DeviceMetric|DeviceRequest|DeviceUseStatement|DiagnosticReport|DocumentManifest|DocumentReference|EffectEvidenceSynthesis|Encounter|Endpoint|EnrollmentRequest|EnrollmentResponse|EpisodeOfCare|EventDefinition|Evidence|EvidenceVariable|ExampleScenario|ExplanationOfBenefit|FamilyMemberHistory|Flag|Goal|GraphDefinition|Group|GuidanceResponse|HealthcareService|ImagingStudy|Immunization|ImmunizationEvaluation|ImmunizationRecommendation|ImplementationGuide|InsurancePlan|Invoice|Library|Linkage|List|Location|Measure|MeasureReport|Media|Medication|MedicationAdministration|MedicationDispense|MedicationKnowledge|MedicationRequest|MedicationStatement|MedicinalProduct|MedicinalProductAuthorization|MedicinalProductContraindication|MedicinalProductIndication|MedicinalProductIngredient|MedicinalProductInteraction|MedicinalProductManufactured|MedicinalProductPackaged|MedicinalProductPharmaceutical|MedicinalProductUndesirableEffect|MessageDefinition|MessageHeader|MolecularSequence|NamingSystem|NutritionOrder|Observation|ObservationDefinition|OperationDefinition|OperationOutcome|Organization|OrganizationAffiliation|Patient|PaymentNotice|PaymentReconciliation|Person|PlanDefinition|Practitioner|PractitionerRole|Procedure|Provenance|Questionnaire|QuestionnaireResponse|RelatedPerson|RequestGroup|ResearchDefinition|ResearchElementDefinition|ResearchStudy|ResearchSubject|RiskAssessment|RiskEvidenceSynthesis|Schedule|SearchParameter|ServiceRequest|Slot|Specimen|SpecimenDefinition|StructureDefinition|StructureMap|Subscription|Substance|SubstanceNucleicAcid|SubstancePolymer|SubstanceProtein|SubstanceReferenceInformation|SubstanceSourceMaterial|SubstanceSpecification|SupplyDelivery|SupplyRequest|Task|TerminologyCapabilities|TestReport|TestScript|ValueSet|VerificationResult|VisionPrescription)\/[A-Za-z0-9\-\.]{1,64}(\/_history\/[A-Za-z0-9\-\.]{1,64})?"/>
+                    </extension>
+                </code>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Extension.value[x]">
+            <path value="Extension.value[x]"/>
+            <short value="Value of extension"/>
+            <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](extensibility.html) for a list)."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Extension.value[x]"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="base64Binary"/>
+            </type>
+            <type>
+                <code value="boolean"/>
+            </type>
+            <type>
+                <code value="canonical"/>
+            </type>
+            <type>
+                <code value="code"/>
+            </type>
+            <type>
+                <code value="date"/>
+            </type>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <type>
+                <code value="decimal"/>
+            </type>
+            <type>
+                <code value="id"/>
+            </type>
+            <type>
+                <code value="instant"/>
+            </type>
+            <type>
+                <code value="integer"/>
+            </type>
+            <type>
+                <code value="markdown"/>
+            </type>
+            <type>
+                <code value="oid"/>
+            </type>
+            <type>
+                <code value="positiveInt"/>
+            </type>
+            <type>
+                <code value="string"/>
+            </type>
+            <type>
+                <code value="time"/>
+            </type>
+            <type>
+                <code value="unsignedInt"/>
+            </type>
+            <type>
+                <code value="uri"/>
+            </type>
+            <type>
+                <code value="url"/>
+            </type>
+            <type>
+                <code value="uuid"/>
+            </type>
+            <type>
+                <code value="Address"/>
+            </type>
+            <type>
+                <code value="Age"/>
+            </type>
+            <type>
+                <code value="Annotation"/>
+            </type>
+            <type>
+                <code value="Attachment"/>
+            </type>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <type>
+                <code value="Coding"/>
+            </type>
+            <type>
+                <code value="ContactPoint"/>
+            </type>
+            <type>
+                <code value="Count"/>
+            </type>
+            <type>
+                <code value="Distance"/>
+            </type>
+            <type>
+                <code value="Duration"/>
+            </type>
+            <type>
+                <code value="HumanName"/>
+            </type>
+            <type>
+                <code value="Identifier"/>
+            </type>
+            <type>
+                <code value="Money"/>
+            </type>
+            <type>
+                <code value="Period"/>
+            </type>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <type>
+                <code value="Range"/>
+            </type>
+            <type>
+                <code value="Ratio"/>
+            </type>
+            <type>
+                <code value="Reference"/>
+            </type>
+            <type>
+                <code value="SampledData"/>
+            </type>
+            <type>
+                <code value="Signature"/>
+            </type>
+            <type>
+                <code value="Timing"/>
+            </type>
+            <type>
+                <code value="ContactDetail"/>
+            </type>
+            <type>
+                <code value="Contributor"/>
+            </type>
+            <type>
+                <code value="DataRequirement"/>
+            </type>
+            <type>
+                <code value="Expression"/>
+            </type>
+            <type>
+                <code value="ParameterDefinition"/>
+            </type>
+            <type>
+                <code value="RelatedArtifact"/>
+            </type>
+            <type>
+                <code value="TriggerDefinition"/>
+            </type>
+            <type>
+                <code value="UsageContext"/>
+            </type>
+            <type>
+                <code value="Dosage"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+    </snapshot>
+    <differential>
+        <element id="Extension">
+            <path value="Extension"/>
+            <short value="患者の拡張情報"/>
+            <definition value="患者の拡張情報です。"/>
+        </element>
+        <element id="Extension.extension">
+            <path value="Extension.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <short value="患者の拡張情報"/>
+            <definition value="患者の拡張情報です。"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:totalFeePoint">
+            <path value="Extension.extension"/>
+            <sliceName value="totalFeePoint"/>
+            <short value="合計点数"/>
+            <definition value="合計点数です。"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:totalFeePoint.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="合計点数"/>
+            <definition value="合計点数です。"/>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentQuantity">
+            <path value="Extension.extension"/>
+            <sliceName value="dietaryLifeTreatmentQuantity"/>
+            <short value="食事療養・生活療養の回数"/>
+            <definition value="食事療養・生活療養の回数です。"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentQuantity.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="食事療養・生活療養の回数"/>
+            <definition value="食事療養・生活療養の回数です。"/>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentTotalFee">
+            <path value="Extension.extension"/>
+            <sliceName value="dietaryLifeTreatmentTotalFee"/>
+            <short value="食事療養・生活療養の合計金額"/>
+            <definition value="食事療養・生活療養の合計金額です。"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:dietaryLifeTreatmentTotalFee.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="食事療養・生活療養の合計金額"/>
+            <definition value="食事療養・生活療養の合計金額です。"/>
+            <type>
+                <code value="Money"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:occupationalReason">
+            <path value="Extension.extension"/>
+            <sliceName value="occupationalReason"/>
+            <short value="職務上の事由"/>
+            <definition value="職務上の事由です。"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:occupationalReason.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="職務上の事由"/>
+            <definition value="職務上の事由です。"/>
+            <type>
+                <code value="CodeableConcept"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:certificateNumber">
+            <path value="Extension.extension"/>
+            <sliceName value="certificateNumber"/>
+            <short value="証明書番号"/>
+            <definition value="証明書番号です。"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:certificateNumber.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="証明書番号"/>
+            <definition value="証明書番号です。"/>
+            <type>
+                <code value="Identifier"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountRate">
+            <path value="Extension.extension"/>
+            <sliceName value="burdenFeeDiscountRate"/>
+            <short value="負担金額の減額割合"/>
+            <definition value="負担金額の減額割合です。"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountRate.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="負担金額の減額割合"/>
+            <definition value="負担金額の減額割合です。"/>
+            <type>
+                <code value="Ratio"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountFee">
+            <path value="Extension.extension"/>
+            <sliceName value="burdenFeeDiscountFee"/>
+            <short value="負担金額の減額金額"/>
+            <definition value="負担金額の減額金額です。"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:burdenFeeDiscountFee.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="負担金額の減額金額"/>
+            <definition value="負担金額の減額金額です。"/>
+            <type>
+                <code value="Money"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+        <element id="Extension.extension:diagnosisTime">
+            <path value="Extension.extension"/>
+            <sliceName value="diagnosisTime"/>
+            <short value="診療実日数"/>
+            <definition value="診療実日数です。"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Extension.extension:diagnosisTime.value[x]">
+            <path value="Extension.extension.value[x]"/>
+            <short value="診療実日数"/>
+            <definition value="診療実日数です。"/>
+            <type>
+                <code value="dateTime"/>
+            </type>
+            <mustSupport value="true"/>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DPC-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-DENTAL-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+            <mapping>
+                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
+                <map value="検討中"/>
+            </mapping>
+        </element>
+    </differential>
+</StructureDefinition>

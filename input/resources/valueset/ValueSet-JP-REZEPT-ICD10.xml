@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-ICD10"/>
+    <meta>
+        <versionId value="2"/>
+        <lastUpdated value="2021-04-06T13:06:26.407+00:00"/>
+        <source value="#csYnmSXlQ2fPwLkl"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-ICD10.html"/>
+    <identifier>
+        <use value="official"/>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:2.16.840.1.113883.4.642.3.531"/>
+    </identifier>
+    <name value="ICD10"/>
+    <title value="ICD10コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、ICD10コードで定義されるすべての傷病名が含まれます。"/>
+</ValueSet>

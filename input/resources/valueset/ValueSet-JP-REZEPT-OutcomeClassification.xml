@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet
+    xmlns="http://hl7.org/fhir">
+    <id value="ValueSet-JP-REZEPT-OutcomeClassification"/>
+    <meta>
+        <versionId value="3"/>
+        <lastUpdated value="2021-04-06T13:06:26.403+00:00"/>
+        <source value="#oQO9IKzQeTNAdofW"/>
+    </meta>
+    <url value="https://xxx/ValueSet-JP-REZEPT-OutcomeClassification"/>
+    <name value="OutcomeClassification"/>
+    <title value="転帰区分コード"/>
+    <status value="draft"/>
+    <description value="このバリューセットには、レセプト電算処理システムで定義されている転帰区分コードが含まれます。"/>
+    <compose>
+        <include>
+            <system value="https://xxx/CodeSystem-JP-REZEPT-OutcomeClassification"/>
+        </include>
+    </compose>
+</ValueSet>
