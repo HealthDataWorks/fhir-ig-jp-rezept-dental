@@ -3,16 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-FacilityStandard"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2021-04-06T12:32:03.575+00:00"/>
-        <source value="#CcSAZJXymC2acrbj"/>
+        <versionId value="2"/>
+        <lastUpdated value="2021-05-07T07:55:51.542+00:00"/>
+        <source value="#ztbi0feZlDDp9qNr"/>
     </meta>
-    <url value="https://xxx/CodeSystem-JP-REZEPT-FacilityStandard"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-dental/CodeSystem-CodeSystem-JP-REZEPT-FacilityStandard.html"/>
     <name value="FacilityStandard"/>
     <title value="施設基準届出コード"/>
     <status value="draft"/>
     <description value="レセプト電算処理システムで使用されている施設基準届出コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表5 施設基準届出コード &#xA;」に記載されています。"/>
-    <valueSet value="https://xxx/ValueSet-JP-REZEPT-DENTAL-FacilityStandard"/>
+    <valueSet value="https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-DENTAL-FacilityStandard.html"/>
     <content value="complete"/>
     <concept>
         <code value="01"/>

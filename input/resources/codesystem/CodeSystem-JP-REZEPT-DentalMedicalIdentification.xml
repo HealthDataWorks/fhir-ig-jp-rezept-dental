@@ -3,16 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-DentalMedicalIdentification"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-04-06T12:34:46.812+00:00"/>
-        <source value="#kD44cQNiX1u7c5R0"/>
+        <versionId value="3"/>
+        <lastUpdated value="2021-05-07T07:54:55.631+00:00"/>
+        <source value="#yAeBoiLrB7eI0iLz"/>
     </meta>
-    <url value="https://xxx/CodeSystem-JP-REZEPT-DentalMedicalIdentification"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-dental/CodeSystem-CodeSystem-JP-REZEPT-DentalMedicalIdentification.html"/>
     <name value="DentalMedicalIdentification"/>
     <title value="診療識別コード"/>
     <status value="draft"/>
     <description value="レセプト電算処理システムで使用されている診療識別コードです。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表20 診療識別コード」に記載されています。"/>
-    <valueSet value="https://xxx/ValueSet-JP-REZEPT-DENTAL-DentalMedicalIdentification"/>
+    <valueSet value="https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-DENTAL-DentalMedicalIdentification.html"/>
     <content value="complete"/>
     <concept>
         <code value="01"/>

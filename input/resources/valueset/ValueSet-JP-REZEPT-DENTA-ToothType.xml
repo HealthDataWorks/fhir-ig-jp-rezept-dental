@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-DENTA-ToothType"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-04-06T13:06:26.961+00:00"/>
-        <source value="#hTjnxIZEYXuJx6en"/>
+        <versionId value="3"/>
+        <lastUpdated value="2021-05-07T07:53:46.037+00:00"/>
+        <source value="#rYogEs5qxdmx87UW"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-ToothType"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-ToothType.html"/>
     <name value="ToothType"/>
     <title value="歯式"/>
     <status value="draft"/>

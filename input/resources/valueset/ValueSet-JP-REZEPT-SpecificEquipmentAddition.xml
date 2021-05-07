@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-SpecificEquipmentAddition"/>
     <meta>
-        <versionId value="1"/>
-        <lastUpdated value="2021-04-06T13:06:26.880+00:00"/>
-        <source value="#Z4SAIj9dzAiSxxOs"/>
+        <versionId value="3"/>
+        <lastUpdated value="2021-05-07T07:53:07.911+00:00"/>
+        <source value="#nFeGDh9S6GFSwSaT"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-SpecificEquipmentAddition"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-SpecificEquipmentAddition.html"/>
     <name value="SpecificEquipmentAddition"/>
     <title value="特定器材加算等コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている特定器材加算等コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-SpecificEquipmentAddition"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-dental/CodeSystem-CodeSystem-JP-REZEPT-SpecificEquipmentAddition.html"/>
         </include>
     </compose>
 </ValueSet>
