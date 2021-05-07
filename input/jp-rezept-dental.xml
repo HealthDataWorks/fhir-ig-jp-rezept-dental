@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="jp-rezept-dental"/>
     <meta>
-        <versionId value="15"/>
-        <lastUpdated value="2021-04-28T03:36:57.470+00:00"/>
-        <source value="#eBNPXTZkWO4j3qmy"/>
+        <versionId value="16"/>
+        <lastUpdated value="2021-05-06T22:52:27.537+00:00"/>
+        <source value="#Ql7XO7Se24N6J1Hx"/>
     </meta>
     <url value="https://healthdataworks.net/hl7-fhir/ImplementationGuide/jp-rezept-dental"/>
     <version value="0.8.0"/>
@@ -801,6 +801,11 @@
                     <title value="使用するコード体系"/>
                     <generation value="markdown"/>
                 </page>
+            </page>
+            <page>
+                <nameUrl value="downloads.html"/>
+                <title value="ダウンロード"/>
+                <generation value="markdown"/>
             </page>
         </page>
         <parameter>

@@ -6,3 +6,6 @@
 * それ以外のコードは、電子レセプトの機能範囲で使用するため、電子レセプトで使用しているコード体系に従います。
 	* 診療行為、特定器材のコードは [標準マスタ](https://shinryohoshu.mhlw.go.jp/shinryohoshu/downloadMenu/) を使用します。
 	* その他のコードは、[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表 各種コードに関する事項」に記載されたコードを使用します。
+
+
+[Next Page - ダウンロード](downloads.html)
