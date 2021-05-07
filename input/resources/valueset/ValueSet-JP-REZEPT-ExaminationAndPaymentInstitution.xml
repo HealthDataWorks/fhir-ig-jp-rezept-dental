@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-ExaminationAndPaymentInstitution"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-06T13:06:27.219+00:00"/>
-        <source value="#HyUd7V7EaDWdJwOW"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T02:56:53.750+00:00"/>
+        <source value="#spsj8L4LWcAQVsXp"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-ExaminationAndPaymentInstitution"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-ExaminationAndPaymentInstitution.html"/>
     <name value="ExaminationAndPaymentInstitution"/>
     <title value="審査支払機関コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている審査支払機関コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-ExaminationAndPaymentInstitution"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-ExaminationAndPaymentInstitution.html"/>
         </include>
     </compose>
 </ValueSet>

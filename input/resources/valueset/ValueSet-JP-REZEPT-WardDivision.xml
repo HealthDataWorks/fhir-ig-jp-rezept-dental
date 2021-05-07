@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-WardDivision"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2021-04-06T13:06:26.964+00:00"/>
-        <source value="#kJBE17NIxUYhpdIn"/>
+        <versionId value="5"/>
+        <lastUpdated value="2021-05-07T04:47:13.245+00:00"/>
+        <source value="#NVObJPv03Wi9FPs4"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-WardDivision"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medical/ValueSet-ValueSet-JP-REZEPT-WardDivision.html"/>
     <name value="WardDivision"/>
     <title value="病棟区分コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている病棟区分コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-WardDivision"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-medical/CodeSystem-CodeSystem-JP-REZEPT-WardDivision.html"/>
         </include>
     </compose>
 </ValueSet>

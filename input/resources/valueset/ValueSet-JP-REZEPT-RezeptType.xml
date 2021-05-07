@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-RezeptType"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-06T13:06:26.882+00:00"/>
-        <source value="#Z4MEgn2kkFcIEazA"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T03:15:52.034+00:00"/>
+        <source value="#tcNRz5J31QAtxQse"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-RezeptType"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-RezeptType.html"/>
     <name value="RezeptType"/>
     <title value="点数表コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている点数表コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-RezeptType"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-RezeptType.html"/>
         </include>
     </compose>
 </ValueSet>

@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="rezept-dental-server"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-03-24T11:55:58.251+00:00"/>
-        <source value="#cruExw4UEjUYp87e"/>
+        <versionId value="5"/>
+        <lastUpdated value="2021-05-07T06:14:15.180+00:00"/>
+        <source value="#9nk0vMKFgnYY5fEQ"/>
     </meta>
-    <url value="http://xxx/rezept-dental-server"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-dental/CapabilityStatement-rezept-dental-server.html"/>
     <version value="0.0.1"/>
     <name value="Rezept Dental Server"/>
     <title value="Rezept Dental Server"/>
@@ -24,7 +24,7 @@
         <documentation value="歯科レセプトのエンドポイントです。"/>
         <resource>
             <type value="Patient"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Patient"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Patient.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -43,7 +43,7 @@
         </resource>
         <resource>
             <type value="Organization"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Organization"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Organization.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -62,7 +62,7 @@
         </resource>
         <resource>
             <type value="Claim"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Claim"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Claim.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -81,7 +81,7 @@
         </resource>
         <resource>
             <type value="Coverage"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Coverage"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Coverage.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -100,7 +100,7 @@
         </resource>
         <resource>
             <type value="Condition"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Condition"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Condition.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -119,7 +119,7 @@
         </resource>
         <resource>
             <type value="Encounter"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Encounter"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition/JP-REZEPT-Encounter.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -138,7 +138,7 @@
         </resource>
         <resource>
             <type value="Procedure"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Procedure"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Procedure.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -157,7 +157,7 @@
         </resource>
         <resource>
             <type value="MedicationAdministration"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-MedicationAdministration"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition/JP-REZEPT-MedicationAdministration.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -176,7 +176,7 @@
         </resource>
         <resource>
             <type value="MedicationDispense"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-MedicationDespence"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-MedicationDispense.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -195,7 +195,7 @@
         </resource>
         <resource>
             <type value="Medication"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Medication"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Medication.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>
@@ -214,7 +214,7 @@
         </resource>
         <resource>
             <type value="Device"/>
-            <profile value="https://xxx/StructureDefinition/JP-REZEPT-Device"/>
+            <profile value="https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Device.html"/>
             <interaction>
                 <code value="read"/>
             </interaction>

@@ -3,16 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-SpecificEquipmentUnit"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-16T12:52:11.860+00:00"/>
-        <source value="#a66ZPV7NeudQFIQN"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T03:27:30.048+00:00"/>
+        <source value="#RgDKv4nVa05F1RVU"/>
     </meta>
-    <url value="https://xxx/CodeSystem-JP-REZEPT-SpecificEquipmentUnit"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-SpecificEquipmentUnit.html"/>
     <name value="SpecificEquipmentUnit"/>
     <title value="特定器材単位コード"/>
     <status value="draft"/>
     <description value="レセプト電算処理システムで使用されている特定器材単位コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表22 特定器材単位コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表32 特定器材単位コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表23 特定器材単位コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表17 特定器材単位コード」に記載されています。"/>
-    <valueSet value="https://xxx/ValueSet-JP-REZEPT-SpecificEquipmentUnit"/>
+    <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-SpecificEquipmentUnit.html"/>
     <content value="complete"/>
     <concept>
         <code value="001"/>

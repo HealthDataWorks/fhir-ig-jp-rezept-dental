@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-Patient"/>
     <meta>
-        <versionId value="105"/>
-        <lastUpdated value="2021-04-20T07:13:27.461+00:00"/>
-        <source value="#ZLyityaufTd4pHg5"/>
+        <versionId value="107"/>
+        <lastUpdated value="2021-05-06T04:40:17.403+00:00"/>
+        <source value="#UpEw5RTrhSqDXM7I"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-Patient"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-Patient.html"/>
     <name value="Patient"/>
     <title value="患者情報"/>
     <status value="draft"/>

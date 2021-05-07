@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-BearerType"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-06T13:06:26.969+00:00"/>
-        <source value="#4pMKD2C6pqlKLAaR"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T02:16:53.772+00:00"/>
+        <source value="#PF08iIUm62q2Lknl"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-BearerType"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-BearerType.html"/>
     <name value="BearerType"/>
     <title value="負担者種別コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている負担者種別コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-BearerType"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-BearerType.html"/>
         </include>
     </compose>
 </ValueSet>

@@ -3,16 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-BearerType"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-04-15T11:22:03.053+00:00"/>
-        <source value="#Kg5d9R7AIidaHxkf"/>
+        <versionId value="7"/>
+        <lastUpdated value="2021-05-07T02:21:39.522+00:00"/>
+        <source value="#bbKHXQ2RBD4fta4J"/>
     </meta>
-    <url value="https://xxx/CodeSystem-JP-REZEPT-BearerType"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-BearerType.html"/>
     <name value="BearerType"/>
     <title value="負担者種別コード"/>
     <status value="draft"/>
     <description value="レセプト電算処理システムで使用されている負担者種別コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表28 負担者種別コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表37 負担者種別コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表27 負担者種別コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表20 負担者種別コード」に記載されています。"/>
-    <valueSet value="https://xxx/ValueSet-JP-REZEPT-BearerType"/>
+    <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-BearerType.html"/>
     <content value="complete"/>
     <concept>
         <code value="1"/>

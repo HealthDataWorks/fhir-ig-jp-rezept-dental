@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-Gender"/>
     <meta>
-        <versionId value="2"/>
-        <lastUpdated value="2021-04-06T13:15:04.694+00:00"/>
-        <source value="#Rbu93xMV11ptV7II"/>
+        <versionId value="5"/>
+        <lastUpdated value="2021-05-07T02:57:19.990+00:00"/>
+        <source value="#ZEXsoKKu0nYJ58Eh"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-Gender"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-Gender.html"/>
     <name value="Gender"/>
     <title value="男女区分コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている男女区分コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-Gender"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-Gender.html"/>
         </include>
     </compose>
 </ValueSet>

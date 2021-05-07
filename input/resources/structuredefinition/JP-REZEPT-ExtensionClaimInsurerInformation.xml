@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-ExtensionClaimInsurerInformation"/>
     <meta>
-        <versionId value="7"/>
-        <lastUpdated value="2021-04-16T03:00:50.219+00:00"/>
-        <source value="#tbGJZXz30VjVkx8A"/>
+        <versionId value="9"/>
+        <lastUpdated value="2021-05-06T04:35:01.869+00:00"/>
+        <source value="#tIH4Z9pH4Sqzgilv"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimInsurerInformation"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimInsurerInformation.html"/>
     <name value="ExtensionClaimInsurerInformation"/>
     <title value="保険会社の拡張情報"/>
     <status value="draft"/>

@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-HOT9"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-04-06T13:06:26.419+00:00"/>
-        <source value="#YPZg2K1rXNlK4nVJ"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T02:27:25.601+00:00"/>
+        <source value="#HsfuKmL28ZcQNTd7"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-HOT9.html"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-HOT9.html"/>
     <identifier>
         <use value="official"/>
         <system value="urn:ietf:rfc:3986"/>

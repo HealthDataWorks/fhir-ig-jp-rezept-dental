@@ -3,16 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-RezeptType"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-16T12:52:11.861+00:00"/>
-        <source value="#ANtOu0991cwExNtA"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T03:27:07.782+00:00"/>
+        <source value="#IASsqd3Ar0FEidyL"/>
     </meta>
-    <url value="https://xxx/CodeSystem-JP-REZEPT-RezeptType"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-RezeptType.html"/>
     <name value="RezeptType"/>
     <title value="点数表コード"/>
     <status value="draft"/>
     <description value="レセプト電算処理システムで使用されている点数表コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表3 点数表コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表3 点数表コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表3 点数表コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表3 点数表コード」に記載されています。"/>
-    <valueSet value="https://xxx/ValueSet-JP-REZEPT-RezeptType"/>
+    <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-RezeptType.html"/>
     <content value="complete"/>
     <concept>
         <code value="1"/>

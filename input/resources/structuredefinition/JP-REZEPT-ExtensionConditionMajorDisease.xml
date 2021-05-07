@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-ExtensionConditionMajorDisease"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2021-04-19T11:43:33.825+00:00"/>
-        <source value="#DMOAvboi6I5mnRM4"/>
+        <versionId value="7"/>
+        <lastUpdated value="2021-05-06T05:21:34.245+00:00"/>
+        <source value="#dGJXqxxDqq7ehMXf"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionConditionMajorDisease"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medical/StructureDefinition/JP-REZEPT-ExtensionConditionMajorDisease.html"/>
     <name value="ExtensionConditionMajorDisease"/>
     <title value="主病名があるかどうか"/>
     <status value="draft"/>

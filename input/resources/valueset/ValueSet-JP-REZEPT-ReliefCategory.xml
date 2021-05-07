@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-ReliefCategory"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-04-06T13:06:26.663+00:00"/>
-        <source value="#7MxRIpkmybzEsY3z"/>
+        <versionId value="7"/>
+        <lastUpdated value="2021-05-07T03:01:21.270+00:00"/>
+        <source value="#qeZZSpc9qiVodIFh"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-ReliefCategory"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-ReliefCategory.html"/>
     <name value="ReliefCategory"/>
     <title value="減免区分コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている減免区分コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-ReliefCategory"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-ReliefCategory.html"/>
         </include>
     </compose>
 </ValueSet>

@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-ExtensionConditionNumberOfComorbidities"/>
     <meta>
-        <versionId value="9"/>
-        <lastUpdated value="2021-04-19T11:44:07.096+00:00"/>
-        <source value="#dOuuTlORneLElog7"/>
+        <versionId value="10"/>
+        <lastUpdated value="2021-05-06T05:27:57.822+00:00"/>
+        <source value="#vOtsczmAtpyiRXY5"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionConditionNumberOfComorbidities"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medical/StructureDefinition-JP-REZEPT-ExtensionConditionNumberOfComorbidities.html"/>
     <name value="ExtensionConditionNumberOfComorbidities"/>
     <title value="併存傷病名数"/>
     <status value="draft"/>

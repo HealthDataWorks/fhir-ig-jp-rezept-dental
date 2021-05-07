@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-ConfirmationCategory"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-06T13:06:27.011+00:00"/>
-        <source value="#3m8vWx8au1N7P1aH"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T02:54:59.128+00:00"/>
+        <source value="#BTKJr8kEOVphuAoB"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-ConfirmationCategory"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-ConfirmationCategory.html"/>
     <name value="ConfirmationCategory"/>
     <title value="確認区分コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている確認区分コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-ConfirmationCategory"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-ConfirmationCategory.html"/>
         </include>
     </compose>
 </ValueSet>

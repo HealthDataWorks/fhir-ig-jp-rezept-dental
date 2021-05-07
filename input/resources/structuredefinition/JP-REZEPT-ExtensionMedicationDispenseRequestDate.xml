@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-ExtensionMedicationDispenseRequestDate"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-04-16T02:25:29.049+00:00"/>
-        <source value="#hOjVKRPDqUBXNj7Y"/>
+        <versionId value="7"/>
+        <lastUpdated value="2021-05-06T04:37:04.263+00:00"/>
+        <source value="#QpVNoJr3Rs1rXcJG"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionMedicationDispenseRequestDate"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionMedicationDispenseRequestDate.html"/>
     <name value="ExtensionMedicationDispenseRequestDate"/>
     <title value="処方箋発行日"/>
     <status value="draft"/>

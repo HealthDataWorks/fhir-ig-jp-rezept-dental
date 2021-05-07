@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-Encounter"/>
     <meta>
-        <versionId value="14"/>
-        <lastUpdated value="2021-04-20T12:00:24.688+00:00"/>
-        <source value="#6jChvErw9s5PrMCs"/>
+        <versionId value="15"/>
+        <lastUpdated value="2021-05-06T05:19:56.733+00:00"/>
+        <source value="#sdGVeY5pI1uUmbWW"/>
     </meta>
-    <url value="https://healthdataworks.net/StructureDefinition/JP-REZEPT-Encounter"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medical/StructureDefinition/JP-REZEPT-Encounter.html"/>
     <name value="Encounter"/>
     <title value="入院、外来情報"/>
     <status value="draft"/>

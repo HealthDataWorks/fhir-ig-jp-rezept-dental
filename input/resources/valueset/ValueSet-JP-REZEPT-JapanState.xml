@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-JapanState"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-06T13:06:26.453+00:00"/>
-        <source value="#l10aQeDerUy8wQqT"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T02:58:05.358+00:00"/>
+        <source value="#NOUELUiuZzG0XFgP"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-JapanState"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-JapanState.html"/>
     <name value="JapanState"/>
     <title value="都道府県コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている都道府県コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-JapanState"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-JapanState.html"/>
         </include>
     </compose>
 </ValueSet>

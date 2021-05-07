@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-MedicationAdministration"/>
     <meta>
-        <versionId value="41"/>
-        <lastUpdated value="2021-04-21T07:27:28.031+00:00"/>
-        <source value="#srQizLWSIXbRlts8"/>
+        <versionId value="42"/>
+        <lastUpdated value="2021-05-06T05:22:47.955+00:00"/>
+        <source value="#C4X3n8orZhF2x1qU"/>
     </meta>
-    <url value="https://healthdataworks.net/StructureDefinition/JP-REZEPT-MedicationAdministration"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medical/StructureDefinition/JP-REZEPT-MedicationAdministration.html"/>
     <name value="MedicationAdministration"/>
     <title value="日単位の投薬記録"/>
     <status value="draft"/>

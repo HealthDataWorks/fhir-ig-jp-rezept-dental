@@ -3,16 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-ConsultationClassification"/>
     <meta>
-        <versionId value="3"/>
-        <lastUpdated value="2021-04-21T07:33:14.064+00:00"/>
-        <source value="#7zljG5faNlfszNEv"/>
+        <versionId value="5"/>
+        <lastUpdated value="2021-05-07T04:32:13.179+00:00"/>
+        <source value="#pFO0ajkRB4c1M15k"/>
     </meta>
-    <url value="https://xxx/CodeSystem-JP-REZEPT-ConsultationClassification"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medical/CodeSystem-CodeSystem-JP-REZEPT-ConsultationClassification.html"/>
     <name value="ConsultationClassification"/>
     <title value="受診等区分コード"/>
     <status value="draft"/>
     <description value="レセプト電算処理システムで使用されている受診等区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表30 受診等区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表39 受診等区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表39 受診等区分コード」に記載されています。"/>
-    <valueSet value="https://xxx/ValueSet-JP-REZEPT-ConsultationClassification"/>
+    <valueSet value="https://igs.healthdataworks.net/jp-rezept-medical/ValueSet-ValueSet-JP-REZEPT-ConsultationClassification.html"/>
     <content value="complete"/>
     <concept>
         <code value="1"/>

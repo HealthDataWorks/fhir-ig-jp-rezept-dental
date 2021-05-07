@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-Medication"/>
     <meta>
-        <versionId value="35"/>
-        <lastUpdated value="2021-04-20T09:10:08.521+00:00"/>
-        <source value="#thGODqQG6tHlY4UT"/>
+        <versionId value="38"/>
+        <lastUpdated value="2021-05-07T03:49:24.455+00:00"/>
+        <source value="#W0UWcEiIi2AuE6gp"/>
     </meta>
-    <url value="https://healthdataworks.net/hl7-fhir/StructureDefinition/JP-REZEPT-Medication"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-Medication.html"/>
     <name value="Medication"/>
     <title value="医薬品情報"/>
     <status value="draft"/>
@@ -1620,7 +1620,7 @@
             <isSummary value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-DosageForm"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-DosageForm.html"/>
             </binding>
             <mapping>
                 <identity value="v2"/>
@@ -2399,7 +2399,7 @@
             <isSummary value="false"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-DosageForm"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-DosageForm.html"/>
             </binding>
             <mapping>
                 <identity value="script10.6"/>
@@ -3735,7 +3735,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-DosageForm"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-DosageForm.html"/>
             </binding>
             <mapping>
                 <identity value="JP-REZEPT-MEDICATION-MASTER-Mapping"/>
@@ -3826,7 +3826,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-DosageForm"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-DosageForm.html"/>
             </binding>
             <mapping>
                 <identity value="JP-REZEPT-MEDICATION-MASTER-Mapping"/>

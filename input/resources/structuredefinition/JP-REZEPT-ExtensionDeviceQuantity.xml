@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-ExtensionDeviceQuantity"/>
     <meta>
-        <versionId value="5"/>
-        <lastUpdated value="2021-04-16T02:26:38.284+00:00"/>
-        <source value="#DjVJkNUvfEnKxB9h"/>
+        <versionId value="7"/>
+        <lastUpdated value="2021-05-06T04:45:55.888+00:00"/>
+        <source value="#Qr5RrsG1qyWXrdIo"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionDeviceQuantity"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionDeviceQuantity.html"/>
     <name value="ExtentionDeviceQuantity"/>
     <title value="特定器材の使用量"/>
     <status value="draft"/>

@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-Organization"/>
     <meta>
-        <versionId value="22"/>
-        <lastUpdated value="2021-04-21T04:31:09.978+00:00"/>
-        <source value="#GlZ63FcEnN5nHZeG"/>
+        <versionId value="26"/>
+        <lastUpdated value="2021-05-07T03:47:18.508+00:00"/>
+        <source value="#OKAVdpvrjXEN9gbz"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-Organization"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-Organization.html"/>
     <name value="Organization"/>
     <title value="医療機関"/>
     <status value="active"/>
@@ -921,7 +921,7 @@
             <isSummary value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-JapanState"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-JapanState.html"/>
             </binding>
             <mapping>
                 <identity value="v2"/>
@@ -1244,7 +1244,7 @@
             <isSummary value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-RezeptType"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-RezeptType.html"/>
             </binding>
             <mapping>
                 <identity value="v2"/>
@@ -2787,7 +2787,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-JapanState"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-JapanState.html"/>
             </binding>
             <mapping>
                 <identity value="JP-REZEPT-MEDICAL-Mapping"/>
@@ -2828,7 +2828,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-RezeptType"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-RezeptType.html"/>
             </binding>
             <mapping>
                 <identity value="JP-REZEPT-MEDICAL-Mapping"/>

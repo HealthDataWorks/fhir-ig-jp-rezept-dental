@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-ExtensionProcedureAddition"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2021-04-16T04:10:53.504+00:00"/>
-        <source value="#vgIrVSMTwvXSmKk8"/>
+        <versionId value="8"/>
+        <lastUpdated value="2021-05-06T04:44:06.276+00:00"/>
+        <source value="#jIx2iJgN4vj0XJXF"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionProcedureAddition"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionProcedureAddition.html"/>
     <name value="ExtentionProcedureAddition"/>
     <title value="診療行為の加算情報"/>
     <status value="draft"/>

@@ -3,18 +3,18 @@
     xmlns="http://hl7.org/fhir">
     <id value="ValueSet-JP-REZEPT-SpecificEquipmentUnit"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-06T13:06:26.884+00:00"/>
-        <source value="#2FQPxo6KPI5Q7kDe"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T03:16:38.884+00:00"/>
+        <source value="#gB5rU4bGhG9pP1KO"/>
     </meta>
-    <url value="https://xxx/ValueSet-JP-REZEPT-SpecificEquipmentUnit"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-SpecificEquipmentUnit.html"/>
     <name value="SpecificEquipmentUnit"/>
     <title value="特定器材単位コード"/>
     <status value="draft"/>
     <description value="このバリューセットには、レセプト電算処理システムで定義されている特定器材単位コードが含まれます。"/>
     <compose>
         <include>
-            <system value="https://xxx/CodeSystem-JP-REZEPT-SpecificEquipmentUnit"/>
+            <system value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-SpecificEquipmentUnit.html"/>
         </include>
     </compose>
 </ValueSet>

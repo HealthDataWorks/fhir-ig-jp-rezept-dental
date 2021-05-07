@@ -3,16 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-DetailedSymptomClassification"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-21T07:34:14.019+00:00"/>
-        <source value="#uRFHErug8CGdmDMs"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T04:33:45.094+00:00"/>
+        <source value="#tw8hHjrGggvcvxNG"/>
     </meta>
-    <url value="https://xxx/CodeSystem-JP-REZEPT-DetailedSymptomClassification"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medical/CodeSystem-CodeSystem-JP-REZEPT-DetailedSymptomClassification.html"/>
     <name value="DetailedSymptomClassification"/>
     <title value="症状詳記区分コード"/>
     <status value="draft"/>
     <description value="レセプト電算処理システムで使用されている症状詳記区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表23 症状詳記区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表25 症状詳記区分コード」に記載されています。"/>
-    <valueSet value="https://xxx/ValueSet-JP-REZEPT-DetailedSymptomClassification"/>
+    <valueSet value="https://igs.healthdataworks.net/jp-rezept-medical/ValueSet-ValueSet-JP-REZEPT-DetailedSymptomClassification.html"/>
     <content value="complete"/>
     <concept>
         <code value="01"/>

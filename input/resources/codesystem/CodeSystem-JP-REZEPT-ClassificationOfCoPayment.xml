@@ -3,16 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-ClassificationOfCoPayment"/>
     <meta>
-        <versionId value="6"/>
-        <lastUpdated value="2021-04-15T11:27:15.618+00:00"/>
-        <source value="#Mje9BWoYhmVzir39"/>
+        <versionId value="8"/>
+        <lastUpdated value="2021-05-07T03:19:43.277+00:00"/>
+        <source value="#uMh5MdG1ryZM0EVa"/>
     </meta>
-    <url value="https://xxx/CodeSystem-JP-REZEPT-ClassificationOfCoPayment"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-ClassificationOfCoPayment.html"/>
     <name value="ClassificationOfCoPayment"/>
     <title value="一部負担金・食事療養費・生活療養費標準負担額区分コード"/>
     <status value="draft"/>
     <description value="レセプト電算処理システムで使用されている一部負担金・食事療養費・生活療養費標準負担額区分コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表8 一部負担金・食事療養費・生活療養費標準負担額区分コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表8 一部負担金・食事療養費・生活療養費標準負担額区分コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表10 一部負担金・食事療養費・生活療養費標準負担額区分コード」に記載されています。"/>
-    <valueSet value="https://xxx/ValueSet-JP-REZEPT-ClassificationOfCoPayment"/>
+    <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-ClassificationOfCoPayment.html"/>
     <content value="complete"/>
     <concept>
         <code value="1"/>

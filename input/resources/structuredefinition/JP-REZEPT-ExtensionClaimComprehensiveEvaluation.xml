@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-ExtensionClaimComprehensiveEvaluation"/>
     <meta>
-        <versionId value="10"/>
-        <lastUpdated value="2021-04-16T02:24:00.393+00:00"/>
-        <source value="#bEFoUtvhyiHzwBlT"/>
+        <versionId value="13"/>
+        <lastUpdated value="2021-05-07T03:56:01.661+00:00"/>
+        <source value="#UXy138VhT6CxYdga"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimComprehensiveEvaluation"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimComprehensiveEvaluation.html"/>
     <name value="ExtensionClaimComprehensiveEvaluation"/>
     <title value="包括評価の拡張情報"/>
     <status value="draft"/>
@@ -247,7 +247,7 @@
             <isSummary value="false"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-CalculationCategory"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-CalculationCategory.html"/>
             </binding>
             <mapping>
                 <identity value="rim"/>
@@ -1514,7 +1514,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-CalculationCategory"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-CalculationCategory.html"/>
             </binding>
             <mapping>
                 <identity value="JP-REZEPT-MEDICAL-Mapping"/>

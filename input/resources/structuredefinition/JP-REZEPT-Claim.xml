@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-Claim"/>
     <meta>
-        <versionId value="38"/>
-        <lastUpdated value="2021-04-19T14:48:51.135+00:00"/>
-        <source value="#BwGGzJI4iG3jIyaT"/>
+        <versionId value="47"/>
+        <lastUpdated value="2021-05-07T03:40:49.014+00:00"/>
+        <source value="#mD1L3grIovuCxma8"/>
     </meta>
-    <url value="https://healthdataworks.net/StructureDefinition/JP-REZEPT-Claim"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-Claim.html"/>
     <name value="Claim"/>
     <title value="レセプト情報"/>
     <status value="draft"/>
@@ -293,7 +293,7 @@
             </base>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimPatientInformation"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimPatientInformation.html"/>
             </type>
             <condition value="ele-1"/>
             <constraint>
@@ -329,7 +329,7 @@
             </base>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimInsurerInformation"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimInsurerInformation.html"/>
             </type>
             <condition value="ele-1"/>
             <constraint>
@@ -365,7 +365,7 @@
             </base>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimCommonInformation"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimCommonInformation.html"/>
             </type>
             <condition value="ele-1"/>
             <constraint>
@@ -401,7 +401,7 @@
             </base>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimComprehensiveEvaluation"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimCommonInformation.html"/>
             </type>
             <condition value="ele-1"/>
             <constraint>
@@ -1436,7 +1436,7 @@
             <isSummary value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-RezeptType"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-RezeptType.html"/>
             </binding>
             <mapping>
                 <identity value="v2"/>
@@ -9508,7 +9508,7 @@
             <definition value="患者の拡張情報です。"/>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimPatientInformation"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimPatientInformation.html"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -9519,7 +9519,7 @@
             <definition value="保険会社の拡張情報です。"/>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimInsurerInformation"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimInsurerInformation.html"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -9530,7 +9530,7 @@
             <definition value="共通の拡張情報です。"/>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimCommonInformation"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimCommonInformation.html"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -9541,7 +9541,7 @@
             <definition value="包括評価です。"/>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimComprehensiveEvaluation"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimCommonInformation.html"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -9728,7 +9728,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-RezeptType"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-RezeptType.html"/>
             </binding>
             <mapping>
                 <identity value="JP-REZEPT-MEDICAL-Mapping"/>

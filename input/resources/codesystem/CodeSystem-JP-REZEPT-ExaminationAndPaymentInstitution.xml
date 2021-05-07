@@ -3,16 +3,16 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-ExaminationAndPaymentInstitution"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-16T12:44:57.263+00:00"/>
-        <source value="#WN7aGyyJgYWtK9mh"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-07T03:22:26.483+00:00"/>
+        <source value="#vqp9U0XkXtzTl6ak"/>
     </meta>
-    <url value="https://xxx/CodeSystem-JP-REZEPT-ExaminationAndPaymentInstitution"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-ExaminationAndPaymentInstitution.html"/>
     <name value="ExaminationAndPaymentInstitution"/>
     <title value="審査支払機関コード"/>
     <status value="draft"/>
     <description value="レセプト電算処理システムで使用されている審査支払機関コードです。&#xA;&#xA;医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表1 審査支払機関コード」に記載されています。&#xA;&#xA;DPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表1 審査支払機関コード」に記載されています。&#xA;&#xA;歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表1 審査支払機関コード」に記載されています。&#xA;&#xA;調剤レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(調剤用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_4_kiroku_chozai.pdf) の「別表1 審査支払機関コード」に記載されています。"/>
-    <valueSet value="https://xxx/ValueSet-JP-REZEPT-ExaminationAndPaymentInstitution"/>
+    <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-ExaminationAndPaymentInstitution.html"/>
     <content value="complete"/>
     <concept>
         <code value="1"/>

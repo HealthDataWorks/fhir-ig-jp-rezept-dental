@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-ExtensionClaimCommonInformation"/>
     <meta>
-        <versionId value="13"/>
-        <lastUpdated value="2021-04-16T11:25:35.478+00:00"/>
-        <source value="#MFICx3ci03Jqdbbg"/>
+        <versionId value="18"/>
+        <lastUpdated value="2021-05-07T03:54:53.825+00:00"/>
+        <source value="#fVCSBNfjiUWfoOKR"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionClaimCommonInformation"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionClaimCommonInformation.html"/>
     <name value="ExtensionClaimCommonInformation"/>
     <title value="レセプト情報の共通の拡張情報"/>
     <status value="draft"/>
@@ -406,7 +406,7 @@
             <isSummary value="false"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-ClassificationOfCoPayment"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-ClassificationOfCoPayment.html"/>
             </binding>
             <mapping>
                 <identity value="rim"/>
@@ -557,7 +557,7 @@
             <isSummary value="false"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-RezeptSpecialInstruction"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-RezeptSpecialInstruction.html"/>
             </binding>
             <mapping>
                 <identity value="rim"/>
@@ -1884,7 +1884,7 @@
             <isSummary value="false"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-Gender"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-Gender.html"/>
             </binding>
             <mapping>
                 <identity value="rim"/>
@@ -2605,7 +2605,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-ClassificationOfCoPayment"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-ClassificationOfCoPayment.html"/>
             </binding>
             <mapping>
                 <identity value="JP-REZEPT-MEDICAL-Mapping"/>
@@ -2641,7 +2641,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-RezeptSpecialInstruction"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-RezeptSpecialInstruction.html"/>
             </binding>
             <mapping>
                 <identity value="JP-REZEPT-MEDICAL-Mapping"/>
@@ -2933,7 +2933,7 @@
             <mustSupport value="true"/>
             <binding>
                 <strength value="required"/>
-                <valueSet value="https://xxx/ValueSet-JP-REZEPT-Gender"/>
+                <valueSet value="https://igs.healthdataworks.net/jp-rezept-medication/ValueSet-ValueSet-JP-REZEPT-Gender.html"/>
             </binding>
             <mapping>
                 <identity value="JP-REZEPT-MEDICAL-Mapping"/>

@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-ExtensionDeviceUnitPrice"/>
     <meta>
-        <versionId value="4"/>
-        <lastUpdated value="2021-04-16T02:26:58.429+00:00"/>
-        <source value="#VhlPPTgD5YCuku2y"/>
+        <versionId value="6"/>
+        <lastUpdated value="2021-05-06T04:45:23.900+00:00"/>
+        <source value="#HAXPJ1vL3qlNoI2v"/>
     </meta>
-    <url value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionDeviceUnitPrice"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionDeviceUnitPrice.html"/>
     <name value="ExtentionDeviceUnitPrice"/>
     <title value="特定器材の単価"/>
     <status value="draft"/>

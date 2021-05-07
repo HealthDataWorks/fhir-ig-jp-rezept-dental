@@ -3,11 +3,11 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-Device"/>
     <meta>
-        <versionId value="25"/>
-        <lastUpdated value="2021-04-20T06:54:08.616+00:00"/>
-        <source value="#jf9z0E55yZofP4DM"/>
+        <versionId value="30"/>
+        <lastUpdated value="2021-05-07T00:56:46.841+00:00"/>
+        <source value="#JruHX0caROdO1kVT"/>
     </meta>
-    <url value="https://healthdataworks.net/StructureDefinition/JP-REZEPT-Device"/>
+    <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-Device.html"/>
     <name value="Device"/>
     <title value="日単位の特定器材情報"/>
     <status value="draft"/>
@@ -291,7 +291,7 @@
             </base>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionDeviceUnitPrice"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionDeviceUnitPrice.html"/>
             </type>
             <condition value="ele-1"/>
             <constraint>
@@ -328,7 +328,7 @@
             </base>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionDeviceQuantity"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionDeviceQuantity.html"/>
             </type>
             <condition value="ele-1"/>
             <constraint>
@@ -365,7 +365,7 @@
             </base>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionDeviceNumberOfTimes"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionDeviceNumberOfTimes.html"/>
             </type>
             <condition value="ele-1"/>
             <constraint>
@@ -2413,7 +2413,7 @@
             <comment value="特定器材マスタの金額種別が「5:%加算」「9:乗算割合」の場合、設定しません。&#xA;単価が設定されていない場合、設定しません。"/>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionDeviceUnitPrice"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionDeviceUnitPrice.html"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -2425,7 +2425,7 @@
             <comment value="特定器材マスタの金額種別が「9:乗算割合」の場合、設定しません。&#xA;使用量が入力されていない場合、設定しません。"/>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionDeviceQuantity"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionDeviceQuantity.html"/>
             </type>
             <mustSupport value="true"/>
         </element>
@@ -2437,7 +2437,7 @@
             <comment value="１~３１日の情報がある場合に設定しません。"/>
             <type>
                 <code value="Extension"/>
-                <profile value="https://xxx/StructureDefinition/JP-REZEPT-ExtensionDeviceNumberOfTimes"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionDeviceNumberOfTimes.html"/>
             </type>
             <mustSupport value="true"/>
         </element>
