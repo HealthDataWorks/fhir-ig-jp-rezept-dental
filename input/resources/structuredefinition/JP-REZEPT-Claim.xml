@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-Claim"/>
     <meta>
-        <versionId value="47"/>
-        <lastUpdated value="2021-05-07T03:40:49.014+00:00"/>
-        <source value="#mD1L3grIovuCxma8"/>
+        <versionId value="50"/>
+        <lastUpdated value="2021-05-19T04:27:46.774+00:00"/>
+        <source value="#mtfkJu0hke1dxATj"/>
     </meta>
     <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-Claim.html"/>
     <name value="Claim"/>

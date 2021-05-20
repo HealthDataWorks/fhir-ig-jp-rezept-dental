@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-Coverage"/>
     <meta>
-        <versionId value="65"/>
-        <lastUpdated value="2021-05-07T03:43:29.660+00:00"/>
-        <source value="#f7rhXeZs4IqR8kPq"/>
+        <versionId value="110"/>
+        <lastUpdated value="2021-05-20T11:24:20.579+00:00"/>
+        <source value="#7Jq07ZYXXk535yLb"/>
     </meta>
     <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-Coverage.html"/>
     <name value="Coverage"/>
@@ -263,11 +263,15 @@
         </element>
         <element id="Coverage.extension">
             <path value="Coverage.extension"/>
-            <short value="Additional content defined by implementations"/>
-            <definition value="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-            <alias value="extensions"/>
-            <alias value="user content"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <rules value="open"/>
+            </slicing>
+            <short value="Extension"/>
+            <definition value="An Extension"/>
             <min value="0"/>
             <max value="*"/>
             <base>
@@ -278,12 +282,83 @@
             <type>
                 <code value="Extension"/>
             </type>
+            <mustSupport value="true"/>
             <isModifier value="false"/>
             <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="N/A"/>
-            </mapping>
+        </element>
+        <element id="Coverage.extension:InsuredPersonSymbol">
+            <path value="Coverage.extension"/>
+            <sliceName value="InsuredPersonSymbol"/>
+            <label value="被保険者証記号を表す拡張"/>
+            <short value="被保険者証記号を表す拡張"/>
+            <definition value="被保険者証記号を表す拡張「InsuredPersonSymbol」です。保険種別が「1:医保」、「2:国保」の場合に記録します。被保険者証記号がない場合は、本拡張要素は出現しません。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="DomainResource.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionCoverageInsuredPersonSymbol.html"/>
+            </type>
+            <condition value="ele-1"/>
+            <constraint>
+                <key value="ele-1"/>
+                <severity value="error"/>
+                <human value="All FHIR elements must have a @value or children"/>
+                <expression value="hasValue() or (children().count() &gt; id.count())"/>
+                <xpath value="@value|f:*|h:div"/>
+                <source value="Element"/>
+            </constraint>
+            <constraint>
+                <key value="ext-1"/>
+                <severity value="error"/>
+                <human value="Must have either extensions or value[x], not both"/>
+                <expression value="extension.exists() != value.exists()"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+                <source value="Extension"/>
+            </constraint>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+        </element>
+        <element id="Coverage.extension:InsuredPersonNumber">
+            <path value="Coverage.extension"/>
+            <sliceName value="InsuredPersonNumber"/>
+            <label value="被保険者証番号を表す拡張"/>
+            <short value="被保険者証番号を表す拡張"/>
+            <definition value="被保険者証番号を表す拡張「InsuredPersonNumber」です。保険種別が「1:医保」、「2:国保」、「7:後期⾼齢者」の場合に記録します。それ以外の場合は、本拡張要素は出現しません。"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="DomainResource.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionCoverageInsuredPersonNo.html"/>
+            </type>
+            <condition value="ele-1"/>
+            <constraint>
+                <key value="ele-1"/>
+                <severity value="error"/>
+                <human value="All FHIR elements must have a @value or children"/>
+                <expression value="hasValue() or (children().count() &gt; id.count())"/>
+                <xpath value="@value|f:*|h:div"/>
+                <source value="Element"/>
+            </constraint>
+            <constraint>
+                <key value="ext-1"/>
+                <severity value="error"/>
+                <human value="Must have either extensions or value[x], not both"/>
+                <expression value="extension.exists() != value.exists()"/>
+                <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+                <source value="Extension"/>
+            </constraint>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
         </element>
         <element id="Coverage.modifierExtension">
             <path value="Coverage.modifierExtension"/>
@@ -313,15 +388,8 @@
         </element>
         <element id="Coverage.identifier">
             <path value="Coverage.identifier"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="system"/>
-                </discriminator>
-                <rules value="open"/>
-            </slicing>
-            <short value="保険情報の識別子"/>
-            <definition value="保険情報の識別子です。"/>
+            <short value="Business Identifier for the coverage"/>
+            <definition value="A unique identifier assigned to this coverage."/>
             <comment value="The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant."/>
             <requirements value="Allows coverages to be distinguished and referenced."/>
             <min value="0"/>
@@ -334,7 +402,6 @@
             <type>
                 <code value="Identifier"/>
             </type>
-            <mustSupport value="true"/>
             <isModifier value="false"/>
             <isSummary value="true"/>
             <mapping>
@@ -360,1628 +427,6 @@
             <mapping>
                 <identity value="cpha3pharm"/>
                 <map value="C.32, C.33, C.39"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id1">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id1"/>
-            <short value="保険者番号"/>
-            <definition value="保険者番号です。"/>
-            <comment value="The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant."/>
-            <requirements value="Allows coverages to be distinguished and referenced."/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Coverage.identifier"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Identifier"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="workflow"/>
-                <map value="Event.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="w5"/>
-                <map value="FiveWs.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="cdanetv4"/>
-                <map value="C02"/>
-            </mapping>
-            <mapping>
-                <identity value="v2"/>
-                <map value="IN1-2"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value=".id"/>
-            </mapping>
-            <mapping>
-                <identity value="cpha3pharm"/>
-                <map value="C.32, C.33, C.39"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id1.id">
-            <path value="Coverage.identifier.id"/>
-            <representation value="xmlAttr"/>
-            <short value="Unique id for inter-element referencing"/>
-            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Element.id"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id1.extension">
-            <path value="Coverage.identifier.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <description value="Extensions are always sliced by (at least) url"/>
-                <rules value="open"/>
-            </slicing>
-            <short value="Additional content defined by implementations"/>
-            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-            <alias value="extensions"/>
-            <alias value="user content"/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Element.extension"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Extension"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id1.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="保険者番号の用途"/>
-            <definition value="保険者番号の用途です。"/>
-            <comment value="保険者番号では「official」固定とします。"/>
-            <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.use"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="official"/>
-            <mustSupport value="true"/>
-            <isModifier value="true"/>
-            <isModifierReason value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one."/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierUse"/>
-                </extension>
-                <strength value="required"/>
-                <description value="Identifies the purpose for this identifier, if known ."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-use|4.0.0"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="N/A"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id1.type">
-            <path value="Coverage.identifier.type"/>
-            <short value="Description of identifier"/>
-            <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose."/>
-            <comment value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type."/>
-            <requirements value="Allows users to make use of identifiers when the identifier system is not known."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.type"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="CodeableConcept"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierType"/>
-                </extension>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-                    <valueBoolean value="true"/>
-                </extension>
-                <strength value="extensible"/>
-                <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.5"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id1.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="保険者番号のOID"/>
-            <definition value="保険者番号のOIDです。"/>
-            <comment value="Identifier.system is always case sensitive."/>
-            <requirements value="There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.system"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="uri"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueUri value="http://www.acme.com/identifiers/patient"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / EI-2-4"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.root or Role.id.root"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierType"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id1.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="保険者番号"/>
-            <definition value="保険者番号です。"/>
-            <comment value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.value"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueString value="123456"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.1 / EI.1"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./Value"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="保険者レコード(HO).保険者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="保険者レコード(HO).保険者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="保険者レコード(HO).保険者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="保険者レコード(HO).保険者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEMBERS-Mapping"/>
-                <map value="加入者情報.保険者番号"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id1.period">
-            <path value="Coverage.identifier.period"/>
-            <short value="Time period when id is/was valid for use"/>
-            <definition value="Time period during which identifier is/was valid for use."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.period"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Period"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.7 + CX.8"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.effectiveTime or implied by context"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./StartDate and ./EndDate"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id1.assigner">
-            <path value="Coverage.identifier.assigner"/>
-            <short value="Organization that issued id (may be just text)"/>
-            <definition value="Organization that issued/manages the identifier."/>
-            <comment value="The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.assigner"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierIssuingAuthority"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id2"/>
-            <short value="被保険者証記号"/>
-            <definition value="被保険者証記号です。"/>
-            <comment value="The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant."/>
-            <requirements value="Allows coverages to be distinguished and referenced."/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Coverage.identifier"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Identifier"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="workflow"/>
-                <map value="Event.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="w5"/>
-                <map value="FiveWs.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="cdanetv4"/>
-                <map value="C02"/>
-            </mapping>
-            <mapping>
-                <identity value="v2"/>
-                <map value="IN1-2"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value=".id"/>
-            </mapping>
-            <mapping>
-                <identity value="cpha3pharm"/>
-                <map value="C.32, C.33, C.39"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2.id">
-            <path value="Coverage.identifier.id"/>
-            <representation value="xmlAttr"/>
-            <short value="Unique id for inter-element referencing"/>
-            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Element.id"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2.extension">
-            <path value="Coverage.identifier.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <description value="Extensions are always sliced by (at least) url"/>
-                <rules value="open"/>
-            </slicing>
-            <short value="Additional content defined by implementations"/>
-            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-            <alias value="extensions"/>
-            <alias value="user content"/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Element.extension"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Extension"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="被保険者証記号の用途"/>
-            <definition value="被保険者証記号の用途です。"/>
-            <comment value="被保険者証記号では「official」固定とします。"/>
-            <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.use"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="official"/>
-            <mustSupport value="true"/>
-            <isModifier value="true"/>
-            <isModifierReason value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one."/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierUse"/>
-                </extension>
-                <strength value="required"/>
-                <description value="Identifies the purpose for this identifier, if known ."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-use|4.0.0"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="N/A"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2.type">
-            <path value="Coverage.identifier.type"/>
-            <short value="Description of identifier"/>
-            <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose."/>
-            <comment value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type."/>
-            <requirements value="Allows users to make use of identifiers when the identifier system is not known."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.type"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="CodeableConcept"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierType"/>
-                </extension>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-                    <valueBoolean value="true"/>
-                </extension>
-                <strength value="extensible"/>
-                <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.5"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="被保険者証記号のOID"/>
-            <definition value="被保険者証記号のOIDです。"/>
-            <comment value="Identifier.system is always case sensitive."/>
-            <requirements value="There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.system"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="uri"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueUri value="http://www.acme.com/identifiers/patient"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / EI-2-4"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.root or Role.id.root"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierType"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="被保険者証記号"/>
-            <definition value="被保険者証記号です。"/>
-            <comment value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.value"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueString value="123456"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.1 / EI.1"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./Value"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の記号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の記号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の記号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の記号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEMBERS-Mapping"/>
-                <map value="加入者情報.被保険者証(手帳)等の記号"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2.period">
-            <path value="Coverage.identifier.period"/>
-            <short value="Time period when id is/was valid for use"/>
-            <definition value="Time period during which identifier is/was valid for use."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.period"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Period"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.7 + CX.8"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.effectiveTime or implied by context"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./StartDate and ./EndDate"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2.assigner">
-            <path value="Coverage.identifier.assigner"/>
-            <short value="Organization that issued id (may be just text)"/>
-            <definition value="Organization that issued/manages the identifier."/>
-            <comment value="The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.assigner"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierIssuingAuthority"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id3"/>
-            <short value="被保険者証番号"/>
-            <definition value="被保険者証番号です。"/>
-            <comment value="The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant."/>
-            <requirements value="Allows coverages to be distinguished and referenced."/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Coverage.identifier"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Identifier"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="workflow"/>
-                <map value="Event.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="w5"/>
-                <map value="FiveWs.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="cdanetv4"/>
-                <map value="C02"/>
-            </mapping>
-            <mapping>
-                <identity value="v2"/>
-                <map value="IN1-2"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value=".id"/>
-            </mapping>
-            <mapping>
-                <identity value="cpha3pharm"/>
-                <map value="C.32, C.33, C.39"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3.id">
-            <path value="Coverage.identifier.id"/>
-            <representation value="xmlAttr"/>
-            <short value="Unique id for inter-element referencing"/>
-            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Element.id"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3.extension">
-            <path value="Coverage.identifier.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <description value="Extensions are always sliced by (at least) url"/>
-                <rules value="open"/>
-            </slicing>
-            <short value="Additional content defined by implementations"/>
-            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-            <alias value="extensions"/>
-            <alias value="user content"/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Element.extension"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Extension"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="被保険者証番号の用途"/>
-            <definition value="被保険者証番号の用途です。"/>
-            <comment value="被保険者証番号では「official」固定とします。"/>
-            <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.use"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="official"/>
-            <mustSupport value="true"/>
-            <isModifier value="true"/>
-            <isModifierReason value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one."/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierUse"/>
-                </extension>
-                <strength value="required"/>
-                <description value="Identifies the purpose for this identifier, if known ."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-use|4.0.0"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="N/A"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3.type">
-            <path value="Coverage.identifier.type"/>
-            <short value="Description of identifier"/>
-            <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose."/>
-            <comment value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type."/>
-            <requirements value="Allows users to make use of identifiers when the identifier system is not known."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.type"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="CodeableConcept"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierType"/>
-                </extension>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-                    <valueBoolean value="true"/>
-                </extension>
-                <strength value="extensible"/>
-                <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.5"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="被保険者証番号のOID"/>
-            <definition value="被保険者証番号のOIDです。"/>
-            <comment value="Identifier.system is always case sensitive."/>
-            <requirements value="There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.system"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="uri"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueUri value="http://www.acme.com/identifiers/patient"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / EI-2-4"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.root or Role.id.root"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierType"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="被保険者証番号"/>
-            <definition value="被保険者証番号です。"/>
-            <comment value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.value"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueString value="123456"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.1 / EI.1"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./Value"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEMBERS-Mapping"/>
-                <map value="加入者情報.被保険者証(手帳)等の番号"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3.period">
-            <path value="Coverage.identifier.period"/>
-            <short value="Time period when id is/was valid for use"/>
-            <definition value="Time period during which identifier is/was valid for use."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.period"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Period"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.7 + CX.8"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.effectiveTime or implied by context"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./StartDate and ./EndDate"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3.assigner">
-            <path value="Coverage.identifier.assigner"/>
-            <short value="Organization that issued id (may be just text)"/>
-            <definition value="Organization that issued/manages the identifier."/>
-            <comment value="The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.assigner"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierIssuingAuthority"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id4"/>
-            <short value="負担者番号"/>
-            <definition value="負担者番号です。"/>
-            <comment value="The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant."/>
-            <requirements value="Allows coverages to be distinguished and referenced."/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Coverage.identifier"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Identifier"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="workflow"/>
-                <map value="Event.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="w5"/>
-                <map value="FiveWs.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="cdanetv4"/>
-                <map value="C02"/>
-            </mapping>
-            <mapping>
-                <identity value="v2"/>
-                <map value="IN1-2"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value=".id"/>
-            </mapping>
-            <mapping>
-                <identity value="cpha3pharm"/>
-                <map value="C.32, C.33, C.39"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4.id">
-            <path value="Coverage.identifier.id"/>
-            <representation value="xmlAttr"/>
-            <short value="Unique id for inter-element referencing"/>
-            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Element.id"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4.extension">
-            <path value="Coverage.identifier.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <description value="Extensions are always sliced by (at least) url"/>
-                <rules value="open"/>
-            </slicing>
-            <short value="Additional content defined by implementations"/>
-            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-            <alias value="extensions"/>
-            <alias value="user content"/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Element.extension"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Extension"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="負担者番号の用途"/>
-            <definition value="負担者番号の用途です。"/>
-            <comment value="負担者番号では「official」固定とします。"/>
-            <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.use"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="official"/>
-            <mustSupport value="true"/>
-            <isModifier value="true"/>
-            <isModifierReason value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one."/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierUse"/>
-                </extension>
-                <strength value="required"/>
-                <description value="Identifies the purpose for this identifier, if known ."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-use|4.0.0"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="N/A"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4.type">
-            <path value="Coverage.identifier.type"/>
-            <short value="Description of identifier"/>
-            <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose."/>
-            <comment value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type."/>
-            <requirements value="Allows users to make use of identifiers when the identifier system is not known."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.type"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="CodeableConcept"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierType"/>
-                </extension>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-                    <valueBoolean value="true"/>
-                </extension>
-                <strength value="extensible"/>
-                <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.5"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="負担者番号のOID"/>
-            <definition value="負担者番号のOIDです。"/>
-            <comment value="Identifier.system is always case sensitive."/>
-            <requirements value="There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.system"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="uri"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueUri value="http://www.acme.com/identifiers/patient"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / EI-2-4"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.root or Role.id.root"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierType"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="負担者番号"/>
-            <definition value="負担者番号です。"/>
-            <comment value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.value"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueString value="123456"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.1 / EI.1"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./Value"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="公費レコード(KO).負担者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="公費レコード(KO).負担者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="公費レコード(KO).負担者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="公費レコード(KO).負担者番号"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4.period">
-            <path value="Coverage.identifier.period"/>
-            <short value="Time period when id is/was valid for use"/>
-            <definition value="Time period during which identifier is/was valid for use."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.period"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Period"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.7 + CX.8"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.effectiveTime or implied by context"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./StartDate and ./EndDate"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4.assigner">
-            <path value="Coverage.identifier.assigner"/>
-            <short value="Organization that issued id (may be just text)"/>
-            <definition value="Organization that issued/manages the identifier."/>
-            <comment value="The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.assigner"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierIssuingAuthority"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id5"/>
-            <short value="受給者番号"/>
-            <definition value="受給者番号です。"/>
-            <comment value="The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant."/>
-            <requirements value="Allows coverages to be distinguished and referenced."/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Coverage.identifier"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Identifier"/>
-            </type>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="workflow"/>
-                <map value="Event.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="w5"/>
-                <map value="FiveWs.identifier"/>
-            </mapping>
-            <mapping>
-                <identity value="cdanetv4"/>
-                <map value="C02"/>
-            </mapping>
-            <mapping>
-                <identity value="v2"/>
-                <map value="IN1-2"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value=".id"/>
-            </mapping>
-            <mapping>
-                <identity value="cpha3pharm"/>
-                <map value="C.32, C.33, C.39"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5.id">
-            <path value="Coverage.identifier.id"/>
-            <representation value="xmlAttr"/>
-            <short value="Unique id for inter-element referencing"/>
-            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Element.id"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5.extension">
-            <path value="Coverage.identifier.extension"/>
-            <slicing>
-                <discriminator>
-                    <type value="value"/>
-                    <path value="url"/>
-                </discriminator>
-                <description value="Extensions are always sliced by (at least) url"/>
-                <rules value="open"/>
-            </slicing>
-            <short value="Additional content defined by implementations"/>
-            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-            <alias value="extensions"/>
-            <alias value="user content"/>
-            <min value="0"/>
-            <max value="*"/>
-            <base>
-                <path value="Element.extension"/>
-                <min value="0"/>
-                <max value="*"/>
-            </base>
-            <type>
-                <code value="Extension"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="false"/>
-            <mapping>
-                <identity value="rim"/>
-                <map value="n/a"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="受給者番号の用途"/>
-            <definition value="受給者番号の用途です。"/>
-            <comment value="受給者番号では「official」固定とします。"/>
-            <requirements value="Allows the appropriate identifier for a particular context of use to be selected from among a set of identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.use"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="code"/>
-            </type>
-            <fixedCode value="official"/>
-            <mustSupport value="true"/>
-            <isModifier value="true"/>
-            <isModifierReason value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one."/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierUse"/>
-                </extension>
-                <strength value="required"/>
-                <description value="Identifies the purpose for this identifier, if known ."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-use|4.0.0"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="N/A"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5.type">
-            <path value="Coverage.identifier.type"/>
-            <short value="Description of identifier"/>
-            <definition value="A coded type for the identifier that can be used to determine which identifier to use for a specific purpose."/>
-            <comment value="This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type."/>
-            <requirements value="Allows users to make use of identifiers when the identifier system is not known."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.type"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="CodeableConcept"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <binding>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
-                    <valueString value="IdentifierType"/>
-                </extension>
-                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-                    <valueBoolean value="true"/>
-                </extension>
-                <strength value="extensible"/>
-                <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
-                <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type"/>
-            </binding>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.5"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.code or implied by context"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="受給者番号のOID"/>
-            <definition value="受給者番号のOIDです。"/>
-            <comment value="Identifier.system is always case sensitive."/>
-            <requirements value="There are many sets  of identifiers.  To perform matching of two identifiers, we need to know what set we're dealing with. The system identifies a particular set of unique identifiers."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.system"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="uri"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueUri value="http://www.acme.com/identifiers/patient"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / EI-2-4"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.root or Role.id.root"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierType"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="受給者番号"/>
-            <definition value="受給者番号です。"/>
-            <comment value="If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.value"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="string"/>
-            </type>
-            <example>
-                <label value="General"/>
-                <valueString value="123456"/>
-            </example>
-            <mustSupport value="true"/>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.1 / EI.1"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.extension or II.root if system indicates OID or GUID (Or Role.id.extension or root)"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./Value"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="公費レコード(KO).受給者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="公費レコード(KO).受給者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="公費レコード(KO).受給者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="公費レコード(KO).受給者番号"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5.period">
-            <path value="Coverage.identifier.period"/>
-            <short value="Time period when id is/was valid for use"/>
-            <definition value="Time period during which identifier is/was valid for use."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.period"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Period"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.7 + CX.8"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="Role.effectiveTime or implied by context"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./StartDate and ./EndDate"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5.assigner">
-            <path value="Coverage.identifier.assigner"/>
-            <short value="Organization that issued id (may be just text)"/>
-            <definition value="Organization that issued/manages the identifier."/>
-            <comment value="The Identifier.assigner may omit the .reference element and only contain a .display element reflecting the name or other textual information about the assigning organization."/>
-            <min value="0"/>
-            <max value="1"/>
-            <base>
-                <path value="Identifier.assigner"/>
-                <min value="0"/>
-                <max value="1"/>
-            </base>
-            <type>
-                <code value="Reference"/>
-                <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization"/>
-            </type>
-            <isModifier value="false"/>
-            <isSummary value="true"/>
-            <mapping>
-                <identity value="v2"/>
-                <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
-            </mapping>
-            <mapping>
-                <identity value="rim"/>
-                <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper"/>
-            </mapping>
-            <mapping>
-                <identity value="servd"/>
-                <map value="./IdentifierIssuingAuthority"/>
             </mapping>
         </element>
         <element id="Coverage.status">
@@ -4360,6 +2805,7 @@
                 <xpath value="@value|f:*|h:div"/>
                 <source value="Element"/>
             </constraint>
+            <mustSupport value="true"/>
             <isModifier value="false"/>
             <isSummary value="false"/>
         </element>
@@ -4478,11 +2924,15 @@
             </base>
             <type>
                 <code value="Quantity"/>
-                <profile value="http://hl7.org/fhir/StructureDefinition/SimpleQuantity"/>
             </type>
-            <type>
-                <code value="Money"/>
-            </type>
+            <example>
+                <label value="Example for Quantity"/>
+                <valueQuantity>
+                    <value value="30"/>
+                    <unit value="%"/>
+                </valueQuantity>
+            </example>
+            <mustSupport value="true"/>
             <isModifier value="false"/>
             <isSummary value="true"/>
             <mapping>
@@ -4720,245 +3170,40 @@
             <comment value="保険者向け例:&#xA;・保険者番号&#xA;・被保険者証記号&#xA;・被保険者証番号&#xA;公費向け例:&#xA;・負担者番号&#xA;・受給者番号"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Coverage.identifier">
-            <path value="Coverage.identifier"/>
+        <element id="Coverage.extension">
+            <path value="Coverage.extension"/>
             <slicing>
                 <discriminator>
                     <type value="value"/>
-                    <path value="system"/>
+                    <path value="url"/>
                 </discriminator>
                 <rules value="open"/>
             </slicing>
-            <short value="保険情報の識別子"/>
-            <definition value="保険情報の識別子です。"/>
             <mustSupport value="true"/>
         </element>
-        <element id="Coverage.identifier:id1">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id1"/>
-            <short value="保険者番号"/>
-            <definition value="保険者番号です。"/>
+        <element id="Coverage.extension:InsuredPersonSymbol">
+            <path value="Coverage.extension"/>
+            <sliceName value="InsuredPersonSymbol"/>
+            <label value="被保険者証記号を表す拡張"/>
+            <short value="被保険者証記号を表す拡張"/>
+            <definition value="被保険者証記号を表す拡張「InsuredPersonSymbol」です。保険種別が「1:医保」、「2:国保」の場合に記録します。被保険者証記号がない場合は、本拡張要素は出現しません。"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionCoverageInsuredPersonSymbol.html"/>
+            </type>
             <mustSupport value="true"/>
         </element>
-        <element id="Coverage.identifier:id1.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="保険者番号の用途"/>
-            <definition value="保険者番号の用途です。"/>
-            <comment value="保険者番号では「official」固定とします。"/>
-            <fixedCode value="official"/>
+        <element id="Coverage.extension:InsuredPersonNumber">
+            <path value="Coverage.extension"/>
+            <sliceName value="InsuredPersonNumber"/>
+            <label value="被保険者証番号を表す拡張"/>
+            <short value="被保険者証番号を表す拡張"/>
+            <definition value="被保険者証番号を表す拡張「InsuredPersonNumber」です。保険種別が「1:医保」、「2:国保」、「7:後期⾼齢者」の場合に記録します。それ以外の場合は、本拡張要素は出現しません。"/>
+            <type>
+                <code value="Extension"/>
+                <profile value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-ExtensionCoverageInsuredPersonNo.html"/>
+            </type>
             <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id1.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="保険者番号のOID"/>
-            <definition value="保険者番号のOIDです。"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id1.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="保険者番号"/>
-            <definition value="保険者番号です。"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="保険者レコード(HO).保険者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="保険者レコード(HO).保険者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="保険者レコード(HO).保険者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="保険者レコード(HO).保険者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEMBERS-Mapping"/>
-                <map value="加入者情報.保険者番号"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id2">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id2"/>
-            <short value="被保険者証記号"/>
-            <definition value="被保険者証記号です。"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id2.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="被保険者証記号の用途"/>
-            <definition value="被保険者証記号の用途です。"/>
-            <comment value="被保険者証記号では「official」固定とします。"/>
-            <fixedCode value="official"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id2.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="被保険者証記号のOID"/>
-            <definition value="被保険者証記号のOIDです。"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id2.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="被保険者証記号"/>
-            <definition value="被保険者証記号です。"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の記号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の記号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の記号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の記号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEMBERS-Mapping"/>
-                <map value="加入者情報.被保険者証(手帳)等の記号"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id3">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id3"/>
-            <short value="被保険者証番号"/>
-            <definition value="被保険者証番号です。"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id3.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="被保険者証番号の用途"/>
-            <definition value="被保険者証番号の用途です。"/>
-            <comment value="被保険者証番号では「official」固定とします。"/>
-            <fixedCode value="official"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id3.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="被保険者証番号のOID"/>
-            <definition value="被保険者証番号のOIDです。"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id3.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="被保険者証番号"/>
-            <definition value="被保険者証番号です。"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)等の番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEMBERS-Mapping"/>
-                <map value="加入者情報.被保険者証(手帳)等の番号"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id4">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id4"/>
-            <short value="負担者番号"/>
-            <definition value="負担者番号です。"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id4.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="負担者番号の用途"/>
-            <definition value="負担者番号の用途です。"/>
-            <comment value="負担者番号では「official」固定とします。"/>
-            <fixedCode value="official"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id4.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="負担者番号のOID"/>
-            <definition value="負担者番号のOIDです。"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id4.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="負担者番号"/>
-            <definition value="負担者番号です。"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="公費レコード(KO).負担者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="公費レコード(KO).負担者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="公費レコード(KO).負担者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="公費レコード(KO).負担者番号"/>
-            </mapping>
-        </element>
-        <element id="Coverage.identifier:id5">
-            <path value="Coverage.identifier"/>
-            <sliceName value="id5"/>
-            <short value="受給者番号"/>
-            <definition value="受給者番号です。"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id5.use">
-            <path value="Coverage.identifier.use"/>
-            <short value="受給者番号の用途"/>
-            <definition value="受給者番号の用途です。"/>
-            <comment value="受給者番号では「official」固定とします。"/>
-            <fixedCode value="official"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id5.system">
-            <path value="Coverage.identifier.system"/>
-            <short value="受給者番号のOID"/>
-            <definition value="受給者番号のOIDです。"/>
-            <mustSupport value="true"/>
-        </element>
-        <element id="Coverage.identifier:id5.value">
-            <path value="Coverage.identifier.value"/>
-            <short value="受給者番号"/>
-            <definition value="受給者番号です。"/>
-            <mustSupport value="true"/>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="公費レコード(KO).受給者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="公費レコード(KO).受給者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="公費レコード(KO).受給者番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="公費レコード(KO).受給者番号"/>
-            </mapping>
         </element>
         <element id="Coverage.status">
             <path value="Coverage.status"/>
@@ -5303,6 +3548,24 @@
             <short value="保険適用順序"/>
             <definition value="保険適用順序です。"/>
             <comment value="保険(公費)区分コードをそのまま優先度にする。&#xA;1:医療保険、国民健康保険、退職者医療又は後期高齢者医療　&#xA;2:第１公費負担医療 &#xA;3:第２公費負担医療 &#xA;4:第３公費負担医療 &#xA;5:第４公費負担医療"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Coverage.costToBeneficiary">
+            <path value="Coverage.costToBeneficiary"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Coverage.costToBeneficiary.value[x]">
+            <path value="Coverage.costToBeneficiary.value[x]"/>
+            <type>
+                <code value="Quantity"/>
+            </type>
+            <example>
+                <label value="Example for Quantity"/>
+                <valueQuantity>
+                    <value value="30"/>
+                    <unit value="%"/>
+                </valueQuantity>
+            </example>
             <mustSupport value="true"/>
         </element>
     </differential>
