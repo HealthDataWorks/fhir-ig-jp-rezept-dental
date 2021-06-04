@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="JP-REZEPT-Coverage"/>
     <meta>
-        <versionId value="110"/>
-        <lastUpdated value="2021-05-20T11:24:20.579+00:00"/>
-        <source value="#7Jq07ZYXXk535yLb"/>
+        <versionId value="113"/>
+        <lastUpdated value="2021-06-01T10:48:08.564+00:00"/>
+        <source value="#M3jz2Hm6EBsZ7IgC"/>
     </meta>
     <url value="https://igs.healthdataworks.net/jp-rezept-medication/StructureDefinition-JP-REZEPT-Coverage.html"/>
     <name value="Coverage"/>
@@ -234,6 +234,130 @@
             <mapping>
                 <identity value="rim"/>
                 <map value="Act.text?"/>
+            </mapping>
+        </element>
+        <element id="Coverage.text.id">
+            <path value="Coverage.text.id"/>
+            <representation value="xmlAttr"/>
+            <short value="Unique id for inter-element referencing"/>
+            <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+            <min value="0"/>
+            <max value="1"/>
+            <base>
+                <path value="Element.id"/>
+                <min value="0"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="string"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Coverage.text.extension">
+            <path value="Coverage.text.extension"/>
+            <slicing>
+                <discriminator>
+                    <type value="value"/>
+                    <path value="url"/>
+                </discriminator>
+                <description value="Extensions are always sliced by (at least) url"/>
+                <rules value="open"/>
+            </slicing>
+            <short value="Additional content defined by implementations"/>
+            <definition value="May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+            <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
+            <alias value="extensions"/>
+            <alias value="user content"/>
+            <min value="0"/>
+            <max value="*"/>
+            <base>
+                <path value="Element.extension"/>
+                <min value="0"/>
+                <max value="*"/>
+            </base>
+            <type>
+                <code value="Extension"/>
+            </type>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="n/a"/>
+            </mapping>
+        </element>
+        <element id="Coverage.text.status">
+            <path value="Coverage.text.status"/>
+            <short value="generated | extensions | additional | empty"/>
+            <definition value="このリソースの概要がリソースのコンテンツから⽣成されたことを⽰す。"/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Narrative.status"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="code"/>
+            </type>
+            <fixedCode value="generated"/>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <binding>
+                <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+                    <valueString value="NarrativeStatus"/>
+                </extension>
+                <strength value="required"/>
+                <description value="The status of a resource narrative."/>
+                <valueSet value="http://hl7.org/fhir/ValueSet/narrative-status|4.0.0"/>
+            </binding>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+            </mapping>
+        </element>
+        <element id="Coverage.text.div">
+            <path value="Coverage.text.div"/>
+            <short value="このリソースの概要"/>
+            <definition value="このリソースの概要です。"/>
+            <comment value="The contents of the html element are an XHTML fragment containing only the basic html formatting elements described in chapters 7-11 and 15 of the HTML 4.0 standard, &lt;a&gt; elements (either name or href), images and internally contained stylesheets. The XHTML content SHALL NOT contain a head, a body, external stylesheet references, scripts, forms, base/link/xlink, frames, iframes and objects."/>
+            <min value="1"/>
+            <max value="1"/>
+            <base>
+                <path value="Narrative.div"/>
+                <min value="1"/>
+                <max value="1"/>
+            </base>
+            <type>
+                <code value="xhtml"/>
+            </type>
+            <constraint>
+                <key value="txt-1"/>
+                <severity value="error"/>
+                <human value="The narrative SHALL contain only the basic html formatting elements and attributes described in chapters 7-11 (except section 4 of chapter 9) and 15 of the HTML 4.0 standard, &lt;a&gt; elements (either name or href), images and internally contained style attributes"/>
+                <expression value="htmlChecks()"/>
+                <xpath value="not(descendant-or-self::*[not(local-name(.)=('a', 'abbr', 'acronym', 'b', 'big', 'blockquote', 'br', 'caption', 'cite', 'code', 'col', 'colgroup', 'dd', 'dfn', 'div', 'dl', 'dt', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'i', 'img', 'li', 'ol', 'p', 'pre', 'q', 'samp', 'small', 'span', 'strong', 'sub', 'sup', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'tt', 'ul', 'var'))]) and not(descendant-or-self::*/@*[not(name(.)=('abbr', 'accesskey', 'align', 'alt', 'axis', 'bgcolor', 'border', 'cellhalign', 'cellpadding', 'cellspacing', 'cellvalign', 'char', 'charoff', 'charset', 'cite', 'class', 'colspan', 'compact', 'coords', 'dir', 'frame', 'headers', 'height', 'href', 'hreflang', 'hspace', 'id', 'lang', 'longdesc', 'name', 'nowrap', 'rel', 'rev', 'rowspan', 'rules', 'scope', 'shape', 'span', 'src', 'start', 'style', 'summary', 'tabindex', 'title', 'type', 'valign', 'value', 'vspace', 'width'))])"/>
+                <source value="Narrative.div"/>
+            </constraint>
+            <constraint>
+                <key value="txt-2"/>
+                <severity value="error"/>
+                <human value="The narrative SHALL have some non-whitespace content"/>
+                <expression value="htmlChecks()"/>
+                <xpath value="descendant::text()[normalize-space(.)!=''] or descendant::h:img[@src]"/>
+                <source value="Narrative.div"/>
+            </constraint>
+            <mustSupport value="true"/>
+            <isModifier value="false"/>
+            <isSummary value="false"/>
+            <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
             </mapping>
         </element>
         <element id="Coverage.contained">
@@ -1124,8 +1248,8 @@
         </element>
         <element id="Coverage.subscriberId">
             <path value="Coverage.subscriberId"/>
-            <short value="被保険者証記号・番号"/>
-            <definition value="被保険者証記号・番号です。"/>
+            <short value="受診券整理番号"/>
+            <definition value="受診券整理番号です。"/>
             <requirements value="The insurer requires this identifier on correspondance and claims (digital and otherwise)."/>
             <min value="0"/>
             <max value="1"/>
@@ -1161,30 +1285,18 @@
                 <map value="FiveWs.subject"/>
             </mapping>
             <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)の記号・番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)の記号・番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)の記号・番号"/>
-            </mapping>
-            <mapping>
                 <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)の記号・番号"/>
+                <map value="XML No: 9.6.1 XPath: /ClinicalDocument/participant/associatedEntity/id/@extension"/>
             </mapping>
             <mapping>
                 <identity value="JP-REZEPT-MEMBERS-Mapping"/>
-                <map value="加入者情報.被保険者証(手帳)の記号・番号"/>
+                <map value="XML No: 9.6.1 XPath: /ClinicalDocument/participant/associatedEntity/id/@extension"/>
             </mapping>
         </element>
         <element id="Coverage.beneficiary">
             <path value="Coverage.beneficiary"/>
-            <short value="受取人(患者)の参照"/>
-            <definition value="受取人(患者)の参照です。"/>
+            <short value="患者の参照"/>
+            <definition value="患者の参照です。"/>
             <requirements value="This is the party who receives treatment for which the costs are reimbursed under the coverage."/>
             <min value="1"/>
             <max value="1"/>
@@ -1281,8 +1393,8 @@
         </element>
         <element id="Coverage.beneficiary.reference">
             <path value="Coverage.beneficiary.reference"/>
-            <short value="受取人(患者)の参照"/>
-            <definition value="受取人(患者)の参照です。"/>
+            <short value="この保険で給付される患者の参照"/>
+            <definition value="この保険で給付される患者の参照です。"/>
             <comment value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure &quot;/[type]/[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server."/>
             <min value="0"/>
             <max value="1"/>
@@ -1632,6 +1744,7 @@
             <type>
                 <code value="uri"/>
             </type>
+            <fixedUri value="urn:oid:1.2.392.100495.20.2.62"/>
             <mustSupport value="true"/>
             <isModifier value="false"/>
             <isSummary value="true"/>
@@ -3170,6 +3283,18 @@
             <comment value="保険者向け例:&#xA;・保険者番号&#xA;・被保険者証記号&#xA;・被保険者証番号&#xA;公費向け例:&#xA;・負担者番号&#xA;・受給者番号"/>
             <mustSupport value="true"/>
         </element>
+        <element id="Coverage.text.status">
+            <path value="Coverage.text.status"/>
+            <definition value="このリソースの概要がリソースのコンテンツから⽣成されたことを⽰す。"/>
+            <fixedCode value="generated"/>
+            <mustSupport value="true"/>
+        </element>
+        <element id="Coverage.text.div">
+            <path value="Coverage.text.div"/>
+            <short value="このリソースの概要"/>
+            <definition value="このリソースの概要です。"/>
+            <mustSupport value="true"/>
+        </element>
         <element id="Coverage.extension">
             <path value="Coverage.extension"/>
             <slicing>
@@ -3302,40 +3427,28 @@
         </element>
         <element id="Coverage.subscriberId">
             <path value="Coverage.subscriberId"/>
-            <short value="被保険者証記号・番号"/>
-            <definition value="被保険者証記号・番号です。"/>
+            <short value="受診券整理番号"/>
+            <definition value="受診券整理番号です。"/>
             <mustSupport value="true"/>
             <mapping>
-                <identity value="JP-REZEPT-MEDICAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)の記号・番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DPC-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)の記号・番号"/>
-            </mapping>
-            <mapping>
-                <identity value="JP-REZEPT-DENTAL-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)の記号・番号"/>
-            </mapping>
-            <mapping>
                 <identity value="JP-REZEPT-MEDICATION-Mapping"/>
-                <map value="保険者レコード(HO).被保険者証(手帳)の記号・番号"/>
+                <map value="XML No: 9.6.1 XPath: /ClinicalDocument/participant/associatedEntity/id/@extension"/>
             </mapping>
             <mapping>
                 <identity value="JP-REZEPT-MEMBERS-Mapping"/>
-                <map value="加入者情報.被保険者証(手帳)の記号・番号"/>
+                <map value="XML No: 9.6.1 XPath: /ClinicalDocument/participant/associatedEntity/id/@extension"/>
             </mapping>
         </element>
         <element id="Coverage.beneficiary">
             <path value="Coverage.beneficiary"/>
-            <short value="受取人(患者)の参照"/>
-            <definition value="受取人(患者)の参照です。"/>
+            <short value="患者の参照"/>
+            <definition value="患者の参照です。"/>
             <mustSupport value="true"/>
         </element>
         <element id="Coverage.beneficiary.reference">
             <path value="Coverage.beneficiary.reference"/>
-            <short value="受取人(患者)の参照"/>
-            <definition value="受取人(患者)の参照です。"/>
+            <short value="この保険で給付される患者の参照"/>
+            <definition value="この保険で給付される患者の参照です。"/>
             <mustSupport value="true"/>
             <mapping>
                 <identity value="JP-REZEPT-MEDICAL-Mapping"/>
@@ -3396,6 +3509,7 @@
             <path value="Coverage.relationship.coding.system"/>
             <short value="患者との関係区分のOID"/>
             <definition value="患者との関係区分のOIDです。"/>
+            <fixedUri value="urn:oid:1.2.392.100495.20.2.62"/>
             <mustSupport value="true"/>
         </element>
         <element id="Coverage.relationship.coding.code">

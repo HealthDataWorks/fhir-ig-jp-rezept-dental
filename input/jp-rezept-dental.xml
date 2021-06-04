@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="jp-rezept-dental"/>
     <meta>
-        <versionId value="16"/>
-        <lastUpdated value="2021-05-06T22:52:27.537+00:00"/>
-        <source value="#Ql7XO7Se24N6J1Hx"/>
+        <versionId value="18"/>
+        <lastUpdated value="2021-06-02T07:41:56.107+00:00"/>
+        <source value="#bKKVD86gA8JN494u"/>
     </meta>
     <url value="https://healthdataworks.net/hl7-fhir/ImplementationGuide/jp-rezept-dental"/>
     <version value="0.8.0"/>
@@ -761,6 +761,86 @@
             </reference>
             <name value="調剤情報"/>
             <description value="調剤情報です。  &#xA;医薬品が指定された患者に調剤される予定であるか、調剤されたことを示します。  &#xA;これには、提供される医薬品の説明と、医薬品を投与するための指示が含まれます。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionCoverageInsuredPersonSymbol"/>
+                <display value="保険情報の被保険者記号"/>
+            </reference>
+            <name value="保険情報の被保険者記号"/>
+            <description value="被保険者証記号を表す拡張 InsuredPersonSymbol です。保険種別が「1:医保」、「2:国保」の場合に記録します。&#xA;被保険者証記号がない場合は、本拡張要素は出現しません。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionPatientNameKanji"/>
+                <display value="漢字表記"/>
+            </reference>
+            <name value="漢字表記"/>
+            <description value="漢字表記であることを⽰す。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionOrganizationOrganizationCategory"/>
+                <display value="点数表コード"/>
+            </reference>
+            <name value="点数表コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionCoverageInsuredPersonNo"/>
+                <display value="保険情報の被保険者番号"/>
+            </reference>
+            <name value="保険情報の被保険者番号"/>
+            <description value="被保険者証番号を表す拡張 InsuredPersonNumber です。保険種別が「1:医保」、「2:国保」、「7:後期⾼齢者」の場合に記録します。&#xA;それ以外の場合は、本拡張要素は出現しません。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionPatientNameKana"/>
+                <display value="カナ表記"/>
+            </reference>
+            <name value="カナ表記"/>
+            <description value="カナ表記であることを⽰します。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionOeganizationOrganizationNo"/>
+                <display value="保険医療機関コード"/>
+            </reference>
+            <name value="保険医療機関コード"/>
+            <description value="保険医療機関番号です。７桁で指定します。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionOrganizationPrefectureNo"/>
+                <display value="都道府県番号"/>
+            </reference>
+            <name value="都道府県番号"/>
+            <description value="都道府県番号です。２桁で指定します。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionPatientContactPosition"/>
+                <display value="役割、役職情報"/>
+            </reference>
+            <name value="役割、役職情報"/>
+            <description value="ローマ字表記であることを⽰す。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/JP-REZEPT-ExtensionPatientNameRoma"/>
+                <display value="ローマ字表記"/>
+            </reference>
+            <name value="ローマ字表記"/>
+            <description value="ローマ字表記であることを⽰す。"/>
             <exampleBoolean value="false"/>
         </resource>
         <page>

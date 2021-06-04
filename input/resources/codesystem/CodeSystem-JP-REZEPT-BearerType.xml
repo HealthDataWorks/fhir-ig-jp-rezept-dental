@@ -3,9 +3,9 @@
     xmlns="http://hl7.org/fhir">
     <id value="CodeSystem-JP-REZEPT-BearerType"/>
     <meta>
-        <versionId value="7"/>
-        <lastUpdated value="2021-05-07T02:21:39.522+00:00"/>
-        <source value="#bbKHXQ2RBD4fta4J"/>
+        <versionId value="8"/>
+        <lastUpdated value="2021-06-02T05:28:24.051+00:00"/>
+        <source value="#AVRUmRwa04af3mM6"/>
     </meta>
     <url value="https://igs.healthdataworks.net/jp-rezept-medication/CodeSystem-CodeSystem-JP-REZEPT-BearerType.html"/>
     <name value="BearerType"/>
