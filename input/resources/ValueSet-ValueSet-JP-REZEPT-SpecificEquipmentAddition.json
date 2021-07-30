@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "SpecificEquipmentAddition",
+  "id": "ValueSet-JP-REZEPT-SpecificEquipmentAddition",
+  "title": "特定器材加算等コード",
+  "description": "このバリューセットには、レセプト電算処理システムで定義されている特定器材加算等コードが含まれます。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-SpecificEquipmentAddition.html",
+  "meta": {
+    "versionId": "3",
+    "lastUpdated": "2021-05-07T07:53:07.911+00:00",
+    "source": "#nFeGDh9S6GFSwSaT"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/jp-rezept-dental/CodeSystem-CodeSystem-JP-REZEPT-SpecificEquipmentAddition.html"
+      }
+    ]
+  }
+}

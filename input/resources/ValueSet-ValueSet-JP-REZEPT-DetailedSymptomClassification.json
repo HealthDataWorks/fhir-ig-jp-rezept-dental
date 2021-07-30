@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "DetailedSymptomClassification",
+  "id": "ValueSet-JP-REZEPT-DetailedSymptomClassification",
+  "title": "症状詳記区分コード",
+  "description": "このバリューセットには、レセプト電算処理システムで定義されている症状詳記区分コードが含まれます。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-medical/ValueSet-ValueSet-JP-REZEPT-DetailedSymptomClassification.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-05-07T04:40:54.563+00:00",
+    "source": "#RNh8WetpjKwnGKXN"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/jp-rezept-medical/CodeSystem-CodeSystem-JP-REZEPT-DetailedSymptomClassification.html"
+      }
+    ]
+  }
+}

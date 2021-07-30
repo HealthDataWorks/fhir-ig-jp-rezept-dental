@@ -1,0 +1,267 @@
+{
+  "resourceType": "CapabilityStatement",
+  "id": "rezept-dental-server",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-05-07T06:14:15.180+00:00",
+    "source": "#9nk0vMKFgnYY5fEQ"
+  },
+  "url": "https://igs.healthdataworks.net/jp-rezept-dental/CapabilityStatement-rezept-dental-server.html",
+  "version": "0.0.1",
+  "name": "Rezept Dental Server",
+  "title": "Rezept Dental Server",
+  "status": "draft",
+  "experimental": false,
+  "date": "2021-02-01",
+  "description": "歯科レセプトのサーバ機能の機能ステートメントです。  \n使用できるリソース(Resource Type)と使用できる操作(Read\tSearch:検索参照,\tUpdate:更新,\tCreate:作成,\tDelete:削除)の関係を示します。  \n表で\"y\"となっている操作が使用できます。空欄となっている操作は使用できません。",
+  "kind": "requirements",
+  "fhirVersion": "4.0.1",
+  "format": [
+    "json",
+    "xml"
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "documentation": "歯科レセプトのエンドポイントです。",
+      "resource": [
+        {
+          "type": "Patient",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Patient.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Organization",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Organization.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Claim",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Claim.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Coverage",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Coverage.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Condition",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Condition.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Encounter",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition/JP-REZEPT-Encounter.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Procedure",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Procedure.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "MedicationAdministration",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition/JP-REZEPT-MedicationAdministration.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "MedicationDispense",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-MedicationDispense.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Medication",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Medication.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        },
+        {
+          "type": "Device",
+          "profile": "https://igs.healthdataworks.net/jp-rezept-dental/StructureDefinition-JP-REZEPT-Device.html",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "delete"
+            },
+            {
+              "code": "search-type"
+            }
+          ]
+        }
+      ],
+      "interaction": [
+        {
+          "code": "search-system"
+        }
+      ]
+    }
+  ]
+}

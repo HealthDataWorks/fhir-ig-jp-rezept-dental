@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "MedicalIdentification",
+  "id": "ValueSet-JP-REZEPT-MedicalIdentification",
+  "title": "診療識別コード",
+  "description": "このバリューセットには、レセプト電算処理システムで定義されている診療識別コードが含まれます。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-medical/ValueSet-ValueSet-JP-REZEPT-MedicalIdentification.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-05-07T04:43:25.599+00:00",
+    "source": "#IvdYqwh3wQGbTlBl"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/jp-rezept-medical/CodeSystem-CodeSystem-JP-REZEPT-MedicalIdentification.html"
+      }
+    ]
+  }
+}

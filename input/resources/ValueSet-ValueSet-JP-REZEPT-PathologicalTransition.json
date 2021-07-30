@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "PathologicalTransition",
+  "id": "ValueSet-JP-REZEPT-PathologicalTransition",
+  "title": "病態移行コード",
+  "description": "このバリューセットには、レセプト電算処理システムで定義されている病態移行コードが含まれます。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-PathologicalTransition.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-05-07T07:49:01.014+00:00",
+    "source": "#SswYioVEVLUgPXIz"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/jp-rezept-dental/CodeSystem-CodeSystem-JP-REZEPT-PathologicalTransition.html"
+      }
+    ]
+  }
+}

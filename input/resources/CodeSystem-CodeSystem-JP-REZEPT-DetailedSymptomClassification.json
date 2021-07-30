@@ -1,0 +1,75 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "DetailedSymptomClassification",
+  "id": "CodeSystem-JP-REZEPT-DetailedSymptomClassification",
+  "title": "症状詳記区分コード",
+  "description": "レセプト電算処理システムで使用されている症状詳記区分コードです。\n\n医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表23 症状詳記区分コード」に記載されています。\n\n歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表25 症状詳記区分コード」に記載されています。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-medical/CodeSystem-CodeSystem-JP-REZEPT-DetailedSymptomClassification.html",
+  "meta": {
+    "versionId": "6",
+    "lastUpdated": "2021-05-07T04:33:45.094+00:00",
+    "source": "#tw8hHjrGggvcvxNG"
+  },
+  "valueSet": "https://igs.healthdataworks.net/jp-rezept-medical/ValueSet-ValueSet-JP-REZEPT-DetailedSymptomClassification.html",
+  "concept": [
+    {
+      "code": "01",
+      "display": "患者の主たる疾患（合併症を含む。）の診断根拠となった臨床症状",
+      "definition": "患者の主たる疾患（合併症を含む。）の診断根拠となった臨床症状"
+    },
+    {
+      "code": "02",
+      "display": "患者の主たる疾患（合併症を含む。）の診断根拠となった臨床症状の診察・検査所見",
+      "definition": "患者の主たる疾患（合併症を含む。）の診断根拠となった臨床症状の診察・検査所見"
+    },
+    {
+      "code": "03",
+      "display": "主な治療行為（手術、処置、薬物治療等）の必要性",
+      "definition": "主な治療行為（手術、処置、薬物治療等）の必要性"
+    },
+    {
+      "code": "04",
+      "display": "主な治療行為（手術、処置、薬物治療等）の経過",
+      "definition": "主な治療行為（手術、処置、薬物治療等）の経過"
+    },
+    {
+      "code": "05",
+      "display": "診療報酬明細書の合計点数が１００万点以上の場合における薬剤に係る症状等",
+      "definition": "診療報酬明細書の合計点数が１００万点以上の場合における薬剤に係る症状等"
+    },
+    {
+      "code": "06",
+      "display": "診療報酬明細書の合計点数が１００万点以上の場合における処置に係る症状等",
+      "definition": "診療報酬明細書の合計点数が１００万点以上の場合における処置に係る症状等"
+    },
+    {
+      "code": "07",
+      "display": "その他",
+      "definition": "その他"
+    },
+    {
+      "code": "50",
+      "display": "医薬品医療機器等法に規定する治験に係る治験概要",
+      "definition": "医薬品医療機器等法に規定する治験に係る治験概要"
+    },
+    {
+      "code": "51",
+      "display": "疾患別リハビリテーション（心大血管疾患、脳血管疾患等、廃用症候群、運動器及び呼吸器）に係る治療継続の理由等の記載",
+      "definition": "疾患別リハビリテーション（心大血管疾患、脳血管疾患等、廃用症候群、運動器及び呼吸器）に係る治療継続の理由等の記載"
+    },
+    {
+      "code": "52",
+      "display": "廃用症候群リハビリテーション料を算定する場合の、廃用をもたらすに至った要因等の記載",
+      "definition": "廃用症候群リハビリテーション料を算定する場合の、廃用をもたらすに至った要因等の記載"
+    },
+    {
+      "code": "90",
+      "display": "療養の給付及び公費負担医療に関する費用の請求に関する省令第１条第２項及び第３項の規定に基づく診療報酬明細書以外の診療報酬明細書の症状詳記",
+      "definition": "療養の給付及び公費負担医療に関する費用の請求に関する省令第１条第２項及び第３項の規定に基づく診療報酬明細書以外の診療報酬明細書の症状詳記"
+    }
+  ],
+  "count": 11
+}

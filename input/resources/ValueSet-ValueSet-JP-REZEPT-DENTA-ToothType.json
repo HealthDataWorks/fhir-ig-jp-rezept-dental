@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ToothType",
+  "id": "ValueSet-JP-REZEPT-DENTA-ToothType",
+  "title": "歯式",
+  "description": "このバリューセットには、レセプト電算処理システムで定義されている歯式の種類が含まれます。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-ToothType.html",
+  "meta": {
+    "versionId": "3",
+    "lastUpdated": "2021-05-07T07:53:46.037+00:00",
+    "source": "#rYogEs5qxdmx87UW"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://www.ssk.or.jp/seikyushiharai/tensuhyo/kihonmasta/kihonmasta_09.html"
+      }
+    ]
+  }
+}

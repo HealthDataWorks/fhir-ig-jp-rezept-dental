@@ -1,0 +1,160 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-REZEPT-Encounter",
+  "meta": {
+    "versionId": "16",
+    "lastUpdated": "2021-06-01T11:04:08.816+00:00",
+    "source": "#aP7Vaznhz7zuczFe"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Management"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://igs.healthdataworks.net/jp-rezept-medical/StructureDefinition/JP-REZEPT-Encounter.html",
+  "version": "0.8.0",
+  "name": "Encounter",
+  "title": "入院、外来情報",
+  "status": "draft",
+  "description": "入院、外来を記録した情報です。  \n医療サービスの提供者と患者の間を繋ぐ情報を示します。",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Encounter",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Encounter",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Encounter",
+        "path": "Encounter",
+        "short": "入院、外来情報",
+        "definition": "入院、外来を記録した情報です。\n医療サービスの提供者と患者の間を繋ぐ情報を示します。"
+      },
+      {
+        "id": "Encounter.id",
+        "path": "Encounter.id",
+        "short": "このリソースのID",
+        "definition": "このリソースのIDです。",
+        "comment": "リソースIDは自動採番されます。",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.text",
+        "path": "Encounter.text",
+        "short": "このリソースの概要",
+        "definition": "このリソースの概要です。",
+        "comment": "例：入院　2021/01/15 - 2021/01/25",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.text.status",
+        "path": "Encounter.text.status",
+        "definition": "このリソースの概要がリソースのコンテンツから⽣成されたことを⽰す。",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.text.div",
+        "path": "Encounter.text.div",
+        "short": "このリソースの概要",
+        "definition": "このリソースの概要です。",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.status",
+        "path": "Encounter.status",
+        "short": "このリソース状態",
+        "definition": "このリソース状態です。",
+        "comment": "finished : 完了\nunknown : 不明",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.class",
+        "path": "Encounter.class",
+        "short": "このリソースの分類",
+        "definition": "このリソースの分類です。",
+        "comment": "AMB : 外来\nIMP : 入院",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.subject",
+        "path": "Encounter.subject",
+        "short": "患者の参照",
+        "definition": "患者の参照です。",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.subject.reference",
+        "path": "Encounter.subject.reference",
+        "short": "患者の参照",
+        "definition": "患者の参照です。",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period",
+        "path": "Encounter.period",
+        "short": "入院、通院期間",
+        "definition": "入院、通院期間です。",
+        "comment": "入院レセプトの場合、診療年月の1日または入院開始から診療最終日までの期間を入れます。\n入院外レセプトの場合、診療年月の対象日を開始と終了に入れます。",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period.start",
+        "path": "Encounter.period.start",
+        "short": "入院、通院開始日",
+        "definition": "入院、通院開始日です。",
+        "comment": "入院レセプトの場合、入院年月日と診療年月の1日で新しいほうを開始日とします。",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.period.end",
+        "path": "Encounter.period.end",
+        "short": "入院、通院終了日",
+        "definition": "入院、通院終了日です。",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceProvider",
+        "path": "Encounter.serviceProvider",
+        "short": "医療機関の参照",
+        "definition": "医療機関の参照です。",
+        "mustSupport": true
+      },
+      {
+        "id": "Encounter.serviceProvider.reference",
+        "path": "Encounter.serviceProvider.reference",
+        "short": "医療機関の参照",
+        "definition": "医療機関の参照です。",
+        "mustSupport": true
+      }
+    ]
+  }
+}

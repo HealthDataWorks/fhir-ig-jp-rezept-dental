@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "PatientStatus",
+  "id": "ValueSet-JP-REZEPT-PatientStatus",
+  "title": "患者の状態コード",
+  "description": "このバリューセットには、レセプト電算処理システムで定義されている患者の状態コードが含まれます。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-medical/ValueSet-ValueSet-JP-REZEPT-PatientStatus.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-05-07T04:46:11.250+00:00",
+    "source": "#Tlb3FEmOwpetZXXx"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/jp-rezept-medical/CodeSystem-CodeSystem-JP-REZEPT-PatientStatus.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "FacilityStandard",
+  "id": "CodeSystem-JP-REZEPT-FacilityStandard",
+  "title": "施設基準届出コード",
+  "description": "レセプト電算処理システムで使用されている施設基準届出コードです。\n\n歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表5 施設基準届出コード \n」に記載されています。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-dental/CodeSystem-CodeSystem-JP-REZEPT-FacilityStandard.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-05-07T07:55:51.542+00:00",
+    "source": "#ztbi0feZlDDp9qNr"
+  },
+  "valueSet": "https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-DENTAL-FacilityStandard.html",
+  "concept": [
+    {
+      "code": "01",
+      "display": "補管",
+      "definition": "クラウン・ブリッジ維持管理料"
+    },
+    {
+      "code": "02",
+      "display": "歯援診",
+      "definition": "在宅療養支援歯科診療所"
+    },
+    {
+      "code": "03",
+      "display": "外来環",
+      "definition": "歯科外来診療環境体制加算"
+    },
+    {
+      "code": "04",
+      "display": "う蝕無痛",
+      "definition": "う蝕歯無痛的窩洞形成加算"
+    },
+    {
+      "code": "06",
+      "display": "医管",
+      "definition": "歯科治療総合医療管理料（Ｉ）及び（Ⅱ）"
+    },
+    {
+      "code": "07",
+      "display": "在歯管",
+      "definition": "在宅患者歯科治療総合医療管理料（Ｉ）及び（Ⅱ）"
+    },
+    {
+      "code": "08",
+      "display": "特連",
+      "definition": "歯科診療特別対応連携加算"
+    },
+    {
+      "code": "09",
+      "display": "手術歯根",
+      "definition": "手術時歯根面レーザー応用加算"
+    },
+    {
+      "code": "10",
+      "display": "歯技工",
+      "definition": "歯科技工加算１及び２"
+    },
+    {
+      "code": "13",
+      "display": "在推進",
+      "definition": "在宅歯科医療推進加算"
+    },
+    {
+      "code": "14",
+      "display": "歯ＣＡＤ",
+      "definition": "ＣＡＤ／ＣＡＭ冠"
+    },
+    {
+      "code": "15",
+      "display": "歯リハ２",
+      "definition": "歯科口腔リハビリテーション料２"
+    },
+    {
+      "code": "16",
+      "display": "か強診",
+      "definition": "かかりつけ歯科医機能強化型歯科診療所"
+    },
+    {
+      "code": "17",
+      "display": "歯初診",
+      "definition": "歯科初診料"
+    }
+  ],
+  "count": 14
+}

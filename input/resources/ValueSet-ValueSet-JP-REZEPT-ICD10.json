@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ICD10",
+  "id": "ValueSet-JP-REZEPT-ICD10",
+  "title": "ICD10コード",
+  "description": "このバリューセットには、ICD10コードで定義されるすべての傷病名が含まれます。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-medical/ValueSet-ValueSet-JP-REZEPT-ICD10.html",
+  "meta": {
+    "versionId": "3",
+    "lastUpdated": "2021-05-07T04:18:54.550+00:00",
+    "source": "#3BrXGcyhlNbP1Oj0"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:oid:2.16.840.1.113883.4.642.3.531"
+    }
+  ]
+}

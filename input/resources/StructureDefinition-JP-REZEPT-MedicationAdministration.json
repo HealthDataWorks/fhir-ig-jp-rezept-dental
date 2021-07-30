@@ -1,0 +1,258 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-REZEPT-MedicationAdministration",
+  "meta": {
+    "versionId": "43",
+    "lastUpdated": "2021-06-01T11:07:14.926+00:00",
+    "source": "#oseyBwzMNVhWh63T"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Medications"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://igs.healthdataworks.net/jp-rezept-medical/StructureDefinition/JP-REZEPT-MedicationAdministration.html",
+  "version": "0.8.0",
+  "name": "MedicationAdministration",
+  "title": "日単位の投薬記録",
+  "status": "draft",
+  "description": "患者が薬を服薬したり、診療行為で投与したこと等を記録します。  \nこれは、錠剤を飲み込む簡単な場合や、長期的な投薬である場合もあります。",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "w3c.prov",
+      "uri": "http://www.w3.org/ns/prov",
+      "name": "W3C PROV"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationAdministration",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/MedicationAdministration",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationAdministration",
+        "path": "MedicationAdministration",
+        "short": "投薬記録",
+        "definition": "患者が薬を服薬したり、診療行為で投与したこと等を記録します。\nこれは、錠剤を飲み込む簡単な場合や、長期的な投薬である場合もあります。",
+        "comment": "日単位の患者への投薬記録です。"
+      },
+      {
+        "id": "MedicationAdministration.id",
+        "path": "MedicationAdministration.id",
+        "short": "リソースID",
+        "definition": "リソースIDです。",
+        "comment": "リソースIDは自動採番されます。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.text",
+        "path": "MedicationAdministration.text",
+        "short": "このリソースの概要",
+        "definition": "このリソースの概要です。",
+        "comment": "例:\n・エルカルチンＦＦ錠 250ｍｇ\n・2錠",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.text.status",
+        "path": "MedicationAdministration.text.status",
+        "definition": "このリソースの概要がリソースのコンテンツから⽣成されたことを⽰す。",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.text.div",
+        "path": "MedicationAdministration.text.div",
+        "short": "このリソースの概要",
+        "definition": "このリソースの概要です。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.partOf",
+        "path": "MedicationAdministration.partOf",
+        "short": "イベントの一部",
+        "definition": "イベントの一部です。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.partOf.reference",
+        "path": "MedicationAdministration.partOf.reference",
+        "short": "イベント",
+        "definition": "診療識別、枝番が同じ1つ目の診療行為のProcedureの参照。",
+        "comment": "診療識別、枝番が同じ診療行為がない場合は、\"投薬\"として生成したProcedureの参照。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.status",
+        "path": "MedicationAdministration.status",
+        "short": "投薬状態",
+        "definition": "投薬の状態です。",
+        "comment": "レセプトは実施済みなので「completed」固定とします。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.category",
+        "path": "MedicationAdministration.category",
+        "short": "医薬品情報の参照",
+        "definition": "医薬品情報の参照です。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.category.coding",
+        "path": "MedicationAdministration.category.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.category.coding.code",
+        "path": "MedicationAdministration.category.coding.code",
+        "short": "手順の分類コード",
+        "definition": "手順の分類コードを示す。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.category.coding.display",
+        "path": "MedicationAdministration.category.coding.display",
+        "short": "コード値から引き当てた名称",
+        "definition": "コード値から引き当てた名称を示す。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.category.text",
+        "path": "MedicationAdministration.category.text",
+        "short": "手順の分類の名称",
+        "definition": "手順の分類の名称を示す。",
+        "comment": "手順の分類の名称は「診療識別」固定とします。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.medication[x]",
+        "path": "MedicationAdministration.medication[x]",
+        "short": "医薬品情報の参照",
+        "definition": "医薬品情報の参照です。",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.subject",
+        "path": "MedicationAdministration.subject",
+        "short": "患者情報の参照",
+        "definition": "患者情報の参照です。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.subject.reference",
+        "path": "MedicationAdministration.subject.reference",
+        "short": "患者情報の参照",
+        "definition": "患者情報の参照です。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.context",
+        "path": "MedicationAdministration.context",
+        "short": "受診情報の参照",
+        "definition": "受診情報の参照です。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.context.reference",
+        "path": "MedicationAdministration.context.reference",
+        "short": "受診情報の参照",
+        "definition": "受診情報の参照です。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.supportingInformation",
+        "path": "MedicationAdministration.supportingInformation",
+        "short": "診療日",
+        "definition": "診療日です。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.effective[x]",
+        "path": "MedicationAdministration.effective[x]",
+        "short": "診療日",
+        "definition": "診療日です。",
+        "comment": "レセプトは日で情報を持つため、DateTimeを使用する。",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.note",
+        "path": "MedicationAdministration.note",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.note.text",
+        "path": "MedicationAdministration.note.text",
+        "short": "コメント内容",
+        "definition": "コメント内容を示す。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.dosage",
+        "path": "MedicationAdministration.dosage",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.dosage.dose",
+        "path": "MedicationAdministration.dosage.dose",
+        "short": "用量",
+        "definition": "用量を示す。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.dosage.dose.value",
+        "path": "MedicationAdministration.dosage.dose.value",
+        "short": "投与量",
+        "definition": "投与量を示す。",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationAdministration.dosage.dose.unit",
+        "path": "MedicationAdministration.dosage.dose.unit",
+        "short": "投与量の単位",
+        "definition": "投与量の単位を示す。",
+        "comment": "例: 錠",
+        "mustSupport": true
+      }
+    ]
+  }
+}

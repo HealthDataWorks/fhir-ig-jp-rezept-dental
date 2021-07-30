@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "RequestForNonVisit",
+  "id": "ValueSet-JP-REZEPT-RequestForNonVisit",
+  "title": "未来院請求コード",
+  "description": "このバリューセットには、レセプト電算処理システムで定義されている未来院請求コードが含まれます。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-RequestForNonVisit.html",
+  "meta": {
+    "versionId": "3",
+    "lastUpdated": "2021-05-07T07:51:09.118+00:00",
+    "source": "#rJe2W2avJNbRb4qF"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/jp-rezept-dental/CodeSystem-CodeSystem-JP-REZEPT-RequestForNonVisit.html"
+      }
+    ]
+  }
+}

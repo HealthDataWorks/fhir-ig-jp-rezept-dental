@@ -1,0 +1,185 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "DentalMedicalIdentification",
+  "id": "CodeSystem-JP-REZEPT-DentalMedicalIdentification",
+  "title": "診療識別コード",
+  "description": "レセプト電算処理システムで使用されている診療識別コードです。\n\n歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表20 診療識別コード」に記載されています。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-dental/CodeSystem-CodeSystem-JP-REZEPT-DentalMedicalIdentification.html",
+  "meta": {
+    "versionId": "3",
+    "lastUpdated": "2021-05-07T07:54:55.631+00:00",
+    "source": "#yAeBoiLrB7eI0iLz"
+  },
+  "valueSet": "https://igs.healthdataworks.net/jp-rezept-dental/ValueSet-ValueSet-JP-REZEPT-DENTAL-DentalMedicalIdentification.html",
+  "concept": [
+    {
+      "code": "01",
+      "display": "全体に係る識別コード(入院)",
+      "definition": "全体に係る識別コード(入院)"
+    },
+    {
+      "code": "11",
+      "display": "初診(入院・入院外)",
+      "definition": "初診(入院・入院外)"
+    },
+    {
+      "code": "12",
+      "display": "再診(入院外)",
+      "definition": "再診(入院外)"
+    },
+    {
+      "code": "13",
+      "display": "管理(入院)、管理・リハ(入院外)",
+      "definition": "管理(入院)、管理・リハ(入院外)"
+    },
+    {
+      "code": "14",
+      "display": "在宅(入院)",
+      "definition": "在宅(入院)"
+    },
+    {
+      "code": "21",
+      "display": "投薬/内服(入院)、投薬・注射(入院外)",
+      "definition": "投薬/内服(入院)、投薬・注射(入院外)"
+    },
+    {
+      "code": "22",
+      "display": "投薬/屯服(入院)",
+      "definition": "投薬/屯服(入院)"
+    },
+    {
+      "code": "23",
+      "display": "投薬/外用(入院)",
+      "definition": "投薬/外用(入院)"
+    },
+    {
+      "code": "24",
+      "display": "投薬/調剤(入院)",
+      "definition": "投薬/調剤(入院)"
+    },
+    {
+      "code": "26",
+      "display": "投薬/麻毒(入院)",
+      "definition": "投薬/麻毒(入院)"
+    },
+    {
+      "code": "27",
+      "display": "投薬/調基(入院)",
+      "definition": "投薬/調基(入院)"
+    },
+    {
+      "code": "31",
+      "display": "注射/皮下筋肉内(入院)、X線検査(入院外)",
+      "definition": "注射/皮下筋肉内(入院)、X線検査(入院外)"
+    },
+    {
+      "code": "32",
+      "display": "注射/静脈内(入院)",
+      "definition": "注射/静脈内(入院)"
+    },
+    {
+      "code": "33",
+      "display": "注射/その他(入院)",
+      "definition": "注射/その他(入院)"
+    },
+    {
+      "code": "39",
+      "display": "薬剤料減点(入院)",
+      "definition": "薬剤料減点(入院)"
+    },
+    {
+      "code": "40",
+      "display": "処置(入院)",
+      "definition": "処置(入院)"
+    },
+    {
+      "code": "41",
+      "display": "処置・手術1(入院外)",
+      "definition": "処置・手術1(入院外)"
+    },
+    {
+      "code": "42",
+      "display": "処置・手術2(入院外)",
+      "definition": "処置・手術2(入院外)"
+    },
+    {
+      "code": "43",
+      "display": "処置・手術3(入院外)",
+      "definition": "処置・手術3(入院外)"
+    },
+    {
+      "code": "44",
+      "display": "処置・手術(その他)(入院外)",
+      "definition": "処置・手術(その他)(入院外)"
+    },
+    {
+      "code": "50",
+      "display": "手術(入院)",
+      "definition": "手術(入院)"
+    },
+    {
+      "code": "54",
+      "display": "麻酔(入院・入院外)",
+      "definition": "麻酔(入院・入院外)"
+    },
+    {
+      "code": "60",
+      "display": "検査・病理(入院)",
+      "definition": "検査・病理(入院)"
+    },
+    {
+      "code": "61",
+      "display": "歯冠修復・欠損補綴・修復・補綴1(入院外)",
+      "definition": "歯冠修復・欠損補綴・修復・補綴1(入院外)"
+    },
+    {
+      "code": "62",
+      "display": "歯冠修復・欠損補綴・修復・補綴2(入院外)",
+      "definition": "歯冠修復・欠損補綴・修復・補綴2(入院外)"
+    },
+    {
+      "code": "63",
+      "display": "歯冠修復・欠損補綴・修復・補綴3(入院外)",
+      "definition": "歯冠修復・欠損補綴・修復・補綴3(入院外)"
+    },
+    {
+      "code": "64",
+      "display": "歯冠修復・欠損補綴・修復・補綴(その他)(入院外)",
+      "definition": "歯冠修復・欠損補綴・修復・補綴(その他)(入院外)"
+    },
+    {
+      "code": "70",
+      "display": "画像診断(入院)",
+      "definition": "画像診断(入院)"
+    },
+    {
+      "code": "80",
+      "display": "その他(入院)、全体のその他(入院外)",
+      "definition": "その他(入院)、全体のその他(入院外)"
+    },
+    {
+      "code": "90",
+      "display": "入院/入院基本料(入院)",
+      "definition": "入院/入院基本料(入院)"
+    },
+    {
+      "code": "92",
+      "display": "入院/特定入院料・その他(入院)",
+      "definition": "入院/特定入院料・その他(入院)"
+    },
+    {
+      "code": "97",
+      "display": "食事療養・生活療養・標準負担額(入院)",
+      "definition": "食事療養・生活療養・標準負担額(入院)"
+    },
+    {
+      "code": "99",
+      "display": "全体に係る識別コード(入院)、摘要(入院外)",
+      "definition": "全体に係る識別コード(入院)、摘要(入院外)"
+    }
+  ],
+  "count": 33
+}

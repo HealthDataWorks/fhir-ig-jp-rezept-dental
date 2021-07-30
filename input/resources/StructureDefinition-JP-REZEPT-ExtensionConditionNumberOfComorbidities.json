@@ -1,0 +1,72 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JP-REZEPT-ExtensionConditionNumberOfComorbidities",
+  "meta": {
+    "versionId": "10",
+    "lastUpdated": "2021-05-06T05:27:57.822+00:00",
+    "source": "#vOtsczmAtpyiRXY5"
+  },
+  "url": "https://igs.healthdataworks.net/jp-rezept-medical/StructureDefinition-JP-REZEPT-ExtensionConditionNumberOfComorbidities.html",
+  "version": "0.8.0",
+  "name": "ExtensionConditionNumberOfComorbidities",
+  "title": "併存傷病名数",
+  "status": "draft",
+  "description": "併存傷病名数です。",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "JP-REZEPT-DENTAL-Mapping",
+      "name": "歯科",
+      "uri": "https://shinryohoshu.mhlw.go.jp/shinryohoshu/receMenu/doReceInfo",
+      "comment": "レセプト電算処理システムの請求に係る記録条件仕様(歯科用)をFHIRにマッピングします。"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "context": [
+    {
+      "type": "fhirpath",
+      "expression": "Condition"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://igs.healthdataworks.net/jp-rezept-medical/StructureDefinition-JP-REZEPT-ExtensionConditionNumberOfComorbidities.html"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "short": "併存傷病名数",
+        "definition": "併存傷病名数です。",
+        "type": [
+          {
+            "code": "integer"
+          }
+        ],
+        "mustSupport": true,
+        "mapping": [
+          {
+            "identity": "JP-REZEPT-DENTAL-Mapping",
+            "map": "傷病名部位レコード(HS).併存傷病名数"
+          }
+        ]
+      }
+    ]
+  }
+}

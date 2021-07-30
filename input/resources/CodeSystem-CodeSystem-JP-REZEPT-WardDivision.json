@@ -1,0 +1,35 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "WardDivision",
+  "id": "CodeSystem-JP-REZEPT-WardDivision",
+  "title": "病棟区分コード",
+  "description": "レセプト電算処理システムで使用されている病棟区分コードです。\n\n医科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(医科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_1_kiroku.pdf) の「別表7 病棟区分コード」に記載されています。\n\nDPCレセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(DPC用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_2_kiroku_dpc.pdf) の「別表7 病棟区分コード」に記載されています。\n\n歯科レセプトでこのコードは[オンライン又は光ディスク等による請求に係る記録条件仕様(歯科用)](https://shinryohoshu.mhlw.go.jp/shinryohoshu/file/spec/R02bt1_3_kiroku_dental.pdf) の「別表9 病棟区分コード」に記載されています。",
+  "version": "0.8.0",
+  "url": "https://igs.healthdataworks.net/jp-rezept-medical/CodeSystem-CodeSystem-JP-REZEPT-WardDivision.html",
+  "meta": {
+    "versionId": "6",
+    "lastUpdated": "2021-05-07T04:37:06.508+00:00",
+    "source": "#N9kjHFDiuDryHBvV"
+  },
+  "valueSet": "https://igs.healthdataworks.net/jp-rezept-medical/ValueSet-ValueSet-JP-REZEPT-WardDivision.html",
+  "concept": [
+    {
+      "code": "01",
+      "display": "精神(精神病棟)",
+      "definition": "精神(精神病棟)"
+    },
+    {
+      "code": "02",
+      "display": "精神(結核病棟)",
+      "definition": "精神(結核病棟)"
+    },
+    {
+      "code": "07",
+      "display": "精神(療養病棟)",
+      "definition": "精神(療養病棟)"
+    }
+  ],
+  "count": 3
+}
