@@ -3,9 +3,9 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: igs.healthdataworks.jp-rezept-dental
+id: jp-rezept-dental
 canonical: https://healthdataworks.net/hl7-fhir
-name: IgsHealthdataworksJp-rezept-dental
+name: Jp-rezept-dental
 title: しかレセプト
 description: この実装ガイドは、HL7 FHIR のリソースに歯科レセプトの情報を設定して利用するためのドキュメントです。
 status: draft # draft | active | retired | unknown
