@@ -1,9 +1,10 @@
-custom-template/
-input-cache/
-output/
-temp/
-template/
-
-publisher.jar
+.DS_Store
+Thumbs.db
+/fsh-generated
+/input-cache
+/output
+/temp
+/template
+/custom-template
 
 .vscode

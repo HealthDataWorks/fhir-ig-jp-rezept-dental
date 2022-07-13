@@ -3,9 +3,10 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto8
+      java: corretto11
+      nodejs: 14
     commands:
-      # install jekyll
+      - npm install -g fsh-sushi
       - gem install jekyll bundler
   pre_build:
     commands:
@@ -14,7 +15,9 @@ phases:
   build:
     commands:
       - export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
-      - java -jar publisher.jar -ig ig.ini
+      - ls
+      - ls input-cache
+      - ./_genonce.sh
   post_build:
     commands:
       - echo Delete S3 Bucket object...
