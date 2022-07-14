@@ -6,7 +6,7 @@
 id: jp-rezept-dental
 canonical: https://healthdataworks.net/hl7-fhir
 name: Jp-rezept-dental
-title: しかレセプト
+title: 歯科レセプト
 description: この実装ガイドは、HL7 FHIR のリソースに歯科レセプトの情報を設定して利用するためのドキュメントです。
 status: draft # draft | active | retired | unknown
 version: 0.8.0
